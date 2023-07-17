@@ -1,5 +1,6 @@
 <script>
 	import Ds3Challenge from "$lib/DS3Challenge.svelte";
+	import Faq from "$lib/FAQ.svelte";
 </script>
 
 <svelte:head>
@@ -9,6 +10,7 @@
 
 <section>
 	<Ds3Challenge/>
+	<Faq/>
 </section>
 
 <style>
