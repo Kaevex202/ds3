@@ -24,9 +24,18 @@
     </label> CHALLENGE RUN</h1>
 	{#if game == "ds3"}
 		<Ds3Challenge/>
-	{/if}
-	{#if game == "er"}
+	{:else if game == "er"}
 		<ErChallenge/>
+	{:else if game == "ds"}
+		<h2 class="flex justify-center text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 ">COMING SOON</h2>
+	{:else if game =="ds2"}
+	<h2 class="flex justify-center text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 ">COMING SOON</h2>
+	{:else if game == "des"}
+	<h2 class="flex justify-center text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 ">COMING SOON</h2>
+	{:else if game == "sk"}
+	<h2 class="flex justify-center text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 ">COMING SOON</h2>
+	{:else}
+	<p>Select a game.</p>
 	{/if}
 	<Faq/>
 </section>
