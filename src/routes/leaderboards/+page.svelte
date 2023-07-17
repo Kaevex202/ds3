@@ -1,0 +1,1 @@
+<div class="justify-center items-center flex flex-col mx-auto mt-16"><h1 class="text-4xl font-extrabold md:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0">UNDER CONSTRUCTION</h1></div>
