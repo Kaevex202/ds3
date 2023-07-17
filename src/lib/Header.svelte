@@ -8,7 +8,7 @@
 
 	<nav class="flex items-center justify-between flex-wrap p-6 w-full lg:w-[85%] mx-auto">
 		<div id="logo" class="flex items-center flex-shrink-0 text-white mr-6 flex-[100] w-fit h-1/2">
-			<a href="/" aria-current={$page.url.pathname === '/' ? 'page' : undefined}><img src={logo} alt="Logo for soulsbornechallenges.com" class="fill-current w-64 mr-2" width="256" height="51"></a>
+			<a href="/" aria-current={$page.url.pathname === '/' ? 'page' : undefined}><h1 class="w-full text-4xl font-black px-6 lg:px-0 text-black">SOULSBORNECHALLENGES</h1></a>
 		</div>
 
 
