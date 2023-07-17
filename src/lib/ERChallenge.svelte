@@ -1,7 +1,7 @@
 <script lang="ts">
     import erchallenge from '$lib/er/erchallenge.json'
     import bosslist from '$lib/er/erbosses.json'
-    import categoryLIst from '$lib/er/ercategory.json'
+    import categoryList from '$lib/er/ercategory.json'
 
     let randomBossPercent = false;
     let statRestrictions = false;
