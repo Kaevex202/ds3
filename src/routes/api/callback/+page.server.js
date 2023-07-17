@@ -5,7 +5,7 @@ const DISCORD_REDIRECT_URI = import.meta.env.VITE_DISCORD_REDIRECT_URI;
 /**
  * @type {import('@sveltejs/kit').RequestHandler}
  */
-export async function load({ url }) {
+export async function load({ url, cookies }) {
   // fetch returnCode set in the URL parameters.
   const returnCode = url.searchParams.get('code');
   console.log('returnCode =>', returnCode);
@@ -39,10 +39,22 @@ export async function load({ url }) {
     }
   }
 
+  const sessionid = cookies.get('sessionid');
+
   // redirect user to front page with cookies set
   const access_token_expires_in = new Date(Date.now() + response.expires_in); // 10 minutes
   const refresh_token_expires_in = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000); // 30 days
   console.log('redirect to / with cookies');
+  
+
+  cookies.set(
+  "disco_access_token", response.access_token, {
+    path: '/',
+    sameSite: 'lax',
+    secure: false
+  }
+  )
+
   return {
     headers: {
       'set-cookie': [
