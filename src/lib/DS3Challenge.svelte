@@ -65,8 +65,8 @@
 </script>
 
 <div class="justify-center items-center flex flex-col mx-auto mt-16">
-    <h1 class="text-6xl font-extrabold md:text-7xl mt-4 mb-8 2xl:mt-12">DARK SOULS 3 CHALLENGE RUN</h1>
-    <form on:submit|preventDefault={selectedCategory} class="mt-8 flex flex-col items-start w-[30%]">
+    <h1 class="text-4xl font-extrabold md:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0">DARK SOULS 3 CHALLENGE RUN</h1>
+    <form on:submit|preventDefault={selectedCategory} class="mt-8 flex flex-col items-start lg:w-[30%]">
         <h4 class="flex items-center w-full mx-auto">Options</h4>
         <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" bind:checked={randomBossPercent}><p>Add Random Boss%</p></label>
         <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" bind:checked={statRestrictions}><p>Stat restrictions (Main stats only)</p></label>
@@ -78,7 +78,7 @@
 </div>
 
 <div class="justify-center flex flex-col mx-auto mt-16 text-left w-1/2 items-center">
-    <h2 class="lg:w-3/5 flex text-left items-start text-6xl font-extrabold md:text-7xl mt-4 mb-8 2xl:mt-12 ">Run information</h2>
+    <h2 class="lg:w-3/5 flex text-left items-start text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 ">Run information</h2>
         {#each arr as items}
             <div class="flex lg:w-3/5 justify-between"><p class="font-bold">{items.categoryName}: </p><p class="text-right items-right">{items.randomOption}</p></div>
         {/each}
