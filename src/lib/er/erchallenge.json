@@ -344,7 +344,8 @@
             "Dexterity Only",
             "Intelligence Only",
             "Faith Only",
-            "Arcane Only"
+            "Arcane Only",
+            "Mundane Build (all stats same level)"
         ]
     },
     {
@@ -357,7 +358,8 @@
             "Dexterity Only",
             "Intelligence Only",
             "Faith Only",
-            "Luck Only"
+            "Luck Only",
+            "Mundane Build (all stats same level)"
         ]
     },
     {
@@ -372,7 +374,28 @@
             "No Armor",
             "No Items/Buffs",
             "No Infusions",
-            "No Weapon Upgrades"
+            "No Weapon Upgrades",
+            "Naked Run (no armor)",
+            "Fat roll only",
+            "Age of the Duskborn Ending",
+            "Age of Order Ending",
+            "Blessing of Despair Ending",
+            "Lord of the Frenzied Flame Ending",
+            "Age of the Stars Ending"
+        ]
+    },
+    {
+        "Hardcore Restrictions": [
+            "No Hit Run",
+            "Shield Only",
+            "No Hit (reset on hit)",
+            "No Deaths (reset on death)",
+            "Bow Only",
+            "No hit SL1 (reset on hit)",
+            "Overenbumbered Run",
+            "Consumable only",
+            "R2 Only",
+            "No Flasks Run"
         ]
     }
 ]

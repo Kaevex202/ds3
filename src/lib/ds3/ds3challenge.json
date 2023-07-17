@@ -248,7 +248,8 @@
             "Dexterity Only",
             "Intelligence Only",
             "Faith Only",
-            "Luck Only"
+            "Luck Only",
+            "Mundane Build (all stats same level)"
         ]
     },
     {
@@ -278,8 +279,10 @@
             "No Parrying",
             "No Rolling",
             "Fat Roll Only",
-            "Left Handed Run",
+            "Left Handed Run. (Weapon in left hand, shield/spellcasting in right)",
             "Start with Calamity Ring",
+            "Start with Skull Ring",
+            "Start with Calamity + Skull Ring",
             "Ending: The End of Fire",
             "Ending: \"Unkindled Ending\" ",
             "Ending: Usurpation of Fire",
