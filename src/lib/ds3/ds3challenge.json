@@ -8,7 +8,7 @@
         ]
     },
     {
-        "Glitchless?": [
+        "Glitchless": [
             "Yes",
             "No"
         ]
@@ -266,9 +266,9 @@
     },
     {
         "Challenge": [
-            "Miracle Only",
-            "Pyromancer Only",
-            "Sorcerer Only",
+            "Miracle Only (catalyst allowed)",
+            "Pyromancy Only (catalyst allowed)",
+            "Sorcerer Only (catalyst allowed)",
             "SL1",
             "No Rings",
             "No Armor",

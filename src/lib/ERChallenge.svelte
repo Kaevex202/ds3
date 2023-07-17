@@ -1,7 +1,5 @@
 <script lang="ts">
-    import ds3challenge from '$lib/ds3/ds3challenge.json'
-    import bosslist from '$lib/ds3/ds3bosses.json'
-    import categoryList from '$lib/ds3/ds3categoryList.json'
+    import erchallenge from '$lib/er/erchallenge.json'
 
     let randomBossPercent = false;
     let statRestrictions = false;
@@ -11,31 +9,19 @@
     let arr = [];
 
     function selectedCategory(){
-
         arr = [];
 
-        var arrayLength = Object.keys(ds3challenge);
+        var arrayLength = Object.keys(erchallenge);
 
-        ds3challenge.forEach(element => getRandomObject(element));
-        
-        if(modRestrictions == false){
-            const removeModdedRestrictions = arr.splice(8,1);
-        }
-        if(HCRestrictions == false){
-            const removeHCRestrictions = arr.splice(7,1);
-        }
+        erchallenge.forEach(element => getRandomObject(element));
+
         if(fullStatRestrictions == false){
             const removeFullStatRestrictions = arr.splice(5,1);
         }
         if(statRestrictions == false){
             const removeStatRestrictions = arr.splice(4,1);
         }
-        if(randomBossPercent == true && arr[0].randomOption == "Other boss %"){
-            arr[0].randomOption = getRandomBoss(bosslist);
-        }
-        if(randomBossPercent == false && arr[0].randomOption == "Other boss %"){
-            arr[0].randomOption = getRandomRunCategory(categoryList);
-        }
+
     }
 
     function getRandomRunCategory(element){
@@ -66,7 +52,7 @@
 
 <div class="justify-center items-center flex flex-col mx-auto mt-16">
     <form on:submit|preventDefault={selectedCategory} class="mt-8 flex flex-col items-start lg:w-[30%] px-6 lg:px-0">
-        <h4 class="flex lg:items-center w-full mx-auto">Options</h4>
+        <h4 class="flex lg:items-center w-full mx-auto">Options (not functional yet)</h4>
         <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" bind:checked={randomBossPercent}><p>Add Random Boss%</p></label>
         <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" bind:checked={statRestrictions}><p>Stat restrictions (Main stats only)</p></label>
         <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" bind:checked={fullStatRestrictions}><p>Full Stat restrictions (include Vigor, Attunement, etc.)</p></label>
