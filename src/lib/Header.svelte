@@ -1,14 +1,19 @@
 <script lang="ts">
 	import { page } from '$app/stores';
     import logo from '$lib/images/alogo-4.svg'
+	import {Hamburger} from 'svelte-hamburgers'
+
+	import MobileMenu from './MobileMenu.svelte';
+
 	let open;
 </script>
 
 <header>
 
-	<nav class="flex items-center justify-between flex-wrap p-6 w-full lg:w-[85%] mx-auto">
+	<nav class="inline-flex lg:flex items-center justify-between flex-wrap p-6 w-full lg:w-[85%] mx-auto">
 		<div id="logo" class="flex items-center flex-shrink-0 text-white mr-6 flex-[100] w-fit h-1/2">
-			<a href="/" aria-current={$page.url.pathname === '/' ? 'page' : undefined}><h1 class="w-full text-2xl lg:text-4xl font-black px-6 lg:px-0 text-black">SOULSBORNECHALLENGES</h1></a>
+			<a href="/" aria-current={$page.url.pathname === '/' ? 'page' : undefined}><h1 class="w-full hidden lg:flex lg:text-4xl font-black px-6 lg:px-0 text-black">SOULSBORNECHALLENGES</h1></a>
+			<a href="/" aria-current={$page.url.pathname === '/' ? 'page' : undefined}><h1 class="w-full flex lg:hidden text-lg text-black font-black items-start">SOULSBORNECHALLENGES</h1></a>
 		</div>
 
 
@@ -25,8 +30,9 @@
 				<a href="/contact" class="text-base font-semibold inline-block px-4 py-2 leading-none border rounded text-[#000] border-[#000] hover:border-[#105D97] hover:text-[#105D97] hover:bg-[#fff] mt-4 lg:mt-0" aria-current={$page.url.pathname.startsWith('/contact') ? 'page' : undefined}>Contact</a>
 			</div>
 		</div>
+		<div class="lg:hidden"><Hamburger bind:open /></div></nav>
 
-		
+		<MobileMenu bind:open />
 </header>
 
 <style>
