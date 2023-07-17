@@ -8,7 +8,7 @@
 	<meta name="description" content="A Soulsborne challenge generator" />
 </svelte:head>
 
-<section>
+<section class="">
 	<Ds3Challenge/>
 	<Faq/>
 </section>
