@@ -3,8 +3,8 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>SOULSBORNECHALLENGES</title>
+	<meta name="description" content="A Soulsborne challenge generator" />
 </svelte:head>
 
 <section>
