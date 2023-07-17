@@ -410,7 +410,8 @@
             "No purchases allowed vendors.",
             "Max level: 50",
             "Max level: 25",
-            "Max level: 75"
+            "Max level: 75",
+            "Two-handing Only"
         ]
     },
     {
@@ -430,7 +431,8 @@
             "All Achievements (Ignore Category)",
             "All Endings (Ignore Category)",
             "Finish NG+7 Any% (Ignore Category)",
-            "Finishg NG+7 All Remembrances (Ignore Category)"
+            "Finishg NG+7 All Remembrances (Ignore Category)",
+            "All Bosses Run"
         ]
     },
     {
