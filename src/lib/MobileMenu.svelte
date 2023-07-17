@@ -10,7 +10,7 @@
 
 {#if open}
     <div>
-        <a href="/" on:click={() =>open=false } class="block mt-32 text-[#000] font-semibold hover:text-[#105D97]text-lg" aria-current={$page.url.pathname === '/' ? 'page' : undefined} >
+        <a href="/" on:click={() =>open=false } class="block mt-16 text-[#000] font-semibold hover:text-[#105D97]text-lg" aria-current={$page.url.pathname === '/' ? 'page' : undefined} >
             Home
             </a>
             <a href="/about" on:click={() =>open=false } class="block mt-16 text-[#000] font-semibold hover:text-[#105D97]text-lg" aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>

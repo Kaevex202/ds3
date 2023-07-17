@@ -8,7 +8,6 @@
     let fullStatRestrictions = false;
     let HCRestrictions = false;
     let modRestrictions = false;
-    let category = "";
     let arr = [];
 
     function selectedCategory(){

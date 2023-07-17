@@ -244,24 +244,24 @@
     },
     {
         "Stat Restrictions": [
-            "Strength",
-            "Dexterity",
-            "Intelligence",
-            "Faith",
-            "Luck"
+            "Strength Only",
+            "Dexterity Only",
+            "Intelligence Only",
+            "Faith Only",
+            "Luck Only"
         ]
     },
     {
         "Stat Restrictions Full": [
-            "Vigor",
-            "Attunement",
-            "Endurance",
-            "Vitality",
-            "Strength",
-            "Dexterity",
-            "Intelligence",
-            "Faith",
-            "Luck"
+            "Vigor Only",
+            "Attunement Only",
+            "Endurance Only",
+            "Vitality Only",
+            "Strength Only",
+            "Dexterity Only",
+            "Intelligence Only",
+            "Faith Only",
+            "Luck Only"
         ]
     },
     {
