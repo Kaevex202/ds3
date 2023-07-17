@@ -78,7 +78,7 @@
 <div class="justify-center flex flex-col mx-auto mt-16 text-left lg:w-1/2 items-stretch lg:items-center px-6">
     <h2 class="lg:w-3/5 flex text-left items-start text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 ">Run information</h2>
         {#each arr as items}
-            <div class="flex lg:w-3/5 justify-between"><p class="font-bold">{items.categoryName}: </p><p class="text-right items-right">{items.randomOption}</p></div>
+            <div class="flex lg:w-3/5 justify-between mt-2 lg:mt-0"><p class="font-bold">{items.categoryName}: </p><p class="text-right items-right">{items.randomOption}</p></div>
         {/each}
 </div>
 
