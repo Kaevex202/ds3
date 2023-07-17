@@ -4,7 +4,6 @@
             "Any%",
             "All Bosses",
             "All Bosses no DLC",
-            "All Bosses (With DLC1)",
             "Other boss %"
         ]
     },
@@ -245,28 +244,28 @@
     },
     {
         "Stat Restrictions": [
-            "Strength Only",
-            "Dexterity Only",
-            "Intelligence Only",
-            "Faith Only",
-            "Luck Only"
+            "Strength",
+            "Dexterity",
+            "Intelligence",
+            "Faith",
+            "Luck"
         ]
     },
     {
         "Stat Restrictions Full": [
-            "Vigor Only",
-            "Attunement Only",
-            "Endurance Only",
-            "Vitality Only",
-            "Strength Only",
-            "Dexterity Only",
-            "Intelligence Only",
-            "Faith Only",
-            "Luck Only"
+            "Vigor",
+            "Attunement",
+            "Endurance",
+            "Vitality",
+            "Strength",
+            "Dexterity",
+            "Intelligence",
+            "Faith",
+            "Luck"
         ]
     },
     {
-        "Restriction / Challenge": [
+        "Restrictions": [
             "Miracle Only",
             "Pyromancer Only",
             "Sorceror Only",
@@ -277,15 +276,20 @@
             "No Infusions",
             "No Weapon Upgrades",
             "No Parrying",
-            "No rolling",
-            "Left Handed Run. (Weapon in left hand, shield/spellcasting in right)",
+            "No Rolling",
+            "Fat Roll Only",
+            "Left Handed Run",
             "Start with Calamity Ring",
-            "On Death: Sell your main weapon",
             "Ending: The End of Fire",
             "Ending: \"Unkindled Ending\" ",
             "Ending: Usurpation of Fire",
             "Help Anri kill Aldrich",
-            "Help Siegward kill Yhorm"
+            "Help Siegward kill Yhorm",
+            "Lightning Run (Only weapons infused with Lightning Gem, or Lightning Consumables allowed)",
+            "Dark Run (Only weapons infused with Deep Gem, or Dark Consumables allowed)",
+            "Poison Run (Only weapons infused with Poison Gem, or Poison Consumables allowed)",
+            "Blood Run: Only weapons/consumabled dealing bleed damage (or infused with Blood Gem) allowed",
+            "Dark Run: Only weapons/consumabled dealing dark damage (or infused with Dark Gem) allowed"
         ]
     },
     {
@@ -295,20 +299,23 @@
             "R2 Only",
             "Shield Only",
             "Bow Only",
-            "No Rolling",
             "No Bonfire Run",
             "All Achievements",
             "Reach NG+7",
             "All Endings run",
-            "Consumable only"
+            "Consumables Only",
+            "Fist Only",
+            "Genocide Run (Kill every enemy and NPC you encounter)",
+            "Fixed Camera (can't use right analog stick)",
+            "Thorn Armor Set Only (No weapons/magic allowed)",
+            "No hit SL1 (reset on hit)"
         ]
     },
     {
-        "Randomizer Runs": [
+        "Modded Runs": [
             "Fog Gate Randomizer",
             "Item Randomizer",
-            "Enemy Randomizer",
-            "Everything Randomized"
+            "Enemy Randomizer"
         ]
     }
 ]
