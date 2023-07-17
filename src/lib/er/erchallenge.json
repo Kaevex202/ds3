@@ -8,9 +8,9 @@
         ]
     },
     {
-        "Glitchless": [
-            "Yes",
-            "No"
+        "Glitches?": [
+            "Glitches Allowed",
+            "Glitchless"
         ]
     },
     {
