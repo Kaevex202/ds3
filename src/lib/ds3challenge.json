@@ -21,7 +21,7 @@
             "Herald",
             "Thief",
             "Assassin",
-            "Sorceror",
+            "Sorcerer",
             "Pyromancer",
             "Cleric",
             "Deprived"
@@ -268,7 +268,7 @@
         "Challenge": [
             "Miracle Only",
             "Pyromancer Only",
-            "Sorceror Only",
+            "Sorcerer Only",
             "SL1",
             "No Rings",
             "No Armor",
