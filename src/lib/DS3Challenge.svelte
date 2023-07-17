@@ -66,7 +66,7 @@
 
 <div class="justify-center items-center flex flex-col mx-auto mt-16">
     <h1 class="text-6xl font-extrabold md:text-7xl mt-4 mb-8 2xl:mt-12">DARK SOULS 3 CHALLENGE RUN</h1>
-    <form on:submit|preventDefault={selectedCategory} class="mt-8">
+    <form on:submit|preventDefault={selectedCategory} class="mt-8 flex flex-col items-start w-[30%]">
         <h4 class="flex items-center w-full mx-auto">Options</h4>
         <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" bind:checked={randomBossPercent}><p>Add Random Boss%</p></label>
         <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" bind:checked={statRestrictions}><p>Stat restrictions (Main stats only)</p></label>
