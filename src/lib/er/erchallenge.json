@@ -401,7 +401,16 @@
             "Obtain the Aspect of the Crucible: Breath",
             "Find all Wandering Artist Spirit Locations",
             "No Buffs",
-            "No Consumables"
+            "No Consumables",
+            "Obtain Varre's Bouquet and use it as your new weapon for the rest of the run.",
+            "No Mounted Combat",
+            "No Great Runes",
+            "No Map Fragments",
+            "\\\"Gun Game\\\": Obtain a new weapon after each boss kill. No duplicates allowed.",
+            "No purchases allowed vendors.",
+            "Max level: 50",
+            "Max level: 25",
+            "Max level: 75"
         ]
     },
     {
@@ -415,7 +424,13 @@
             "Overenbumbered Run",
             "Consumable only",
             "R2 Only",
-            "No Flasks Run"
+            "No Flasks Run",
+            "Fist Only",
+            "No rolling",
+            "All Achievements (Ignore Category)",
+            "All Endings (Ignore Category)",
+            "Finish NG+7 Any% (Ignore Category)",
+            "Finishg NG+7 All Remembrances (Ignore Category)"
         ]
     },
     {
