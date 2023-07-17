@@ -364,7 +364,15 @@
         "Challenge": [
             "Sorcery Only (staff allowed)",
             "Incantations Only (sacred seal allowed)",
-            ""
+            "Ashes of War Disallowed",
+            "No parrying",
+            "No Blocking",
+            "RL1",
+            "No Talismans",
+            "No Armor",
+            "No Items/Buffs",
+            "No Infusions",
+            "No Weapon Upgrades"
         ]
     }
 ]
