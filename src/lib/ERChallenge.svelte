@@ -1,5 +1,7 @@
 <script lang="ts">
     import erchallenge from '$lib/er/erchallenge.json'
+    import bosslist from '$lib/er/erbosses.json'
+    import categoryLIst from '$lib/er/ercategory.json'
 
     let randomBossPercent = false;
     let statRestrictions = false;
@@ -15,13 +17,24 @@
 
         erchallenge.forEach(element => getRandomObject(element));
 
+        if(modRestrictions == false){
+            const removeModdedRestrictions = arr.splice(8,1);
+        }
+        if(HCRestrictions == false){
+            const removeHCRestrictions = arr.splice(7,1);
+        }
         if(fullStatRestrictions == false){
             const removeFullStatRestrictions = arr.splice(5,1);
         }
         if(statRestrictions == false){
             const removeStatRestrictions = arr.splice(4,1);
         }
-
+        if(randomBossPercent == true && arr[0].randomOption == "Other boss %"){
+            arr[0].randomOption = getRandomBoss(bosslist);
+        }
+        if(randomBossPercent == false && arr[0].randomOption == "Other boss %"){
+            arr[0].randomOption = getRandomRunCategory(categoryList);
+        }
     }
 
     function getRandomRunCategory(element){
