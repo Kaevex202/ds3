@@ -65,7 +65,7 @@
 
 <div class="justify-center items-center flex flex-col mx-auto mt-16">
     <form on:submit|preventDefault={selectedCategory} class="mt-8 flex flex-col items-start lg:w-[30%] px-6 lg:px-0">
-        <h4 class="flex lg:items-center w-full mx-auto">Options (not functional yet)</h4>
+        <h4 class="flex lg:items-center w-full mx-auto">Options</h4>
         <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" bind:checked={randomBossPercent}><p>Add Random Boss%</p></label>
         <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" bind:checked={statRestrictions}><p>Stat restrictions (Main stats only)</p></label>
         <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" bind:checked={fullStatRestrictions}><p>Full Stat restrictions (include Vigor, Mind, etc.)</p></label>
