@@ -1,6 +1,7 @@
 <script>
 	import Ds3Challenge from "$lib/DS3Challenge.svelte";
 	import ErChallenge from "$lib/ERChallenge.svelte";
+	import DsChallenge from "$lib/DSChallenge.svelte";
 	import Faq from "$lib/FAQ.svelte";
 
 	let game = "ds3";
@@ -27,7 +28,7 @@
 	{:else if game == "er"}
 		<ErChallenge/>
 	{:else if game == "ds"}
-		<h2 class="flex justify-center text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 ">COMING SOON</h2>
+		<DsChallenge/>
 	{:else if game =="ds2"}
 	<h2 class="flex justify-center text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 ">COMING SOON</h2>
 	{:else if game == "des"}
