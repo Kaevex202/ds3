@@ -13,9 +13,13 @@
 
 <section class=" flex-row mx-auto mt-16 ">
 	<h1 class="flex flex-col lg:flex-row justify-center items-center text-4xl font-extrabold md:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0"><label>
-        <select name="gameName" id="game" bind:value={game} class="underline">
-            <option value="ds3">DARK SOULS 3</option>
-            <option value="er">ELDEN RING</option>
+        <select name="gameName" id="game" bind:value={game} class="underline ">
+            <option value="ds3"class=" text-4xl font-extrabold md:text-7xl ">DARK SOULS 3</option>
+            <option value="er" class=" text-4xl font-extrabold md:text-7xl">ELDEN RING</option>
+			<option value="ds" class=" text-4xl font-extrabold md:text-7xl">DARK SOULS</option>
+			<option value="ds2" class=" text-4xl font-extrabold md:text-7xl">DARK SOULS 2</option>
+			<option value="des" class=" text-4xl font-extrabold md:text-7xl">DEMON'S SOULS</option>
+			<option value="sk" class=" text-4xl font-extrabold md:text-7xl">SEKIRO</option>
         </select>
     </label> CHALLENGE RUN</h1>
 	{#if game == "ds3"}
@@ -28,5 +32,8 @@
 </section>
 
 <style>
-
+select:focus {
+    outline:none;
+	border:none;
+}
 </style>
