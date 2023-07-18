@@ -2,7 +2,12 @@
     import { avatarUrl, username, loggedIn} from '$lib/stores.js'
     export let data;
 
-    console.log(data.strapiResponse[0].id);
+    if(data.strapiResponse[0].id.length > 0)
+    {
+        avatarUrl.set(data.strapiResponse[0].avatarUrl);
+        username.set(data.strapiResponse[0].username);
+        loggedIn.set("true");
+    }
 </script>
 
 
