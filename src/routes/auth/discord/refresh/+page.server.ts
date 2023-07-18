@@ -5,8 +5,8 @@ const DISCORD_REDIRECT_URI = import.meta.env.VITE_DISCORD_REDIRECT_URI;
 /**
  * @type {import('@sveltejs/kit').RequestHandler}
  */
-export async function load({query}) {
-  const disco_refresh_token = query.get('code');
+export async function load({query, cookies}) {
+  const disco_refresh_token = query.searchParams.get('code')
   if (!disco_refresh_token) {
     return {
       body: JSON.stringify({error: 'No refresh token found'}),
@@ -45,6 +45,22 @@ export async function load({query}) {
   const access_token_expires_in = new Date(Date.now() + response.expires_in); // 10 minutes
   const refresh_token_expires_in = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000); // 30 days
   console.log('set refreshed cookies');
+
+  cookies.set('disco_access_token', response.access_token, {
+    httpOnly: true,
+    sameSite: 'strict',
+    secure: false,
+    path: '/',
+    maxAge: 60 * 60 * 24 * 7
+  });
+  cookies.set('disco_refresh_token', response.refresh_token, {
+    httpOnly: true,
+    sameSite: 'strict',
+    secure: false,
+    path: '/',
+    maxAge: 60 * 60 * 24 * 7
+  });
+
   return {
     headers: {
       'set-cookie': [
