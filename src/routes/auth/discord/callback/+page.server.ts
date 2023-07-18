@@ -4,7 +4,7 @@ const DISCORD_REDIRECT_URI = import.meta.env.VITE_DISCORD_REDIRECT_URI;
 import { page } from '$app/stores';
 
 /** @type {import('./$types').PageServerLoad} */
-export async function load({ url }) {
+export async function load({ url, cookies }) {
   // fetch returnCode set in the URL parameters.
   const returnCode = url.searchParams.get('code')
 
@@ -42,6 +42,13 @@ export async function load({ url }) {
   const access_token_expires_in = new Date(Date.now() + response.expires_in); // 10 minutes
   const refresh_token_expires_in = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000); // 30 days
   console.log('redirect to / with cookies');
+  cookies.set('disco_access_token', response.access_token, {
+    httpOnly: true,
+    sameSite: 'strict',
+    secure: false,
+    path: '/',
+    maxAge: 60 * 60 * 24 * 7
+  });
   return {
     headers: {
       'set-cookie': [
