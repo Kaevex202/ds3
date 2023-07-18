@@ -13,5 +13,5 @@
     }
 
     console.log(strapiInfo);
-    console.log(strapiInfo[0].avatarUrl);
+    console.log(strapiInfo.avatarUrl);
 </script>
