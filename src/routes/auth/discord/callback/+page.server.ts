@@ -56,7 +56,7 @@ export async function load({ url, cookies }) {
 
   return {
     access: response.access_token,
-    refresh: response.refresh_tokken,
+    refresh: response.refresh_token,
     status: 302
   }
 }
