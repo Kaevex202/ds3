@@ -102,8 +102,8 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
       "Authorization": `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}` }
     });
     loggedIn.set("true");
-    avatarUrl.set(discordUserInfo.avatar)
-    username.set(discordUserInfo.username)
+    avatarUrl.set(`${discordUserInfo.avatar}`)
+    username.set(`${discordUserInfo.username}`)
 
   }
 
@@ -113,7 +113,7 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
     username.set(discordUserInfo.username)
   }
 
-  console.log(avatarUrl);
+  console.log({avatarUrl});
 
   return {
     Location: '/auth/discord/callback',
