@@ -27,7 +27,6 @@ export async function load({ url, cookies }) {
   });
 
   const response = await request.json();
-  console.log(response);
 
   // redirect to front page in case of error
   if (response.error) {
@@ -44,19 +43,13 @@ export async function load({ url, cookies }) {
   console.log('redirect to / with cookies');
 
 
-  cookies.set('disco_access_tokens', response.access_token, {
-    httpOnly: true,
-    sameSite: 'strict',
-    secure: false,
-    path: '/',
-    maxAge: 60 * 60 * 24 * 7
-  });
-
+  const h = new Headers;
+  h.append("Set-Cookie", `disco_access_token=${response.access_token}; Path=/; HttpOnly; SameSite=Strict; Expires=${access_token_expires_in}}`);
+  h.append("Set-Cookie", `disco_refresh_token=${response.refresh_token}; Path=/; HttpOnly; SameSite=Strict; Expires=${refresh_token_expires_in}`);
 
 
   return {
-    access: response.access_token,
-    refresh: response.refresh_token,
+    h,
     status: 302
   }
 }
