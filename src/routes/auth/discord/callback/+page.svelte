@@ -3,5 +3,5 @@ export let data;
 </script>
 
 
-<h1>Hi {data.cookies}</h1>
+<h1>Hi {data}</h1>
 
