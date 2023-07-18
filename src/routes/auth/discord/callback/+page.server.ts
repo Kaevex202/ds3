@@ -90,7 +90,7 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
   const strapiResponse = await strapiUserSearch.json();
   console.log(strapiResponse);
 
-  if (strapiResponse == "[]"){
+  if (strapiResponse.length == 0){
     const addNewUser = await fetch('https://api.soulsbornechallenges.com/api/users', {
       method: 'POST',
       body: new URLSearchParams(strapiUserInfo),
