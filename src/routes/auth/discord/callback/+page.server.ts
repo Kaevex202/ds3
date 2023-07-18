@@ -42,8 +42,6 @@ export async function load({ url, cookies }) {
   const refresh_token_expires_in = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000); // 30 days
   console.log('redirect to / with cookies');
 
-  const headers = new Headers()
-  Headers.append("Set-Cookie,")
 
   cookies.set('disco_access_token', response.access_token, {
     httpOnly: true,
