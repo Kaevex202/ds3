@@ -2,7 +2,9 @@
     import { avatarUrl, username, loggedIn} from '$lib/stores.js'
     export let data;
 
-    if(data.strapiResponse[0].id.length > 0)
+    const strapiInfo = data.strapiResponse[0];
+
+    if(strapiInfo.id.length > 0)
     {
         console.log("is this working?")
         avatarUrl.set(data.strapiResponse[0].avatarUrl);
@@ -10,6 +12,6 @@
         loggedIn.set("true");
     }
 
-    console.log(data.strapiResponse[0]);
-    console.log(data.strapiResponse[0].avatarUrl);
+    console.log(strapiInfo);
+    console.log(strapiInfo.avatarUrl);
 </script>
