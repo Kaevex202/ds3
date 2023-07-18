@@ -1,8 +1,7 @@
 <script lang="ts">
-export let data;
-console.log(data);
+    export let data;
 </script>
 
 
-<h1>Hi</h1>
+<h1>Logged in.</h1>
 
