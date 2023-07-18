@@ -1,42 +1,51 @@
+import type { Handle } from '@sveltejs/kit';
 import cookie from 'cookie';
 const DISCORD_API_URL = import.meta.env.VITE_DISCORD_API_URL;
 const HOST = import.meta.env.VITE_HOST;
 
-/** @type {import('@sveltejs/kit').GetSession} */
-export async function getSession(req) {
-  const cookies = cookie.parse(req.headers.cookie || '');
+const unProtectedRoutes: string[] = [
+  '/',
+  '/login',
+  '/createAdmin',
+  '/features',
+  '/docs',
+  '/deployment'
+];
 
-  // if only refresh token is found, then access token has expired. perform a refresh on it.
-  if (cookies.disco_refresh_token && !cookies.disco_access_token) {
-    const discord_request = await fetch(`${HOST}/auth/discord/refresh?code=${cookies.disco_refresh_token}`);
+export const handle: Handle = async ({ event, resolve }) => {
+  const access_token = event.cookies.get('disco_access_token');
+  const refresh_token = event.cookies.get('disco_refresh_token')l
+
+  if (event.cookies.get('disco_refresh_token') && !event.cookies.get('disco_access_token')){
+    const discord_request = await fetch(`${HOST}/api/refresh?code=${refresh_token}`);
     const discord_response = await discord_request.json();
 
-    if (discord_response.disco_access_token) {
+    if (discord_response.disco_access_token) 
+    {
       console.log('setting discord user via refresh token..')
       const request = await fetch(`${DISCORD_API_URL}/users/@me`, {
         headers: { 'Authorization': `Bearer ${discord_response.disco_access_token}` }
       });
-  
+
       // returns a discord user if JWT was valid
       const response = await request.json();
-  
-      if (response.id) {
+
+      if (response.id) 
+      {
         return {
-          user: {
-            // only include properties needed client-side —
-            // exclude anything else attached to the user
-            // like access tokens etc
-            ...response
+          id: response.user.id,
+          username: response.user.username,
+          avatar: response.user.avatar
           }
-        }
       }
     }
   }
-
-  if (cookies.disco_access_token) {
+  
+  if (event.cookies.get('disco_access_token')) 
+  {
     console.log('setting discord user via access token..')
     const request = await fetch(`${DISCORD_API_URL}/users/@me`, {
-      headers: { 'Authorization': `Bearer ${cookies.disco_access_token}`}
+      headers: { 'Authorization': `Bearer ${access_token}`}
     });
 
     // returns a discord user if JWT was valid
@@ -44,18 +53,12 @@ export async function getSession(req) {
 
     if (response.id) {
       return {
-        user: {
-          // only include properties needed client-side —
-          // exclude anything else attached to the user
-          // like access tokens etc
-          ...response
-        }
+        id: response.user.id,
+        username: response.user.username,
+        avatar: response.user.avatar
       }
     }
   }
-
-  // not authenticated, return empty user object
-  return {
-    user: false
-  }
-}
+  
+  resolve(event);
+};

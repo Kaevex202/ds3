@@ -51,7 +51,7 @@ export async function load({url, cookies}) {
     sameSite: 'strict',
     secure: false,
     path: '/',
-    maxAge: 60 * 60 * 24 * 7
+    maxAge: 60 * 10
   });
   cookies.set('disco_refresh_token', response.refresh_token, {
     httpOnly: true,
