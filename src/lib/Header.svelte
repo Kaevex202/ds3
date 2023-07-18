@@ -2,6 +2,7 @@
 	import { page } from '$app/stores';
     import logo from '$lib/images/alogo-4.svg'
 	import {Hamburger} from 'svelte-hamburgers'
+	import { username , avatarUrl , loggedIn} from './stores';
 
 	import MobileMenu from './MobileMenu.svelte';
 
@@ -21,6 +22,7 @@
 
 		<div class="w-full block flex-grow hidden lg:flex lg:items-center lg:w-auto font-medium">
 			<div class="text-sm lg:flex-grow inline-flex" >
+				{#if $loggedIn == "true"}<h4>{$username}</h4>{/if}
 				<a href="/about" class="block mt-4 lg:inline-block lg:mt-0 text-[#000] hover:text-[#105D97] mr-12 text-lg" aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
 				About
 				</a>

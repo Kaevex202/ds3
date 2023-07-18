@@ -2,6 +2,7 @@ const DISCORD_CLIENT_ID = import.meta.env.VITE_DISCORD_CLIENT_ID;
 const DISCORD_CLIENT_SECRET = import.meta.env.VITE_DISCORD_CLIENT_SECRET;
 const DISCORD_REDIRECT_URI = import.meta.env.VITE_DISCORD_REDIRECT_URI;
 const STRAPI_SERVER_ADMIN_TOKEN = import.meta.env.VITE_STRAPI_SERVER_ADMIN_TOKEN;
+import { username , avatarUrl , loggedIn } from '$lib/stores.js';
 import { page } from '$app/stores';
 
 /** @type {import('./$types').PageServerLoad} */
@@ -101,6 +102,10 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded',
       "Authorization": `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}` }
     });
+    loggedIn.set("true");
+    avatarUrl.set(discordUserInfo.avatar)
+    username.set(discordUserInfo.username)
+
   }
 
   if (strapiResponse.length > 0){
