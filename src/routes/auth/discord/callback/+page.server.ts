@@ -27,6 +27,7 @@ export async function load({ url, cookies }) {
   });
 
   const response = await request.json();
+  console.log(response);
 
   // redirect to front page in case of error
   if (response.error) {
@@ -43,7 +44,7 @@ export async function load({ url, cookies }) {
   console.log('redirect to / with cookies');
 
 
-  cookies.set('set-cookie', response.access_token, {
+  cookies.set('disco_access_tokens', response.access_token, {
     httpOnly: true,
     sameSite: 'strict',
     secure: false,
