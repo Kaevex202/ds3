@@ -92,7 +92,6 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
   })
 
   const strapiResponse = await strapiUserSearch.json();
-  console.log(strapiResponse);
 
   //If the response is an empty array, it means the user does not exist. So create a new one.
   if (strapiResponse.length == 0){
@@ -114,7 +113,7 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
     username.set(discordUserInfo.username)
   }
 
-  console.log(loggedIn,avatarUrl,username)
+  console.log(avatarUrl);
 
   return {
     Location: '/auth/discord/callback',
