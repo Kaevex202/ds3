@@ -11,4 +11,5 @@
     }
 
     console.log(data.strapiResponse[0]);
+    console.log(data.strapiResponse[0].avatarUrl);
 </script>
