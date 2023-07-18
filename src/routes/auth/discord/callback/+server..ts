@@ -1,14 +1,14 @@
 const DISCORD_CLIENT_ID = import.meta.env.VITE_DISCORD_CLIENT_ID;
 const DISCORD_CLIENT_SECRET = import.meta.env.VITE_DISCORD_CLIENT_SECRET;
 const DISCORD_REDIRECT_URI = import.meta.env.VITE_DISCORD_REDIRECT_URI;
+import { page } from '$app/stores';
 
-/**
- * @type {import('@sveltejs/kit').RequestHandler}
- */
-export async function GET({ params }) {
+/** @type {import('./$types').RequestHandler} */
+export function GET({ url }) {
   // fetch returnCode set in the URL parameters.
   //const returnCode = query.get('code');
-  console.log(params);
+  const returnCode = url.searchParams.get('code');
+  console.log(returnCode);
 
   // initializing data object to be pushed to Discord's token endpoint.
   // the endpoint returns access & refresh tokens for the user.

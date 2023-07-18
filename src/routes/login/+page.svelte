@@ -1,2 +1,2 @@
-<a href="https://discord.com/api/oauth2/authorize?client_id=1130486833101406239&redirect_uri=https%3A%2F%2Fapi.soulsbornechallenges.com%2Fapi%2Fconnect%2Fdiscord%2Fcallback&response_type=code&scope=email%20guilds%20identify">
+<a href="https://discord.com/api/oauth2/authorize?client_id=1130486833101406239&redirect_uri=https%3A%2F%2Fsoulsbornechallenges.com%2Fapi%2Fconnect%2Fdiscord%2Fcallback&response_type=code&scope=email%20identify%20guilds">
 <button>Login to Discord</button></a>
