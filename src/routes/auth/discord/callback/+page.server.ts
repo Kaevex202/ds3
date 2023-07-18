@@ -101,12 +101,13 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded',
       "Authorization": `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}` }
     });
-    console.log(strapiUserInfo);
-    console.log(dataObject);
+  }
+
+  if (strapiResponse.length > 0){
   }
 
   return {
-    Location: '/',
+    Location: '/auth/discord/callback',
     status: 302
   }
 }
