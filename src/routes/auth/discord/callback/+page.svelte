@@ -1,17 +1,12 @@
 <script lang="ts">
-    import { avatarUrl, username, loggedIn} from '$lib/stores.js'
+    import { avatarUrl, username, loggedIn, userData} from '$lib/stores.js'
     export let data;
 
-    const strapiInfo = data.strapiResponse[0];
+    export async function load({ parent }) {
+	const { a, b } = await parent();
+	return { c: a + b };
+}
 
-    if(strapiInfo.id.length > 0)
-    {
-        console.log("is this working?")
-        avatarUrl.set(data.strapiResponse[0].avatarUrl);
-        username.set(data.strapiResponse[0].username);
-        loggedIn.set("true");
-    }
+    userData.set(data.strapiResponse[0]);
 
-    console.log(strapiInfo.avatarUrl);
-    console.log(strapiInfo);
 </script>
