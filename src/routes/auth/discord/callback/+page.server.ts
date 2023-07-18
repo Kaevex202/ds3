@@ -103,23 +103,23 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
     });
   }
 
+  cookies.set('username', strapiResponse.strapiUserInfo[0].username, {
+    httpOnly: true,
+    sameSite: 'strict',
+    secure: false,
+    path: '/',
+    maxAge: 60 * 60 * 24 * 7
+  });
+  cookies.set('avatarurl', strapiResponse.strapiUserInfo[0].avatarurl, {
+    httpOnly: true,
+    sameSite: 'strict',
+    secure: false,
+    path: '/',
+    maxAge: 60 * 60 * 24 * 7
+  });
+
   if (strapiResponse.length > 0){
 
-    cookies.set('username', strapiResponse.strapiUserInfo[0].username, {
-      httpOnly: true,
-      sameSite: 'strict',
-      secure: false,
-      path: '/',
-      maxAge: 60 * 60 * 24 * 7
-    });
-    cookies.set('avatarurl', strapiResponse.strapiUserInfo[0].avatarurl, {
-      httpOnly: true,
-      sameSite: 'strict',
-      secure: false,
-      path: '/',
-      maxAge: 60 * 60 * 24 * 7
-    });
-  
     return{strapiResponse} 
   }
 
