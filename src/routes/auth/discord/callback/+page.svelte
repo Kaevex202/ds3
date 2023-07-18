@@ -2,7 +2,8 @@
     import type { PageData } from './$types';
     export let data: PageData;
 
-    console.log(data.strapiResponse.username);
+    console.log(data);
+    console.log(data.strapiResponse);
 </script>
 
 <div>
