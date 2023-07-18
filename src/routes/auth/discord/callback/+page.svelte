@@ -2,7 +2,7 @@
     import { avatarUrl, username, loggedIn} from '$lib/stores.js'
     export let data;
 
-    console.log(data[0]);
+    console.log(data.strapiResponse[0].id);
 </script>
 
 
