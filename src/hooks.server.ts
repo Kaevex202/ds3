@@ -12,7 +12,8 @@ const unProtectedRoutes: string[] = [
   '/deployment'
 ];
 
-export const handle: Handle = async ({ event, resolve }) => {
+/** @type {import('@sveltejs/kit').Handle} */
+export async function handle({ event, resolve }) {
   const access_token = event.cookies.get('disco_access_token');
   const refresh_token = event.cookies.get('disco_refresh_token');
 
