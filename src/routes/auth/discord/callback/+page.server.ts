@@ -27,7 +27,6 @@ export async function load({ url, cookies }) {
   });
 
   const response = await request.json();
-  console.log(response);
 
   // redirect to front page in case of error
   if (response.error) {
@@ -42,6 +41,10 @@ export async function load({ url, cookies }) {
   const access_token_expires_in = new Date(Date.now() + response.expires_in); // 10 minutes
   const refresh_token_expires_in = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000); // 30 days
   console.log('redirect to / with cookies');
+
+  const headers = new Headers()
+  Headers.append("Set-Cookie,")
+
   cookies.set('disco_access_token', response.access_token, {
     httpOnly: true,
     sameSite: 'strict',
@@ -49,13 +52,15 @@ export async function load({ url, cookies }) {
     path: '/',
     maxAge: 60 * 60 * 24 * 7
   });
-  cookies.set('disco_refresh_token', response.refresh_token, {
+  response.headers.append('disco_refresh_token',response.refresh_token, {
     httpOnly: true,
     sameSite: 'strict',
     secure: false,
     path: '/',
     maxAge: 60 * 60 * 24 * 7
-  });
+  })
+
+
   return {
     headers: {
       'set-cookie': [
