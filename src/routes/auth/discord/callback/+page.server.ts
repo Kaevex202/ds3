@@ -50,7 +50,7 @@ export async function load({ url, cookies }) {
     path: '/',
     maxAge: 60 * 60 * 24 * 7
   });
-  response.headers.append('disco_refresh_token',response.refresh_token, {
+  response.cookies.append('disco_refresh_token',response.refresh_token, {
     httpOnly: true,
     sameSite: 'strict',
     secure: false,
