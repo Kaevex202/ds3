@@ -1,7 +1,7 @@
 <script lang="ts">
-    import { avatarUrl, username, loggedIn, userData} from '$lib/stores.js'
+    import { avatarUrl, username, loggedIn} from '$lib/stores.js'
     export let data;
 
-    $: data, $userData.push(data.strapiResponse);
+    $: data, username.set(data.strapiResponse[0].username);
     
 </script>

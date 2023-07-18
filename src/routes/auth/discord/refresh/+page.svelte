@@ -1,7 +1,4 @@
 <script lang="ts">
-    import {userData} from '$lib/stores'
-
-    console.log($userData);
 </script>
 
 
