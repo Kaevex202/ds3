@@ -43,13 +43,21 @@ export async function load({ url, cookies }) {
   console.log('redirect to / with cookies');
 
 
-  cookies.set('disco_access_token', response.access_token, {
+  cookies.set('set-cookie', response.access_token, {
     httpOnly: true,
     sameSite: 'strict',
     secure: false,
     path: '/',
     maxAge: 60 * 60 * 24 * 7
   });
+  cookies.serialize('disco_refresh_token', response.refresh_token, {
+    httpOnly: true,
+    sameSite: 'strict',
+    secure: false,
+    path: '/',
+    maxAge: 60 * 60 * 24 * 7
+  });
+
 
 
   return {
