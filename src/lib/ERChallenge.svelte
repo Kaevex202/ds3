@@ -4,6 +4,8 @@
     import categoryList from '$lib/er/ercategory.json'
 
     let randomBossPercent = false;
+    let startingClass = false;
+    let weaponRestrictions = false;
     let statRestrictions = false;
     let fullStatRestrictions = false;
     let HCRestrictions = false;
@@ -11,12 +13,13 @@
     let arr = [];
 
     function selectedCategory(){
+
         arr = [];
 
         var arrayLength = Object.keys(erchallenge);
 
         erchallenge.forEach(element => getRandomObject(element));
-
+        
         if(modRestrictions == false){
             const removeModdedRestrictions = arr.splice(8,1);
         }
@@ -28,6 +31,12 @@
         }
         if(statRestrictions == false){
             const removeStatRestrictions = arr.splice(4,1);
+        }
+        if(weaponRestrictions == false){
+            const removeremoveWeaponRestrictions = arr.splice(3,1);
+        }
+        if(startingClass == false){
+            const removeremoveClassRestrictions = arr.splice(2,1);
         }
         if(randomBossPercent == true && arr[0].randomOption == "Other boss %"){
             arr[0].randomOption = getRandomBoss(bosslist);
@@ -67,6 +76,8 @@
     <form on:submit|preventDefault={selectedCategory} class="mt-8 flex flex-col items-start lg:w-[30%] px-6 lg:px-0">
         <h4 class="flex lg:items-center w-full mx-auto">Options</h4>
         <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" bind:checked={randomBossPercent}><p>Add Random Boss%</p></label>
+        <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" bind:checked={startingClass}><p>Pick my Starting Class</p></label>
+        <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" bind:checked={weaponRestrictions}><p>Pick my Weapon Restrictions</p></label>
         <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" bind:checked={statRestrictions}><p>Stat restrictions (Main stats only)</p></label>
         <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" bind:checked={fullStatRestrictions}><p>Full Stat restrictions (include Vigor, Mind, etc.)</p></label>
         <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" bind:checked={HCRestrictions}><p>Hardcore Challenges</p></label>
