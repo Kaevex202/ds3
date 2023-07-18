@@ -78,7 +78,8 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
     blocked: false,
     password: "whatever",
     discordid: discordUserInfo.id,
-    avatarurl: `https://cdn.discordapp.com/avatars/${discordUserInfo.id}}/${discordUserInfo.avatars}}.png`
+    avatarurl: `https://cdn.discordapp.com/avatars/${discordUserInfo.id}}/${discordUserInfo.avatars}}.png`,
+    role: null
   };
 
   //Check if a user exist with that specific discord id.
