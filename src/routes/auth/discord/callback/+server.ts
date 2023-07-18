@@ -22,13 +22,13 @@ export function GET({ url }) {
   };
 
   // performing a Fetch request to Discord's token endpoint
-  const request = await fetch('https://discord.com/api/oauth2/token', {
+  const request = fetch('https://discord.com/api/oauth2/token', {
     method: 'POST',
     body: new URLSearchParams(dataObject),
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
   });
 
-  const response = await request.json();
+  const response = request.json();
 
   // redirect to front page in case of error
   if (response.error) {
