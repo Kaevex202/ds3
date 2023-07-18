@@ -8,7 +8,7 @@ export async function getSession(req) {
 
   // if only refresh token is found, then access token has expired. perform a refresh on it.
   if (cookies.disco_refresh_token && !cookies.disco_access_token) {
-    const discord_request = await fetch(`${HOST}/api/refresh?code=${cookies.disco_refresh_token}`);
+    const discord_request = await fetch(`${HOST}/auth/discord/refresh?code=${cookies.disco_refresh_token}`);
     const discord_response = await discord_request.json();
 
     if (discord_response.disco_access_token) {
