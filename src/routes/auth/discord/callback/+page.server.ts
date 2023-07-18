@@ -7,7 +7,6 @@ import { page } from '$app/stores';
 export async function load({ url }) {
   // fetch returnCode set in the URL parameters.
   const returnCode = url.searchParams.get('code')
-  console.log(returnCode);
 
   // initializing data object to be pushed to Discord's token endpoint.
   // the endpoint returns access & refresh tokens for the user.
@@ -28,6 +27,7 @@ export async function load({ url }) {
   });
 
   const response = await request.json();
+  console.log(response);
 
   // redirect to front page in case of error
   if (response.error) {
