@@ -1,7 +1,7 @@
 const DISCORD_CLIENT_ID = import.meta.env.VITE_DISCORD_CLIENT_ID;
 const DISCORD_CLIENT_SECRET = import.meta.env.VITE_DISCORD_CLIENT_SECRET;
 const DISCORD_REDIRECT_URI = import.meta.env.VITE_DISCORD_REDIRECT_URI;
-const STRAPI_SERVER_ADMIN_TOKEN = import.meta.env.STRAPI_SERVER_ADMIN_TOKEN;
+const STRAPI_SERVER_ADMIN_TOKEN = import.meta.env.VITE_STRAPI_SERVER_ADMIN_TOKEN;
 import { page } from '$app/stores';
 
 /** @type {import('./$types').PageServerLoad} */
