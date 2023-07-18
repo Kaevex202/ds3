@@ -87,7 +87,7 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
   })
 
   const strapiResponse = await strapiUserSearch.json();
-  console.log(STRAPI_SERVER_ADMIN_TOKEN);
+  console.log(strapiResponse);
 
   return {
     Location: '/',
