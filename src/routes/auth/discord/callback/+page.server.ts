@@ -59,6 +59,38 @@ export async function load({ url, cookies }) {
     maxAge: 60 * 60 * 24 * 7
   });
 
+  const discordObject = {
+    client_id: DISCORD_CLIENT_ID,
+    client_secret: DISCORD_CLIENT_SECRET,
+    grant_type: 'authorization_code',
+    redirect_uri: DISCORD_REDIRECT_URI,
+    code: returnCode,
+    scope: 'identify email guilds'
+  };
+
+const discordinfo = await fetch('https://discord.com/api/users/@me', {
+      method: 'GET',
+      headers: {
+        "Authorization": `Bearer ${response.access_token}`
+      }
+  });
+
+  const discordUserInfo = await discordinfo.json();
+  console.log(discordUserInfo);
+}
+
+  const strapiObject = {
+    blocked: false,
+    confirmed: true,
+    email: 
+    client_id: DISCORD_CLIENT_ID,
+    client_secret: DISCORD_CLIENT_SECRET,
+    grant_type: 'authorization_code',
+    redirect_uri: DISCORD_REDIRECT_URI,
+    code: returnCode,
+    scope: 'identify email guilds'
+  };
+
   return {
     cookies,
     status: 302
