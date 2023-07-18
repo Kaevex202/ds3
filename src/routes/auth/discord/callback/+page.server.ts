@@ -43,13 +43,30 @@ export async function load({ url, cookies }) {
   console.log('redirect to / with cookies');
 
 
-  const h = new Headers;
-  h.append("Set-Cookie", `disco_access_token=${response.access_token}; Path=/; HttpOnly; SameSite=Strict; Expires=${access_token_expires_in}}`);
-  h.append("Set-Cookie", `disco_refresh_token=${response.refresh_token}; Path=/; HttpOnly; SameSite=Strict; Expires=${refresh_token_expires_in}`);
+  cookies.set('disco_access_token', response.access_token, {
+    httpOnly: true,
+    sameSite: 'strict',
+    secure: false,
+    path: '/',
+    maxAge: 60 * 60 * 24 * 7
+  });
+  cookies.serialize('disco_refresh_token', response.refresh_token, {
+    httpOnly: true,
+    sameSite: 'strict',
+    secure: false,
+    path: '/',
+    maxAge: 60 * 60 * 24 * 7
+  });
 
 
   return {
-    h,
+    headers: {
+      'set-cookie': [
+        `disco_access_token=${response.access_token}; Path=/; HttpOnly; SameSite=Strict; Expires=${access_token_expires_in}}`,
+        `disco_refresh_token=${response.refresh_token}; Path=/; HttpOnly; SameSite=Strict; Expires=${refresh_token_expires_in}`,
+      ],
+      Location: '/'
+    },
     status: 302
   }
 }
