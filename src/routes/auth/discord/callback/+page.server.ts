@@ -104,8 +104,26 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
   }
 
   if (strapiResponse.length > 0){
-    return{strapiResponse}
+
+    cookies.set('username', strapiResponse.strapiUserInfo[0].username, {
+      httpOnly: true,
+      sameSite: 'strict',
+      secure: false,
+      path: '/',
+      maxAge: 60 * 60 * 24 * 7
+    });
+    cookies.set('avatarurl', strapiResponse.strapiUserInfo[0].avatarurl, {
+      httpOnly: true,
+      sameSite: 'strict',
+      secure: false,
+      path: '/',
+      maxAge: 60 * 60 * 24 * 7
+    });
+  
+    return{strapiResponse} 
   }
+
+
 
   return {
     body: addNewUser,
