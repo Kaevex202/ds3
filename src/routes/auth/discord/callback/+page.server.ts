@@ -92,6 +92,7 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
   })
 
   const strapiResponse = await strapiUserSearch.json();
+
   let addNewUser;
   //If the response is an empty array, it means the user does not exist. So create a new one.
   if (strapiResponse.length == 0){
@@ -103,20 +104,10 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
     });
   }
 
-  cookies.set('username', strapiResponse.strapiUserInfo[0].username, {
-    httpOnly: true,
-    sameSite: 'strict',
-    secure: false,
-    path: '/',
-    maxAge: 60 * 60 * 24 * 7
-  });
-  cookies.set('avatarurl', strapiResponse.strapiUserInfo[0].avatarurl, {
-    httpOnly: true,
-    sameSite: 'strict',
-    secure: false,
-    path: '/',
-    maxAge: 60 * 60 * 24 * 7
-  });
+  console.log(strapiResponse);
+  console.log(strapiResponse.strapiUserInfo[0].username)
+
+
 
   if (strapiResponse.length > 0){
 
