@@ -197,7 +197,9 @@
             "SL1 Run",
             "\\\"Gun Game\\\": Obtain a new weapon after each boss kill. No duplicates allowed.",
             "Pyromancy only",
-            "SL1 + No Pyromancy"
+            "SL1 + No Pyromancy",
+            "Dragon Torso Stone Run",
+            "No Homeward Bones (Darksign allowed)"
         ]
     },
     {
@@ -209,7 +211,8 @@
             "All Endings Run (ignore category)",
             "Shield Only",
             "Bow Only",
-            "No Estus Run"
+            "No Estus Run",
+            "No Damage Run"
         ]
     },
     {
