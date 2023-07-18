@@ -74,6 +74,7 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
 
   return {
     cookies,
-    status: 200
+    Location: '/',
+    status: 302
   }
 }
