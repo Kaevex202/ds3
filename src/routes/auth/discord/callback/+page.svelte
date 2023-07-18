@@ -10,5 +10,5 @@
         loggedIn.set("true");
     }
 
-    console.log(data.strapiResponse[0].avatarUrl);
+    console.log(data.strapiResponse[0]);
 </script>
