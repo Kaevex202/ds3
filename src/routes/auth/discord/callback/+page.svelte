@@ -1,16 +1,7 @@
 <script lang="ts">
-
-import type { Handle } from '@sveltejs/kit'
-
-export const handle: Handle = async ({ event, resolve }) => {
-  const { cookies } = event
-  const session = cookies.get('session')
-
-console.log(session);
-
-  return resolve(event)
-}
+export let data;
 </script>
 
 
-<h1>Hi</h1>
+<h1>Hi {data.cookies}</h1>
+

@@ -5,6 +5,7 @@ import { page } from '$app/stores';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ url, cookies }) {
+
   // fetch returnCode set in the URL parameters.
   const returnCode = url.searchParams.get('code')
 
@@ -59,6 +60,7 @@ export async function load({ url, cookies }) {
   });
 
   return {
+    cookies,
     status: 302
   }
 }
