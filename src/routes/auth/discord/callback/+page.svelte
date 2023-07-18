@@ -12,6 +12,6 @@
         loggedIn.set("true");
     }
 
-    console.log(strapiInfo);
     console.log(strapiInfo.avatarUrl);
+    console.log(strapiInfo);
 </script>
