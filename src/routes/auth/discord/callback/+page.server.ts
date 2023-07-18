@@ -3,11 +3,10 @@ const DISCORD_CLIENT_SECRET = import.meta.env.VITE_DISCORD_CLIENT_SECRET;
 const DISCORD_REDIRECT_URI = import.meta.env.VITE_DISCORD_REDIRECT_URI;
 import { page } from '$app/stores';
 
-/** @type {import('./$types').RequestHandler} */
-export async function GET({ url }) {
+/** @type {import('./$types').PageServerLoad} */
+export async function load({ url }) {
   // fetch returnCode set in the URL parameters.
-  //const returnCode = query.get('code');
-  const returnCode = url.searchParams.get('code');
+  const returnCode = url.searchParams.get('code')
   console.log(returnCode);
 
   // initializing data object to be pushed to Discord's token endpoint.
