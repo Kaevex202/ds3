@@ -1,6 +1,7 @@
 const DISCORD_CLIENT_ID = import.meta.env.VITE_DISCORD_CLIENT_ID;
 const DISCORD_CLIENT_SECRET = import.meta.env.VITE_DISCORD_CLIENT_SECRET;
 const DISCORD_REDIRECT_URI = import.meta.env.VITE_DISCORD_REDIRECT_URI;
+const STRAPI_TOKEN = import.meta.env.STRAPI_SERVER_ADMIN_TOKEN;
 import { page } from '$app/stores';
 
 /** @type {import('./$types').PageServerLoad} */
@@ -67,10 +68,26 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
       }
   });
 
-
-
   const discordUserInfo = await discordinfo.json();
-  console.log(discordUserInfo);
+
+  const strapiUserInfo = {
+    username: discordUserInfo.username,
+    email: discordUserInfo.email,
+    confirmed: true,
+    blocked: false,
+    discordid: discordUserInfo.id,
+    avatarurl: `https://cdn.discordapp.com/avatars/${discordUserInfo.id}}/${discordUserInfo.avatars}}.png`
+  };
+
+  const strapiUserSearch = await fetch(`https://api.soulsbornechallenges.com/api/users?filters[discordid]=`+discordUserInfo.id, {
+    method: 'GET',
+    headers: {
+      "Authorization": `Bearer ${STRAPI_TOKEN}`
+    }
+  })
+
+  const strapiResponse = await strapiUserSearch.json();
+  console.log(strapiResponse);
 
   return {
     Location: '/',
