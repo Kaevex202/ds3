@@ -2,6 +2,6 @@
     import { avatarUrl, username, loggedIn, userData} from '$lib/stores.js'
     export let data;
 
-    $: $userData = data.strapiResponse;
+    $: data, userData.set(data.strapiResponse);
     
 </script>
