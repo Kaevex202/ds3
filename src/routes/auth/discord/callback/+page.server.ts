@@ -51,24 +51,12 @@ export async function load({ url, cookies }) {
     path: '/',
     maxAge: 60 * 60 * 24 * 7
   });
-  cookies.serialize('disco_refresh_token', response.refresh_token, {
-    httpOnly: true,
-    sameSite: 'strict',
-    secure: false,
-    path: '/',
-    maxAge: 60 * 60 * 24 * 7
-  });
 
 
 
   return {
-    headers: {
-      'set-cookie': [
-        `disco_access_token=${response.access_token}; Path=/; HttpOnly; SameSite=Strict; Expires=${access_token_expires_in}}`,
-        `disco_refresh_token=${response.refresh_token}; Path=/; HttpOnly; SameSite=Strict; Expires=${refresh_token_expires_in}`,
-      ],
-      Location: '/'
-    },
+    access: response.access_token,
+    refresh: response.refresh_tokken,
     status: 302
   }
 }
