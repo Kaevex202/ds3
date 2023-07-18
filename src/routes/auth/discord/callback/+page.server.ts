@@ -89,6 +89,16 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
   const strapiResponse = await strapiUserSearch.json();
   console.log(strapiResponse);
 
+  if (strapiResponse == "[]"){
+    const addNewUser = await fetch('https://api.soulsbornechallenges.com/api/users', {
+      method: 'POST',
+      body: new URLSearchParams(strapiUserInfo),
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded',
+      "Authorization": `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}` }
+    });
+    console.log(addNewUser);
+  }
+
   return {
     Location: '/',
     status: 302
