@@ -75,6 +75,7 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
     email: discordUserInfo.email,
     confirmed: true,
     blocked: false,
+    password: "whatever",
     discordid: discordUserInfo.id,
     avatarurl: `https://cdn.discordapp.com/avatars/${discordUserInfo.id}}/${discordUserInfo.avatars}}.png`
   };
