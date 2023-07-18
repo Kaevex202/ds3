@@ -2,8 +2,6 @@
     import { avatarUrl, username, loggedIn, userData} from '$lib/stores.js'
     export let data;
 
+    $: $userData = data.strapiResponse;
     
-    const strapiInfo = data.strapiResponse;
-
-    $userData.push(strapiInfo);
 </script>
