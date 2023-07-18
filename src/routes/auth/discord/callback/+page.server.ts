@@ -109,7 +109,12 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
   }
 
   if (strapiResponse.length > 0){
+    loggedIn.set("true");
+    avatarUrl.set(discordUserInfo.avatar)
+    username.set(discordUserInfo.username)
   }
+
+  console.log(loggedIn,avatarUrl,username)
 
   return {
     Location: '/auth/discord/callback',
