@@ -67,13 +67,13 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
       }
   });
 
-  
+
 
   const discordUserInfo = await discordinfo.json();
   console.log(discordUserInfo);
 
   return {
     cookies,
-    status: 302
+    status: 200
   }
 }
