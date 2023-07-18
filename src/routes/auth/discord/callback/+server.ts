@@ -4,7 +4,7 @@ const DISCORD_REDIRECT_URI = import.meta.env.VITE_DISCORD_REDIRECT_URI;
 import { page } from '$app/stores';
 
 /** @type {import('./$types').RequestHandler} */
-export function GET({ url }) {
+export async function GET({ url }) {
   // fetch returnCode set in the URL parameters.
   //const returnCode = query.get('code');
   const returnCode = url.searchParams.get('code');
@@ -22,13 +22,13 @@ export function GET({ url }) {
   };
 
   // performing a Fetch request to Discord's token endpoint
-  const request = fetch('https://discord.com/api/oauth2/token', {
+  const request = await fetch('https://discord.com/api/oauth2/token', {
     method: 'POST',
     body: new URLSearchParams(dataObject),
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
   });
 
-  const response = request.json();
+  const response = await request.json();
 
   // redirect to front page in case of error
   if (response.error) {
