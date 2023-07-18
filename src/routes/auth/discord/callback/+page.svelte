@@ -4,6 +4,7 @@
 
     if(data.strapiResponse[0].id.length > 0)
     {
+        console.log("is this working?")
         avatarUrl.set(data.strapiResponse[0].avatarUrl);
         username.set(data.strapiResponse[0].username);
         loggedIn.set("true");
