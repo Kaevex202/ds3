@@ -106,8 +106,7 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
 
   if (strapiResponse.length > 0){
 
-    const resp = JSON.stringify(strapiResponse)
-    return{resp} 
+    return{strapiResponse} 
   }
 
 
