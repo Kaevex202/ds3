@@ -8,6 +8,8 @@
         username.set(data.strapiResponse[0].username);
         loggedIn.set("true");
     }
+
+    console.log($avatarUrl);
 </script>
 
 
