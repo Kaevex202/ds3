@@ -14,7 +14,7 @@ const unProtectedRoutes: string[] = [
 
 export const handle: Handle = async ({ event, resolve }) => {
   const access_token = event.cookies.get('disco_access_token');
-  const refresh_token = event.cookies.get('disco_refresh_token')l
+  const refresh_token = event.cookies.get('disco_refresh_token');
 
   if (event.cookies.get('disco_refresh_token') && !event.cookies.get('disco_access_token')){
     const discord_request = await fetch(`${HOST}/api/refresh?code=${refresh_token}`);
