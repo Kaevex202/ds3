@@ -83,9 +83,11 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
   };
 
   const strapiChallengeInfo = {
-    username: discordUserInfo.username,
-    avatarurl: discordUserInfo.avatar,
-    discordId: discordUserInfo.id,
+    data:{
+      username: discordUserInfo.username,
+      avatarurl: discordUserInfo.avatar,
+      discordId: discordUserInfo.id,
+    }
   }
 
   //Check if a user exist with that specific discord id.
