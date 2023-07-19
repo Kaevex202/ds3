@@ -99,6 +99,19 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
   
   const strapiResponse = await strapiUserSearch.json();
 
+  let addNewUser;
+  //If the response is an empty array, it means the user does not exist. So create a new one.
+  if (strapiResponse.length == 0){
+      addNewUser = await fetch('https://api.soulsbornechallenges.com/api/users', {
+      method: 'POST',
+      body: new URLSearchParams(strapiUserInfo),
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded',
+      "Authorization": `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}` }
+    });
+
+  }
+
+  
     //Check if a challengeRunner exist with that specific discord id.
     const strapiChallengerSearch = await fetch(`https://api.soulsbornechallenges.com/api/challenges?filters[discordId]=33323456567`, {
       method: 'GET',
@@ -111,18 +124,15 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
 
     console.log(strapiChallengerSearchData.data);
 
-
-  let addNewUser;
-  //If the response is an empty array, it means the user does not exist. So create a new one.
-  if (strapiResponse.length == 0){
-      addNewUser = await fetch('https://api.soulsbornechallenges.com/api/users', {
-      method: 'POST',
-      body: new URLSearchParams(strapiUserInfo),
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded',
-      "Authorization": `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}` }
-    });
-
-  }
+    let addNewChallenger;
+    if (strapiChallengerSearchData.data.length == 0){
+      addNewChallenger = await fetch('https://api.soulsbornechallenges.com/api/challenges', {
+        method: 'POST',
+        body: new URLSearchParams(strapiChallengeInfo),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded',
+        "Authorization": `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}` }
+      });
+    }
 
   if (strapiResponse.length > 0){
 
