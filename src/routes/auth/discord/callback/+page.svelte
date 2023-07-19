@@ -6,14 +6,15 @@
     import { onMount } from 'svelte';
 
     onMount(async () => {
-        if(browser){
-        localStorage.set("username", data.discordUserInfo.username || "");
+            localStorage.set("username", data.discordUserInfo.username || "");
+
+
+            avatarUrl.set(`https://cdn.discordapp.com/avatars/${data.discordUserInfo.id}/${data.discordUserInfo.avatar}.png`);
+            loggedIn.set("true")
+        }
+    );
 
     username.set(data.discordUserInfo.username);
-    avatarUrl.set(`https://cdn.discordapp.com/avatars/${data.discordUserInfo.id}/${data.discordUserInfo.avatar}.png`);
-    loggedIn.set("true")
-    }
-    });
 
 
 
