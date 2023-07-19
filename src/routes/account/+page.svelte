@@ -19,7 +19,7 @@
 
             <div>
                 <h4 class="font-bold">Username</h4>
-                <p>{data.discordUserInfo.username}</p>
+                <p></p>
             </div>
             <div>
                 <h4 class="font-bold">Finshed Runs</h4>
