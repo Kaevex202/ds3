@@ -86,6 +86,7 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
   })
 
   const strapiResponse = await strapiUserSearch.json();
+  console.log(strapiResponse);
 
   let addNewUser;
   //If the response is an empty array, it means the user does not exist. So create a new one.
