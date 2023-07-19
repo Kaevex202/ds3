@@ -1,6 +1,5 @@
 <script>
     import {usernames} from "$lib/localstores"
-
 </script>
 
 <h1>{$usernames}</h1>
