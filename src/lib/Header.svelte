@@ -38,7 +38,7 @@
 
 		<MobileMenu bind:open />
 	</nav>
-	{#if $loggedIn !== "true"}
+	{#if $loggedIn == "true"}
 		<LoggedInIcon/>
 	{/if}
 </div>
