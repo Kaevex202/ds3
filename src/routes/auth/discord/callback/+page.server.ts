@@ -101,15 +101,15 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded',
       "Authorization": `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}` }
     });
-    
+
   }
 
   if (strapiResponse.length > 0){
 
     return{
-      username: strapiResponse.strapiResponse[0].username,
-      discordid: strapiResponse.strapiResponse[0].id,
-      avatarurl: strapiResponse.strapiResponse[0].avatarurl,
+      username: strapiResponse.strapiResponse.username,
+      discordid: strapiResponse.strapiResponse.id,
+      avatarurl: strapiResponse.strapiResponse.avatarurl,
       status: 302
     } 
   }
