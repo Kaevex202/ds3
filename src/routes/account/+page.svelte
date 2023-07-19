@@ -6,14 +6,12 @@
     let username:string;
     let image;
 
-    onMount (async()=>{
-    console.log(data);
+onMount (async()=>{
+    console.log(await data);
 
-    username = data.discordUserInfo.username;
     image = `https://cdn.discordapp.com/avatars/${data.discordUserInfo.id}/${data.discordUserInfo.avatar}.png`;
 
-
-    })
+})
 
 
 
