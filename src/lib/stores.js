@@ -1,4 +1,6 @@
 import { writable } from 'svelte/store';
+import { browser } from '$app/environment'
+
 
 /** STORING USERNAME */
     const storedUsername = localStorage.getItem("username");
