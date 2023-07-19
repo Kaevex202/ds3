@@ -15,5 +15,5 @@
 </script>
 
 <div>
-    <p>Hi! {$username}</p>
+    <p>Hi! {$username}</p><img src={$avatarUrl}/>
 </div>
