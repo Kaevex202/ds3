@@ -75,10 +75,10 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
     lastLogin: new Date(),
     username: discordUserInfo.username,
     avatarurl: discordUserInfo.avatar
-  }
+  };
 
   //Check if a user exist with that specific discord id.
-  const strapiUserSearch = await fetch(`https://api.soulsbornechallenges.com/api/challenges?filters[discordId]=`+discordUserInfo.id, {
+  const strapiUserSearch = await fetch(`https://api.soulsbornechallenges.com/api/challenges?filters[discordid]=`+discordUserInfo.id, {
     method: 'GET',
     headers: {
       "Authorization": `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}`
@@ -86,13 +86,11 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
   })
 
   const strapiResponse = await strapiUserSearch.json();
-  console.log(strapiResponse);
-  console.log("strapiresponse data length:"+strapiResponse.data.length)
 
   let addNewUser;
   //If the response is an empty array, it means the user does not exist. So create a new one.
-  if (strapiResponse.data.length == 0){
-      addNewUser = await fetch('https://api.soulsbornechallenges.com/api/challenges', {
+  if (strapiResponse.length == 0){
+      addNewUser = await fetch('https://api.soulsbornechallenges.com/api/users', {
       method: 'POST',
       body: new URLSearchParams(strapiChallengersInfo),
       headers: { 'Content-Type': 'application/x-www-form-urlencoded',
