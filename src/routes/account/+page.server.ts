@@ -5,7 +5,7 @@ const DISCORD_API_URL = import.meta.env.VITE_DISCORD_API_URL;
 const STRAPI_SERVER_ADMIN_TOKEN = import.meta.env.VITE_STRAPI_SERVER_ADMIN_TOKEN;
 
 
-let userid;
+let userid: String;
 
 /**
  * @type {import('@sveltejs/kit').RequestHandler}
