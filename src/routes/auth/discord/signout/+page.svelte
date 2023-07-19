@@ -1,5 +1,6 @@
 <script>
     import { onMount } from "svelte";
+    import {loggedIn} from '$lib/localstores'
     import {goto} from '$app/navigation'
 
     let timeout = 900;
@@ -7,7 +8,7 @@
 onMount(() => {
 
     localStorage.clear();
-
+    $loggedIn = "false";
     setTimeout(() => {
         goto('/')
     }, timeout);

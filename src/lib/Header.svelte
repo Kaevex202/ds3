@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import {Hamburger} from 'svelte-hamburgers'
-	import { username, avatarurl } from './localstores';
+	import { username, loggedIn } from './localstores';
 	import LoggedInIcon from './LoggedInIcon.svelte';
 
 	import MobileMenu from './MobileMenu.svelte';
@@ -38,7 +38,7 @@
 
 		<MobileMenu bind:open />
 	</nav>
-	{#if $username.length > 0}
+	{#if $loggedIn !== "true"}
 		<LoggedInIcon/>
 	{/if}
 </div>
