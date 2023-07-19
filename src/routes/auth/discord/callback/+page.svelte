@@ -8,9 +8,11 @@
     console.log(data.strapiResponse[0]);
     console.log(data.strapiResponse[0].discordid);
     console.log(data.strapiResponse[0].email);
+    console.log(data.strapiResponse[0].avatarUrl)
 
     username.set(data.strapiResponse[0].username)
     avatarUrl.set(data.strapiResponse[0].avatarUrl)
+
 </script>
 
 <div>
