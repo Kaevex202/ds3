@@ -109,7 +109,7 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
 
     const strapiChallengerSearchData = await strapiChallengerSearch.json();
 
-    console.log(strapiChallengerSearchData);
+    console.log(strapiChallengerSearchData.data.attributes);
 
 
   let addNewUser;
