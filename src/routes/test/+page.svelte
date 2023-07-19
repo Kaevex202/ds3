@@ -1,8 +1,8 @@
 <script>
-    import {username} from "$lib/localstores"
+    import {usernames} from "$lib/localstores"
 
 </script>
 
-<h1>{$username}</h1>
+<h1>{$usernames}</h1>
 
-<input type="text" bind:value={$username} />
+<input type="text" bind:value={$usernames} />

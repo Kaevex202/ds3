@@ -1,13 +1,14 @@
 <script lang="ts">
     import { username, avatarUrl, loggedIn } from '$lib/stores'
-    import { username_local } from '$lib/localstores'
+    import { usernames } from '$lib/localstores'
     import type { PageData } from './$types';
     export let data: PageData;
     import { onMount } from 'svelte';
 
     onMount(async () => {
             localStorage.set("username", data.discordUserInfo.username || "");
-            $username_local = data.discordUserInfo.userInfo;
+            try{$usernames = data.discordUserInfo.userInfo;}
+            catch(e){console.log(e)}
 
             loggedIn.set("true")
         }
