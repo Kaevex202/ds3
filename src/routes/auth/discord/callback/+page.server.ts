@@ -108,6 +108,7 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
     return{strapiResponse} 
   }
 
+  console.log(strapiResponse.strapiResponse[0].username);
   cookies.set('username', strapiResponse.strapiResponse[0].username, {
     httpOnly: true,
     sameSite: 'strict',
