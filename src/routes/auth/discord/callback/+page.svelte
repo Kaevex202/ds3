@@ -5,10 +5,9 @@
     export let data: PageData;
     import { onMount } from 'svelte';
 
-    onMount(async () => {
+    onMount(() => {
             localStorage.set("username", data.discordUserInfo.username || "");
-            try{$usernames = data.discordUserInfo.userInfo;}
-            catch(e){console.log(e)}
+            $usernames = data.discordUserInfo.userInfo;
 
             loggedIn.set("true")
         }
