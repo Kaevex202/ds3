@@ -22,7 +22,7 @@
 
 		<div class="w-full block flex-grow hidden lg:flex lg:items-center lg:w-auto font-medium">
 			<div class="text-sm lg:flex-grow inline-flex" >
-				{#if $username.length > 0 }<img src="{$avatarUrl}" alt="your Discord profile"/><h4>{$username}</h4>{/if}
+				{#if $username.length > 0 }<img src={$avatarUrl} alt="your Discord profile"/><h4>{$username}</h4>{/if}
 				<a href="/about" class="block mt-4 lg:inline-block lg:mt-0 text-[#000] hover:text-[#105D97] mr-12 text-lg" aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
 				About
 				</a>
