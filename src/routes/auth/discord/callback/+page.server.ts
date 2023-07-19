@@ -87,10 +87,11 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
 
   const strapiResponse = await strapiUserSearch.json();
   console.log(strapiResponse);
+  console.log("strapiresponse data length:"+strapiResponse.data.length)
 
   let addNewUser;
   //If the response is an empty array, it means the user does not exist. So create a new one.
-  if (strapiResponse.length == 0){
+  if (strapiResponse.data.length == 0){
       addNewUser = await fetch('https://api.soulsbornechallenges.com/api/challenges', {
       method: 'POST',
       body: new URLSearchParams(strapiChallengersInfo),
