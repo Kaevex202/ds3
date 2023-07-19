@@ -126,14 +126,13 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
 
     let addNewChallenger;
     if (strapiChallengerSearchData.data.length == 0){
-      console.log("Add new Challenger")
+      console.log(JSON.stringify(strapiChallengeInfo))
       addNewChallenger = await fetch('https://api.soulsbornechallenges.com/api/challenges', {
         method: 'POST',
         body: JSON.stringify(strapiChallengeInfo),
         headers: { 'Content-Type': 'application/json',
         "Authorization": `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}` }
       });
-      console.log(addNewChallenger);
     }
 
   if (strapiResponse.length > 0){
