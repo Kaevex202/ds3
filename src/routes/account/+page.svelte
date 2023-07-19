@@ -5,16 +5,15 @@
     let username:string;
     let image;
 
-    username = data.discordUserInfo.username;
-    image = `https://cdn.discordapp.com/avatars/${data.discordUserInfo.id}/${data.discordUserInfo.avatar}.png`;
-
     console.log(data);
 
+    username = data.discordUserInfo.username;
+    image = `https://cdn.discordapp.com/avatars/${data.discordUserInfo.id}/${data.discordUserInfo.avatar}.png`;
 
 
 </script>
 
-{#await data.discordUserInfo}
+{#await data}
 <div class=" flex flex-col mx-auto mt-16 px-6 lg:px-0">
     <h1 class="flex text-4xl font-extrabold items-center md:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0 mx-auto">ACCOUNT</h1>
     <div id="accountInfo" class="items-start w-4/12 mx-auto">...Loading</div>
