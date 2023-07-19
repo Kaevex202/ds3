@@ -115,8 +115,7 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
 
 
   return {
-    body: addNewUser,
-    Location: '/auth/discord/callback',
+    discordUserInfo,
     status: 302
   }
 }
