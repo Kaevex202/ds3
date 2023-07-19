@@ -8,12 +8,11 @@
     onMount(async () => {
             localStorage.set("username", data.discordUserInfo.username || "");
 
-
-            avatarUrl.set(`https://cdn.discordapp.com/avatars/${data.discordUserInfo.id}/${data.discordUserInfo.avatar}.png`);
             loggedIn.set("true")
         }
     );
 
+    avatarUrl.set(`https://cdn.discordapp.com/avatars/${data.discordUserInfo.id}/${data.discordUserInfo.avatar}.png`);
     username.set(data.discordUserInfo.username);
 
 
