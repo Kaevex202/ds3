@@ -6,7 +6,6 @@
     import { onMount } from 'svelte';
 
     onMount(() => {
-            localStorage.set("username", data.discordUserInfo.username || "");
             $usernames = data.discordUserInfo.userInfo;
 
             loggedIn.set("true")
