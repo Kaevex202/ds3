@@ -84,7 +84,8 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
 
   const strapiChallengeInfo = {
     username: discordUserInfo.username,
-    avatarurl: discordUserInfo.avatar
+    avatarurl: discordUserInfo.avatar,
+    discordId: discordUserInfo.id,
   }
 
   //Check if a user exist with that specific discord id.
@@ -99,7 +100,7 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
   const strapiResponse = await strapiUserSearch.json();
 
     //Check if a challengeRunner exist with that specific discord id.
-    const strapiChallengerSearch = await fetch(`https://api.soulsbornechallenges.com/api/challenge?filters[discordId]=`+discordUserInfo.id, {
+    const strapiChallengerSearch = await fetch(`https://api.soulsbornechallenges.com/api/challenges?filters[discordId]=33323456567`, {
       method: 'GET',
       headers: {
         "Authorization": `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}`
