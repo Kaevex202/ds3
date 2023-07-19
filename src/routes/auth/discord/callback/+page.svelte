@@ -3,9 +3,6 @@
     import type { PageData } from './$types';
     export let data: PageData;
 
-
-    console.log(data);
-
     username.set(data.discordUserInfo.username);
     discordid.set(data.discordUserInfo.id);
     avatarUrl.set(`https://cdn.discordapp.com/avatars/${data.discordUserInfo.id}/${data.discordUserInfo.avatar}.png`);
