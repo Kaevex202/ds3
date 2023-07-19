@@ -102,13 +102,15 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
       "Authorization": `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}` }
     });
   }
-  
-  console.log(strapiResponse.strapiResponse[0].username);
-  cookies.set('username', strapiResponse.strapiResponse[0].username , { path: '/' });
 
   if (strapiResponse.length > 0){
 
-    return{strapiResponse} 
+    return{
+      username: strapiResponse.strapiResponse[0].username,
+      discordid: strapiResponse.strapiResponse[0].id,
+      avatarurl: strapiResponse.strapiResponse[0].avatarurl,
+      status: 302
+    } 
   }
 
 
