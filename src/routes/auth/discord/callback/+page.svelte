@@ -8,6 +8,9 @@
     onMount(async () => {
 
             $usernames = await data.discordUserInfo.userInfo;
+            console.log(data.discordUserInfo.username);
+            console.log(data.discordUserInfo);
+            console.log(data);
 
             loggedIn.set("true")
         }
