@@ -6,14 +6,20 @@
 
 </script>
 
+{#await data}
+<div class=" flex flex-col mx-auto mt-16 px-6 lg:px-0">
+    <h1 class="flex text-4xl font-extrabold items-center md:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0 mx-auto">ACCOUNT</h1>
+    <div id="accountInfo" class="items-start w-4/12 mx-auto">...Loading</div>
+</div>
+{:then}
 <div class=" flex flex-col mx-auto mt-16 px-6 lg:px-0">
     <h1 class="flex text-4xl font-extrabold items-center md:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0 mx-auto">ACCOUNT</h1>
     <div id="accountInfo" class="items-start w-4/12 mx-auto">
         <div class="flex flex-row gap-6">
-            <img src="https://cdn.discordapp.com/avatars/125998088409055233/7943dcc69762855669986f04e3e9bb7f.png"/>
+            <img src="https://cdn.discordapp.com/avatars/${data.discordUserInfo.id}/${data.discordUserInfo.avatar}.png" al="profile photo"/>
             <div>
                 <h4 class="font-bold">Username</h4>
-                <p>Kaevex</p>
+                <p>{data.discordUserInfo.username}</p>
             </div>
             <div>
                 <h4 class="font-bold">Finshed Runs</h4>
@@ -42,3 +48,4 @@
         </a>
     </div>
 </div>
+{/await}
