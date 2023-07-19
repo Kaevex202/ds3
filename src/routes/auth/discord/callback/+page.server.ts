@@ -133,6 +133,7 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
         headers: { 'Content-Type': 'application/json',
         "Authorization": `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}` }
       });
+      console.log(addNewChallenger);
     }
 
   if (strapiResponse.length > 0){
