@@ -7,7 +7,7 @@
 
     onMount(async () => {
 
-            $usernames = data.discordUserInfo.userInfo;
+            $usernames = data.discordUserInfo.username;
             console.log(data.discordUserInfo.username);
             console.log(data.discordUserInfo);
             console.log(data);
