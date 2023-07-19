@@ -1,7 +1,10 @@
 import { browser } from '$app/environment';
 import {writable} from 'svelte/store'
 
-export const usernames = writable(browser && (localStorage.getItem("usernames")));
+/* username */
+export const username = writable(browser && (localStorage.getItem("username")));
+username.subscribe((value) => browser && (localStorage.username = value));
 
-usernames.subscribe((value) => browser && (localStorage.usernames = value));
-
+/*avatarurl*/
+export const avatarurl = writable(browser && (localStorage.getItem("avatarurl")));
+avatarurl.subscribe((value) => browser && (localStorage.avatarurl = value));
