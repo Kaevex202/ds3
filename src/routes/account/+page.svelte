@@ -29,10 +29,10 @@ onMount (async()=>{
     <h1 class="flex text-4xl font-extrabold items-center md:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0 mx-auto">ACCOUNT</h1>
     <div id="accountInfo" class="items-start w-4/12 mx-auto">
         <div class="flex flex-row gap-6">
-
+            <img src="https://cdn.discordapp.com/avatars/${data.id}/${data.avatar}.png" alt="profile photo"/>
             <div>
                 <h4 class="font-bold">Username</h4>
-                <p>{username}</p>
+                <p>{data.username}</p>
             </div>
             <div>
                 <h4 class="font-bold">Finshed Runs</h4>
