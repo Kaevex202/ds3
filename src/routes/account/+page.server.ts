@@ -2,8 +2,10 @@ const DISCORD_CLIENT_ID = import.meta.env.VITE_DISCORD_CLIENT_ID;
 const DISCORD_CLIENT_SECRET = import.meta.env.VITE_DISCORD_CLIENT_SECRET;
 const DISCORD_REDIRECT_URI = import.meta.env.VITE_DISCORD_REDIRECT_URI;
 const DISCORD_API_URL = import.meta.env.VITE_DISCORD_API_URL;
+const STRAPI_SERVER_ADMIN_TOKEN = import.meta.env.VITE_STRAPI_SERVER_ADMIN_TOKEN;
 
 
+let userid;
 
 /**
  * @type {import('@sveltejs/kit').RequestHandler}
@@ -36,6 +38,20 @@ export async function load({url, cookies}) {
     
         // returns a discord user if JWT was valid
         const response = await request.json();
+        userid = response.id;
         return response;
     }
+
+  //Check if a user exist with that specific discord id.
+  const strapiUserSearch = await fetch(`https://api.soulsbornechallenges.com/api/users?filters[discordid]=`+discordUserInfo.id, {
+    method: 'GET',
+    headers: {
+      "Authorization": `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}`
+    }
+  })
+
+  const strapiResponse = await strapiUserSearch.json();
+
+  console.log(strapiResponse);
+
 }
