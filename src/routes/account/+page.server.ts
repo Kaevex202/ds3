@@ -43,7 +43,7 @@ export async function load({url, cookies}) {
     }
 
   //Check if a user exist with that specific discord id.
-  const strapiUserSearch = await fetch(`https://api.soulsbornechallenges.com/api/users?filters[discordid]=`+discordUserInfo.id, {
+  const strapiUserSearch = await fetch(`https://api.soulsbornechallenges.com/api/users?filters[discordid]=`+userid, {
     method: 'GET',
     headers: {
       "Authorization": `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}`
