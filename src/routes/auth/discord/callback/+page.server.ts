@@ -106,7 +106,6 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
 
   console.log(strapiResponse);
   console.log(strapiResponse.strapiResponse);
-  console.log(strapiResponse.strapiResponse.username);
   console.log(strapiResponse.strapiResponse[0].username);
 
   if (strapiResponse.length > 0){
