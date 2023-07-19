@@ -72,7 +72,8 @@
 				<a href="/contact" class="text-base font-semibold inline-block px-4 py-2 h-min leading-none border rounded text-[#000] border-[#000] hover:border-[#105D97] hover:text-[#105D97] hover:bg-[#fff] mt-4 lg:mt-0" aria-current={$page.url.pathname.startsWith('/contact') ? 'page' : undefined}>Contact</a>
 			</div>
 		</div>
-		<div class="lg:hidden"><Hamburger bind:open /></div></nav>
+		<div class="lg:hidden"><Hamburger bind:open /></div>
+	</nav>
 
 		<MobileMenu bind:open />
 		
