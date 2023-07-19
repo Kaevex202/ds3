@@ -1,3 +1,11 @@
+<script lang="ts">
+    import type { PageData } from './$types';
+    export let data: PageData;
+
+    console.log(data);
+
+</script>
+
 <div class=" flex flex-col mx-auto mt-16 px-6 lg:px-0">
     <h1 class="flex text-4xl font-extrabold items-center md:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0 mx-auto">ACCOUNT</h1>
     <div id="accountInfo" class="items-start w-4/12 mx-auto">
@@ -27,8 +35,10 @@
         <button  class="mr-6 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
             Remove Account Data
         </button>
-        <button  class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-            Logout
-        </button>
+        <a href="/auth/discord/signout">
+            <button  class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                Logout
+            </button>
+        </a>
     </div>
 </div>
