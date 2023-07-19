@@ -18,7 +18,7 @@
 <header>
 	<div>
 	<nav class="inline-flex lg:flex items-start justify-between flex-wrap p-6 w-full lg:w-[85%] mx-auto h-min">
-			<div>
+			<div id="userInfo" class="hidden">
 			<button
 			on:click={expandMenu}
 			id="loggedIn"
