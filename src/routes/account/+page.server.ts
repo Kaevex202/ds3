@@ -39,9 +39,11 @@ export async function load({url, cookies}) {
         // returns a discord user if JWT was valid
         const response = await request.json();
         userid = response.id;
+        console.log(response.id)
         return response;
     }
 
+    console.log(userid);
   //Check if a user exist with that specific discord id.
   const strapiUserSearch = await fetch(`https://api.soulsbornechallenges.com/api/users?filters[discordid]=`+userid, {
     method: 'GET',
