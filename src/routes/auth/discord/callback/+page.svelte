@@ -11,7 +11,7 @@
     console.log(data.strapiResponse[0].avatarUrl)
 
     username.set(data.strapiResponse[0].username)
-    avatarUrl.set(data.strapiResponse[0].avatarUrl)
+    avatarUrl.set(encodeURIComponent(data.strapiResponse[0].avatarUrl))
 
 </script>
 
