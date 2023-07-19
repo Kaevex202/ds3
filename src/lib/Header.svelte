@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import {Hamburger} from 'svelte-hamburgers'
-	import { username } from './localstores';
+	import { username, avatarurl } from './localstores';
 	import LoggedInIcon from './LoggedInIcon.svelte';
 
 	import MobileMenu from './MobileMenu.svelte';
+	let open;
 </script>
 
 <header>
