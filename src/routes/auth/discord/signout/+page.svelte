@@ -5,6 +5,9 @@
     let timeout = 900;
 
 onMount(() => {
+
+    localStorage.clear();
+
     setTimeout(() => {
         goto('/')
     }, timeout);
