@@ -18,15 +18,16 @@
 <header>
 	<div>
 	<nav class="inline-flex lg:flex items-start justify-between flex-wrap p-6 w-full lg:w-[85%] mx-auto h-min">
-			<div id="userInfo" class="hidden">
+		{#if username.length > 0}
+			<div id="userInfo" >
 			<button
 			on:click={expandMenu}
 			id="loggedIn"
 			class="mr-8 flex flex-row items-center border px-4 py-2 rounded-xl bg-blue-200 hover:bg-blue-300 focus:ring-2 focus:outline-none focus:ring-blue-300 text-black"
 			type="button"
 			>
-				<img src="https://cdn.discordapp.com/avatars/125998088409055233/7943dcc69762855669986f04e3e9bb7f.png" alt="your Discord profile" class="rounded-full mr-4" height=40 width=40 />
-				<h4 class="font-bold text-lg">Kaevex</h4>
+				<img src="https://cdn.discordapp.com/avatars/125998088409055233/${avatarUrl}.png" alt="your Discord profile" class="rounded-full mr-4" height=40 width=40 />
+				<h4 class="font-bold text-lg">{$username}</h4>
 				<svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
 					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
 				  </svg>
@@ -44,6 +45,7 @@
 				</div>
 			{/if}
 			</div>
+			{/if}
 		<div id="logo" class="flex items-center flex-shrink-0 text-white mr-6 flex-[100] w-fit h-1/2">
 			<a href="/" aria-current={$page.url.pathname === '/' ? 'page' : undefined}><h1 class="w-full hidden lg:flex lg:text-4xl font-black px-6 lg:px-0 text-black ">SOULSBORNECHALLENGES</h1></a>
 			<a href="/" aria-current={$page.url.pathname === '/' ? 'page' : undefined}><h1 class="w-full flex lg:hidden text-lg text-black font-black items-start">SOULSBORNECHALLENGES</h1></a>

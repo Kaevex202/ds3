@@ -74,7 +74,7 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
   const strapiChallengeInfo = {
     data:{
       username: discordUserInfo.username,
-      avatarurl: discordUserInfo.avatar,
+      avatarurl: discordUserInfo.id+"/"+discordUserInfo.avatar,
       discordId: discordUserInfo.id,
       lastLogin: new Date(Date.now())
     }
