@@ -59,6 +59,4 @@ export async function load({url, cookies}) {
     }
 
 
-  console.log(strapiResponse);
-
 }
