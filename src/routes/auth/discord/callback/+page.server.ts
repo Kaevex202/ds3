@@ -76,11 +76,10 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
       username: discordUserInfo.username,
       avatarurl: discordUserInfo.avatar,
       discordId: discordUserInfo.id,
+      lastLogin: new Date(Date.now())
     }
   }
 
-
-  
     //Check if a challengeRunner exist with that specific discord id.
     const strapiChallengerSearch = await fetch(`https://api.soulsbornechallenges.com/api/challenges?filters[discordId]=`+discordUserInfo.id, {
       method: 'GET',
