@@ -4,9 +4,15 @@
     export let data: PageData;
 
     console.log(data);
+    console.log(data.strapiResponse);
+    console.log(data.strapiResponse[0]);
+    console.log(data.strapiResponse[0].discordid);
+    console.log(data.strapiResponse[0].email);
 
+    username.set(data.strapiResponse[0].username)
+    avatarUrl.set(data.strapiResponse[0].avatarUrl)
 </script>
 
 <div>
-    test
+    <p>Hi! {$username}</p><img src={avatarUrl}/>
 </div>
