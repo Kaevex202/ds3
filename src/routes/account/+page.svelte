@@ -1,14 +1,20 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
     import type { PageData } from './$types';
     export let data: PageData;
 
     let username:string;
     let image;
 
+    onMount (async()=>{
     console.log(data);
 
     username = data.discordUserInfo.username;
     image = `https://cdn.discordapp.com/avatars/${data.discordUserInfo.id}/${data.discordUserInfo.avatar}.png`;
+
+
+    })
+
 
 
 </script>
