@@ -15,5 +15,5 @@
 </script>
 
 <div>
-    <p>Hi! </p>
+    <p>Hi! {$username}</p>
 </div>
