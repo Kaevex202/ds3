@@ -50,14 +50,14 @@ export async function load({url, cookies}) {
           }
         })
 
-        console.log(strapiUserSearch);
+        const strapiResponse = await strapiUserSearch.json();
+
+
+        console.log(strapiResponse);
 
         return discordResponse;
     }
 
-
-
-  const strapiResponse = await strapiUserSearch.json();
 
   console.log(strapiResponse);
 
