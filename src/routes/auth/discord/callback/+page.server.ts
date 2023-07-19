@@ -104,12 +104,10 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
 
   }
 
-  console.log(discordUserInfo);
-
   if (strapiResponse.length > 0){
 
     return{
-      strapiResponse,
+      discordUserInfo,
       status: 302
     } 
   }
