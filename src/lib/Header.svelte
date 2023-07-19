@@ -8,6 +8,10 @@
 
 	let dropdownExpanded = false;
 
+	console.log($username)
+	console.log({$username})
+	console.log{username}
+
 	function expandMenu(){
 		dropdownExpanded = !dropdownExpanded
 	}
@@ -18,7 +22,7 @@
 <header>
 	<div>
 	<nav class="inline-flex lg:flex items-start justify-between flex-wrap p-6 w-full lg:w-[85%] mx-auto h-min">
-		{#if username.length > 0}
+		{#if {$username}.length > 0}
 			<div id="userInfo" >
 			<button
 			on:click={expandMenu}
@@ -27,7 +31,7 @@
 			type="button"
 			>
 				<img src="https://cdn.discordapp.com/avatars/125998088409055233/${avatarUrl}.png" alt="your Discord profile" class="rounded-full mr-4" height=40 width=40 />
-				<h4 class="font-bold text-lg">{$username}</h4>
+				<h4 class="font-bold text-lg">{username}</h4>
 				<svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
 					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
 				  </svg>
@@ -56,7 +60,7 @@
 	
 
 		<div class="w-full block flex-grow hidden lg:flex lg:w-auto font-medium ">
-			<div class="text-sm lg:flex-grow inline-flex items-center mt-4" >
+			<div class="text-sm lg:flex-grow inline-flex items-center" >
 				<a href="/about" class="block mt-4 lg:inline-block lg:mt-0 text-[#000] hover:text-[#105D97] mr-12 text-lg" aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
 				About
 				</a>
