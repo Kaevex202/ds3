@@ -1,14 +1,7 @@
 import { writable } from 'svelte/store';
-import { browser } from '$app/environment'
 
-
-/** STORING USERNAME */
-    const storedUsername = localStorage.getItem("username");
-    export const username = writable(storedUsername);
-    username.subscribe(value => {
-        localStorage.set("username", value);
-    });
-
-
+/** SETTINGS MENU */
+export const username = writable("");
 export const avatarUrl = writable("");
+export const discordid = writable("");
 export const loggedIn = writable("false");
