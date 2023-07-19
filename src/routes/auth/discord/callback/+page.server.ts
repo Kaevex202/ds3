@@ -102,14 +102,16 @@ const discordinfo = await fetch('https://discord.com/api/users/@me', {
       "Authorization": `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}` }
     });
   }
+  
+  console.log(strapiResponse.strapiResponse[0].username);
+  cookies.set('username', strapiResponse.strapiResponse[0].username , { path: '/' });
 
   if (strapiResponse.length > 0){
 
     return{strapiResponse} 
   }
 
-  console.log(strapiResponse.strapiResponse[0].username);
-  cookies.set('username', strapiResponse.strapiResponse[0].username , { path: '/' });
+
 
   return {
     body: addNewUser,
