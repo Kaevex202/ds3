@@ -48,7 +48,7 @@
 
 		<MobileMenu bind:open />
 	</nav>
-	{#if {$username}.length > 0}
+	{#if $username.length > 0}
 		<div id="userInfo" >
 			<button
 			on:click={expandMenu}
