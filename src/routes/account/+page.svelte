@@ -10,8 +10,8 @@ onMount (async()=>{
 
     console.log(data);
 
-    username = data.discordUserInfo.username;
-    image = `https://cdn.discordapp.com/avatars/${data.discordUserInfo.id}/${data.discordUserInfo.avatar}.png`;
+    username = data.username;
+    image = `https://cdn.discordapp.com/avatars/${data.id}/${data.avatar}.png`;
 
 })
 
