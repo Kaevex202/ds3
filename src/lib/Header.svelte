@@ -49,7 +49,7 @@
 		class="mr-8 flex flex-row items-center border py-4 w-[7vw] justify-center rounded-xl bg-blue-200 hover:bg-blue-300 text-black"
 		type="button"
 		><h4 class="font-bold">Log In Using Discord</h4></button>
-		</div>
+	</div>
 	{/if}
 </div>
 </header>

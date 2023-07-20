@@ -14,7 +14,7 @@
             $loggedIn = "true";
 
                 setTimeout(() => {
-                goto('/')
+                goto('/account')
             }, timeout);
         }
     );
