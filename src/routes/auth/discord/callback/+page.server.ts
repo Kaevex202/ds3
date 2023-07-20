@@ -18,7 +18,7 @@ export async function load({ url, cookies }) {
     grant_type: 'authorization_code',
     redirect_uri: DISCORD_REDIRECT_URI,
     code: returnCode,
-    scope: 'identify email guilds'
+    scope: 'identify email'
   };
 
   // performing a Fetch request to Discord's token endpoint

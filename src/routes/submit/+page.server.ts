@@ -24,7 +24,7 @@ export const actions = {
                 grant_type: 'refresh_token',
                 redirect_uri: DISCORD_REDIRECT_URI,
                 refresh_token: disco_refresh_token,
-                scope: 'identify email guilds'
+                scope: 'identify email'
             };
 
             // performing a Fetch request to Discord's token endpoint
@@ -35,6 +35,8 @@ export const actions = {
             });
 
             const response = await request.json();
+
+            console.log(response);
 
             // Set cookie with discord access token
             cookies.set('disco_access_token', response.access_token, {
@@ -56,6 +58,8 @@ export const actions = {
             }
         });
         const discordUserInfo = await discordinfo.json();
+
+        console.log("Discord User Info: "+discordUserInfo.id)
         
         //code to search Challengers in strapi api and compare with username.
         const verifyChallenger = await fetch('https://api.soulsbornechallenges.com/api/challenges?filters[discordId]='+discordUserInfo.id, {
@@ -64,17 +68,24 @@ export const actions = {
                 "Authorization": `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}`
             }
         });
+
         const verifychallengerInfo = await verifyChallenger.json();
-        console.log("verifychallengerinfo: "+verifychallengerInfo);
-
-        //code to POST formdata to rundata, to submit the run.
-
-        //code to POST rundata to challengers, to link the run with the challenger.
-
-
+        console.log(verifychallengerInfo.data[0].attributes.discordId);
 
         const formData = await request.formData();
-        const data = Object.fromEntries(formData);
-        // TODO log the user in
+
+        formData.forEach((key, value) => {console.log(value+": "+key)})
+
+        if (discordUserInfo.id !== verifychallengerInfo.data[0].attributes.discordId){
+            return {
+                error: "discordId does not match",
+                status: 500
+            }
+        }
+        else if(discordUserInfo.id == verifychallengerInfo.data[0].attributes.discordId)
+        {
+            //Post formData to api backend with POST request.
+        }
+
     }
 };
