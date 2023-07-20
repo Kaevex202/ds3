@@ -3,6 +3,7 @@
     import bosslist from '$lib/ds3/ds3bosses.json'
     import categoryList from '$lib/ds3/ds3categoryList.json'
     import { loggedIn } from '$lib/localstores'
+    import {goto} from '$app/navigation'
 
     let randomBossPercent = false;
     let startingClass = false;
@@ -12,6 +13,8 @@
     let HCRestrictions = false;
     let modRestrictions = false;
     let arr = [];
+
+    let submissionstring="";
 
     function selectedCategory(){
 
@@ -45,6 +48,20 @@
         if(randomBossPercent == false && arr[0].randomOption == "Other boss %"){
             arr[0].randomOption = getRandomRunCategory(categoryList);
         }
+
+
+        const arrParts = arr.map((param) => {
+            return(
+                encodeURIComponent(param.categoryName)+'='+
+                encodeURIComponent(param.randomOption)
+                );
+            }
+        )
+        submissionstring = arrParts.join('&');
+
+
+        submissionstring = new URLSearchParams(arr).toString();
+        console.log(submissionstring);
     }
 
     function getRandomRunCategory(element){
@@ -95,7 +112,7 @@
         {#if arr.length > 0 && $loggedIn == "true"}
         <div id="buttoncontainer" class="flex justify-end w-3/5 mt-4 items-center">
             <div class="flex text-base font-semibold items-center justify-center inline-block px-6 py-4 leading-none border rounded text-[#000] border-[#000] hover:border-[#105D97] hover:text-[#105D97] hover:bg-[#fff] mt-4 ">
-                <button>Submit This Challenge</button>
+                <a href="/submit?Game=darksouls3&{submissionstring}"><button type="submit" name="challengeSubmission" value={arr}>Submit This Challenge</button></a>
             </div>
         </div>  
         {/if}
