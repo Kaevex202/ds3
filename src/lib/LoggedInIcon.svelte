@@ -22,16 +22,16 @@ function expandMenu(){
         </svg>
     </button>
     {#if dropdownExpanded}
-        <div id="dropdown" class="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 absolute">
-            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" >
+        <div id="dropdown" class="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 absolute">
+            <ul class="py-2 text-sm text-gray-700 " >
                 <li>
-                    <a href="/account" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" on:click={expandMenu}>Account</a>
+                    <a href="/account" class="block px-4 py-2 hover:bg-gray-100 " on:click={expandMenu}>Account</a>
                 </li>
                 <li>
-                    <a href="/submit" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" on:click={expandMenu}>Submit a Run</a>
+                    <a href="/submit" class="block px-4 py-2 hover:bg-gray-100 " on:click={expandMenu}>Submit a Run</a>
                 </li>
                 <li>
-                    <a href="/auth/discord/signout" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" on:click={expandMenu}>Logout</a>
+                    <a href="/auth/discord/signout" class="block px-4 py-2 hover:bg-gray-100 " on:click={expandMenu}>Logout</a>
                 </li>
             </ul>
         </div>
