@@ -17,9 +17,6 @@
 			<a href="/" aria-current={$page.url.pathname === '/' ? 'page' : undefined}><h1 class="w-full flex lg:hidden text-lg text-black font-black items-start">SOULSBORNECHALLENGES</h1></a>
 		</div>
 
-
-	
-
 		<div class="w-full block flex-grow hidden lg:flex lg:w-auto font-medium ml-8">
 			<div class="text-sm lg:flex-grow inline-flex items-center" >
 				<a href="/about" class="block mt-4 lg:inline-block lg:mt-0 text-[#000] hover:text-[#105D97] mr-12 text-lg" aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
@@ -35,8 +32,6 @@
 			</div>
 		</div>
 		<div class="lg:hidden"><Hamburger bind:open /></div>
-
-
 		<MobileMenu bind:open />
 	</nav>
 	{#if $loggedIn == "true"}

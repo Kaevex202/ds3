@@ -75,7 +75,6 @@
             arr[0].randomOption = getRandomRunCategory(categoryList);
         }
 
-
         const arrParts = arr.map((param) => {
             return(
                 encodeURIComponent(param.categoryName)+'='+
@@ -110,10 +109,9 @@
         })
     }
 
-    function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
 }
-
 </script>
 
 <div class="justify-center items-center flex flex-col mx-auto mt-16">
@@ -131,9 +129,9 @@
 </div>
 
 <div class="justify-center flex flex-col mx-auto mt-16 text-left lg:w-1/2 items-stretch lg:items-center px-6">
-    <h2 class="lg:w-3/5 flex text-left items-start text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 ">Run information</h2>
+    <h2 class="lg:w-11/12  2xl:w-3/5 flex text-left items-start text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 ">Run information</h2>
         {#each arr as items}
-            <div class="flex lg:w-3/5 justify-between mt-2 lg:mt-0"><p class="font-bold">{items.categoryName}: </p><p class="text-right items-right">{items.randomOption}</p></div>
+            <div class="flex lg:w-11/12  2xl:w-3/5 justify-between mt-2 lg:mt-0"><p class="font-bold">{items.categoryName}: </p><p class="text-right items-right">{items.randomOption}</p></div>
         {/each}
         {#if arr.length > 0 && $loggedIn == "true"}
         <div id="buttoncontainer" class="flex justify-end w-3/5 mt-4 items-center">
@@ -145,11 +143,9 @@
 </div>
 
 <style>
-
-    h4{
+h4{
     font-size: 1.25rem!important; /* 20px */
     line-height: 2rem!important;
     font-weight: 500!important;
 }
-
 </style>
