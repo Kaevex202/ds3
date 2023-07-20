@@ -28,6 +28,9 @@ function expandMenu(){
                 <a href="/account" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" on:click={expandMenu}>Account</a>
             </li>
             <li>
+                <a href="/submit" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" on:click={expandMenu}>Submit a Run</a>
+            </li>
+            <li>
                 <a href="/auth/discord/signout" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" on:click={expandMenu}>Logout</a>
             </li>
             </ul>
