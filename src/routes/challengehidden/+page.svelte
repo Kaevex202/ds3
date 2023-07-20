@@ -30,7 +30,7 @@
             <p>For the first month of this challenge, we'll be starting off with a simple one. The current challenge run for July / August 2023 is: </p>
         </div><br/>
             <div id="challengerun" class="flex flex-col mb-20 items-center">
-                <h2 class="text-4xl font-extrabold ">Dark Souls 3 - HalfHammer%</h2><br/>
+                <h2 class="text-4xl font-extrabold ">Dark Souls 3 - Midora%</h2><br/>
                 <div id="challengeInfo" class="flex flex-col w-9/12 justify-between">
                 <div class="inline-flex justify-between"><p class="font-semibold">Bounty:</p><p>{bounty}</p></div>
                 <div class="inline-flex justify-between"><p class="font-semibold">Category:</p><p>{category}</p></div>
