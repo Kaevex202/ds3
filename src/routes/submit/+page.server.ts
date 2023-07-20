@@ -11,6 +11,7 @@ export const actions = {
 
         disco_access_token = cookies.get('disco_access_token');
         disco_refresh_token = cookies.get('disco_refresh_token');
+        console.log(disco_access_token, disco_refresh_token);
 
         if(disco_refresh_token && !disco_access_token){
             // initializing data object to be pushed to Discord's token endpoint.
