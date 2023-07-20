@@ -3,7 +3,7 @@
     import {loggedIn} from '$lib/localstores'
     import {goto} from '$app/navigation'
 
-    let timeout = 900;
+    let timeout = 600;
 
 onMount(() => {
 

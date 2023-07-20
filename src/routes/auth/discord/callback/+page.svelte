@@ -5,7 +5,7 @@
     export let data: PageData;
     import { onMount } from 'svelte';
 
-    let timeout = 900;
+    let timeout = 600;
 
     onMount(async () => {
 
