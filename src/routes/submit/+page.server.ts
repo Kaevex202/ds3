@@ -1,6 +1,8 @@
 const DISCORD_CLIENT_ID = import.meta.env.VITE_DISCORD_CLIENT_ID;
 const DISCORD_CLIENT_SECRET = import.meta.env.VITE_DISCORD_CLIENT_SECRET;
 const DISCORD_REDIRECT_URI = import.meta.env.VITE_DISCORD_REDIRECT_URI;
+const STRAPI_SERVER_ADMIN_TOKEN = import.meta.env.VITE_STRAPI_SERVER_ADMIN_TOKEN;
+
 
 let disco_access_token;
 let disco_refresh_token;
@@ -11,7 +13,7 @@ export const actions = {
 
         disco_access_token = cookies.get('disco_access_token');
         disco_refresh_token = cookies.get('disco_refresh_token');
-        console.log(disco_access_token, disco_refresh_token);
+        console.log("Discord tokens: "+disco_access_token+" refreshtoken: "+disco_refresh_token);
 
         if(disco_refresh_token && !disco_access_token){
             // initializing data object to be pushed to Discord's token endpoint.
@@ -47,8 +49,23 @@ export const actions = {
         }
 
         //Code to get discordid from discord backend & compare username with localstorage username.
-
+        const discordinfo = await fetch('https://discord.com/api/users/@me', {
+            method: 'GET',
+            headers: {
+                "Authorization": `Bearer ${disco_access_token}`
+            }
+        });
+        const discordUserInfo = await discordinfo.json();
+        
         //code to search Challengers in strapi api and compare with username.
+        const verifyChallenger = await fetch('https://api.soulsbornechallenges.com/api/challenges?filters[discordId]='+discordUserInfo.id, {
+            method: 'GET',
+            headers: {
+                "Authorization": `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}`
+            }
+        });
+        const verifychallengerInfo = await verifyChallenger.json();
+        console.log("verifychallengerinfo: "+verifychallengerInfo);
 
         //code to POST formdata to rundata, to submit the run.
 
