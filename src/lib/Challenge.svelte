@@ -1,9 +1,20 @@
 <script lang="ts">
-    import dschallenge from '$lib/ds/dschallenge.json'
-    import bosslist from '$lib/ds/dsbosses.json'
-    import categoryList from '$lib/ds/dscategoryList.json'
-    import {loggedIn} from '$lib/localstores'
+    import ds3Challenge from '$lib/ds3/ds3challenge.json'
+    import ds3BossList from '$lib/ds3/ds3bosses.json'
+    import ds3CategoryList from '$lib/ds3/ds3categoryList.json'
+    import erChallenge from '$lib/er/erchallenge.json'
+    import erBossList from '$lib/er/erbosses.json'
+    import erCategoryList from '$lib/er/ercategory.json'
+    import dsChallenge from '$lib/ds/dschallenge.json'
+    import dsBossList from '$lib/ds/dsbosses.json'
+    import dsCategoryList from '$lib/ds/dscategoryList.json'
+    import { loggedIn } from '$lib/localstores'
 
+    export let value = "";
+
+    let challenge;
+    let bosslist;
+    let categoryList;
     let randomBossPercent = false;
     let startingClass = false;
     let weaponRestrictions = false;
@@ -13,15 +24,31 @@
     let modRestrictions = false;
     let arr = [];
 
-    let submissionstring;
+    let submissionstring="";
 
     function selectedCategory(){
 
+        if(value == "ds3"){
+            challenge = ds3Challenge;
+            bosslist = ds3BossList;
+            categoryList = ds3CategoryList
+        }
+        else if(value == "er"){
+            challenge = erChallenge;
+            bosslist = erBossList;
+            categoryList = erCategoryList;
+        }
+        else if(value="ds"){
+            challenge = dsChallenge;
+            bosslist = dsBossList;
+            categoryList = dsCategoryList;
+        }
+
         arr = [];
 
-        var arrayLength = Object.keys(dschallenge);
+        var arrayLength = Object.keys(challenge);
 
-        dschallenge.forEach(element => getRandomObject(element));
+        challenge.forEach(element => getRandomObject(element));
         
         if(modRestrictions == false){
             const removeModdedRestrictions = arr.splice(8,1);
@@ -48,6 +75,7 @@
             arr[0].randomOption = getRandomRunCategory(categoryList);
         }
 
+
         const arrParts = arr.map((param) => {
             return(
                 encodeURIComponent(param.categoryName)+'='+
@@ -56,6 +84,10 @@
             }
         )
         submissionstring = arrParts.join('&');
+
+
+        submissionstring = new URLSearchParams(arr).toString();
+        console.log(submissionstring);
     }
 
     function getRandomRunCategory(element){
@@ -105,7 +137,7 @@
         {/each}
         {#if arr.length > 0 && $loggedIn == "true"}
         <div id="buttoncontainer" class="flex justify-end w-3/5 mt-4 items-center">
-            <a href="/submit?Game=Dark Souls&{submissionstring}"><div class="flex text-base font-semibold items-center justify-center inline-block px-6 py-4 leading-none border rounded text-[#000] border-[#000] hover:border-[#105D97] hover:text-[#105D97] hover:bg-[#fff] mt-4 ">
+            <a href="/submit?Game=Dark Souls 3&{submissionstring}"><div class="flex text-base font-semibold items-center justify-center inline-block px-6 py-4 leading-none border rounded text-[#000] border-[#000] hover:border-[#105D97] hover:text-[#105D97] hover:bg-[#fff] mt-4 ">
                 <button type="submit" name="challengeSubmission" value={arr}>Submit This Challenge</button>
             </div></a>
         </div>  

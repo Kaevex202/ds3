@@ -56,33 +56,33 @@
 <p class="flex justify-center">SUBMIT IS UNDER CONSTRUCTION AND NOT FUNCTIONAL YET.</p>
 <div class="flex justify-center mb-20">
     <form method="POST">
-        <label for="game" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Game *</label>
-        <select id="gameInput" bind:value={selectedGame} name="game" class=" mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+        <label for="game" class="block mb-2 text-sm font-medium text-gray-900 ">Game *</label>
+        <select id="gameInput" bind:value={selectedGame} name="game" class=" mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
             {#each games as game}
             <option value={game}>{game}</option>
             {/each}
         </select>
         <div id="categoryglitchlessrow" class="flex justify-between">
             <div class="mb-6 lg:w-[20vw] ">
-                <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white flex-initial">Category *</label>
-                <input type="category" id="categoryInput" bind:value={category} name="category" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="any%" required>
+                <label for="category" class="block mb-2 text-sm font-medium text-gray-900  flex-initial">Category *</label>
+                <input type="category" id="categoryInput" bind:value={category} name="category" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%" required>
               </div>
               <div class="flex items-center">
-                <input id="glitchless" type="checkbox" bind:checked={glitchlessBox} name="glitchless" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-                <label for="glitchlessInput" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Glitchless</label>
+                <input id="glitchless" type="checkbox" bind:checked={glitchlessBox} name="glitchless" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" >
+                <label for="glitchlessInput" class="ml-2 text-sm font-medium text-gray-900 ">Glitchless</label>
             </div>
         </div>
 
         <div class="mb-6 lg:w-[25vw]">
-          <label for="weapon" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white flex-initial">Starting Weapon</label>
-          <input type="weapon" id="weaponInput" bind:value={startingWeapon} name="startingweapon" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="any%" >
+          <label for="weapon" class="block mb-2 text-sm font-medium text-gray-900 flex-initial">Starting Weapon</label>
+          <input type="weapon" id="weaponInput" bind:value={startingWeapon} name="startingweapon" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="any%" >
         </div>
         <div class="mb-6 lg:w-[25vw]">
-            <label for="class" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white flex-initial">Class *</label>
-            <input type="class" id="classInput" bind:value={startingClass} name="class" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Cleric" required>
+            <label for="class" class="block mb-2 text-sm font-medium text-gray-900 flex-initial">Class *</label>
+            <input type="class" id="classInput" bind:value={startingClass} name="class" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Cleric" required>
         </div>
-        <label for="statrestriction" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Stat Restriction</label>
-        <select id="statrestrictionInput" bind:value={statRestriction} name="stat restriction" class=" mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <label for="statrestriction" class="block mb-2 text-sm font-medium text-gray-900 ">Stat Restriction</label>
+        <select id="statrestrictionInput" bind:value={statRestriction} name="stat restriction" class=" mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
             <option>None</option>
             <option>Vigor</option>
             {#if selectedGame == "Dark Souls 3"}<option>Attunement</option>{/if}
@@ -98,36 +98,36 @@
             {#if selectedGame == "Dark Souls 3"}<option>Luck</option>{/if}
         </select>
         <div class="mb-6 lg:w-[25vw]">
-            <label for="Challenge" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white flex-initial">Challenge *</label>
-            <input type="Challenge" id="ChallengeInput" bind:value={challenge} name="challenge" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="SL1" required>
+            <label for="Challenge" class="block mb-2 text-sm font-medium text-gray-900 flex-initial">Challenge *</label>
+            <input type="Challenge" id="ChallengeInput" bind:value={challenge} name="challenge" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="SL1" required>
         </div>
         <div class="mb-6 lg:w-[25vw]">
-            <label for="Challenge" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white flex-initial">Hardcore Challenge</label>
-            <input type="Challenge" id="ChallengeInput" bind:value={hardcoreChallenge} name="hardcoreChallenge" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="SL1" >
+            <label for="Challenge" class="block mb-2 text-sm font-medium text-gray-900 dflex-initial">Hardcore Challenge</label>
+            <input type="Challenge" id="ChallengeInput" bind:value={hardcoreChallenge} name="hardcoreChallenge" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="SL1" >
         </div>
-        <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Randomizer Type</label>
-        <select id="countriesInput" bind:value={randomizer} name="randomizerOption" class="mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <label for="countries" class="block mb-2 text-sm font-medium text-gray-900">Randomizer Type</label>
+        <select id="countriesInput" bind:value={randomizer} name="randomizerOption" class="mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
             <option>Not Randomized</option>
             <option>Enemy Randomizer</option>
             <option>Fog Gate Randomizer</option>
             <option>Item Randomizer</option>
             <option>All Random</option>
         </select>
-        <hr class="h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"/>
+        <hr class="h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 "/>
         <div class="mb-6 lg:w-[25vw]">
-            <label for="video" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white flex-initial">Video *</label>
-            <input type="url" id="videoInput" name="videoURL" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ" required>
+            <label for="video" class="block mb-2 text-sm font-medium text-gray-900  flex-initial">Video *</label>
+            <input type="url" id="videoInput" name="videoURL" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ" required>
         </div>
         <div class="mb-6 lg:w-[25vw]">
-            <label for="time" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white flex-initial">Time</label>
-            <div class="inline-flex w-1/3 ">
-                <input type="duration" id="hr" name="timeHr" class="mr-4 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="hr">
-                <input type="duration" id="time" name="timeMins" class="mr-4 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="min" >
-                <input type="duration" id="time" name="timeSecs" class="mr-4 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="sec" >
+            <label for="time" class="block mb-2 text-sm font-medium text-gray-900  flex-initial">Time</label>
+            <div class="inline-flex w-2/3 2xl:w-1/3">
+                <input type="duration" id="hr" name="timeHr" class="mr-4 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="hr">
+                <input type="duration" id="time" name="timeMins" class="mr-4 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="min" >
+                <input type="duration" id="time" name="timeSecs" class="mr-4 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="sec" >
             </div>
         </div>          
-        <label for="message"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Comment</label>
-        <textarea id="message" name="comment" rows="4" class="mb-2 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
+        <label for="message"  class="block mb-2 text-sm font-medium text-gray-900 ">Comment</label>
+        <textarea id="message" name="comment" rows="4" class="mb-2 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Leave a comment..."></textarea>
         <div class="flex justify-end">
             <button id="submitButton"><span class="block w-min text-base font-semibold inline-block px-6 py-4 leading-none border rounded text-[#000] border-[#000] hover:border-[#105D97] hover:text-[#105D97] hover:bg-[#fff] mt-4 ">Submit</span></button>
         </div>
