@@ -2,6 +2,7 @@
     import {loggedIn} from '$lib/localstores'    
 	import { onMount } from 'svelte';
 
+    let bounty = "€ 50"
     let category = "Halflight%";
     let glitches = "Glitchless";
     let startingClass = "Sorcerer";
@@ -31,6 +32,7 @@
             <div id="challengerun" class="flex flex-col mb-20 items-center">
                 <h2 class="text-4xl font-extrabold ">Dark Souls 3 - HalfHammer%</h2><br/>
                 <div id="challengeInfo" class="flex flex-col w-9/12 justify-between">
+                <div class="inline-flex justify-between"><p class="font-semibold">Bounty:</p><p>{bounty}</p></div>
                 <div class="inline-flex justify-between"><p class="font-semibold">Category:</p><p>{category}</p></div>
                 <div class="inline-flex justify-between"><p class="font-semibold">Glitchless?:</p><p>{glitches}</p></div>
                 <div class="inline-flex justify-between"><p class="font-semibold">Starting Class:</p><p>{startingClass}</p></div>
