@@ -2,7 +2,7 @@
     import ds3challenge from '$lib/ds3/ds3challenge.json'
     import bosslist from '$lib/ds3/ds3bosses.json'
     import categoryList from '$lib/ds3/ds3categoryList.json'
-    import {loggedIn} from '$lib/localstores'
+    import { loggedIn } from '$lib/localstores'
 
     let randomBossPercent = false;
     let startingClass = false;
@@ -93,9 +93,11 @@
             <div class="flex lg:w-3/5 justify-between mt-2 lg:mt-0"><p class="font-bold">{items.categoryName}: </p><p class="text-right items-right">{items.randomOption}</p></div>
         {/each}
         {#if arr.length > 0 && $loggedIn == "true"}
-        <div class="flex w-min text-base font-semibold inline-block px-6 py-4 leading-none border rounded text-[#000] border-[#000] hover:border-[#105D97] hover:text-[#105D97] hover:bg-[#fff] mt-4 ">
-            <button>Submit This Challenge</button>
-        </div>
+        <div id="buttoncontainer" class="flex justify-end w-3/5 mt-4 items-center">
+            <div class="flex text-base font-semibold items-center justify-center inline-block px-6 py-4 leading-none border rounded text-[#000] border-[#000] hover:border-[#105D97] hover:text-[#105D97] hover:bg-[#fff] mt-4 ">
+                <button>Submit This Challenge</button>
+            </div>
+        </div>  
         {/if}
 </div>
 
