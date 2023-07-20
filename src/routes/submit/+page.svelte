@@ -15,7 +15,7 @@
 </script>
 
 <div class="justify-center items-center flex flex-col mx-auto mt-16"><h1 class="text-4xl font-extrabold md:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0">SUBMIT A RUN</h1></div>
-<p>SUBMIT IS UNDER CONSTRUCTION AND NOT FUNCTIONAL YET.</p>
+<p class="flex justify-center">SUBMIT IS UNDER CONSTRUCTION AND NOT FUNCTIONAL YET.</p>
 <div class="flex justify-center mb-20">
     <form method="POST">
         <label for="game" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Game *</label>
