@@ -49,7 +49,7 @@ onMount (async()=>{
         </div>
     </div>
     <div id="accountOption" class="flex justify-end w-3/12 mx-auto mt-16">
-        <button  class="mr-6 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+        <button  on:click={() => alert("Not functional yet.")} class="mr-6 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
             Remove Account Data
         </button>
         <a href="/auth/discord/signout">
