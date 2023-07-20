@@ -6,8 +6,8 @@
     let category = "Halflight%";
     let glitches = "Glitchless";
     let startingClass = "Sorcerer";
-    let weapon = "<a href=//\"https://darksouls3.wiki.fextralife.com/Morne's+Great+Hammer\" class=\"font-semibold hover:underline text-[#105D97]\" rel=\"nofollow\">Morne's Great Hammer</a>";
-    let challenge = "<div class=\" italic text-lg font-medium mt-2\">Bosses allowed to be killed without Morne's Great Hammer:</div><p>Iudex Gundyr<br/>Vordt of the Boreal Valley<br/>Dancer of the Boreal Valley</p><br/><div class=\" italic text-lg font-medium mt-2\">Extra restrictions</div><p>May not use any other weapon/item for damage after obtaining Morne's Great Hammer.<br/>Once in Undead Settlement, must rush to obtain Morne's Great Hammer before doing anything else.<br/>General <a href=\"https://www.speedrun.com/darksouls3?h=Any_Glitchless&x=jdz6v9v2\" class=\"font-semibold hover:underline text-[#105D97]\" rel=\"nofollow\">Any% Glitchless rules apply.</a><br/>Fall Damage Cancel Allowed.<br/>Fence Skip Allowed.<br/>Greatwood Skip Allowed.<br/>Wyvern Skip Allowed.<br/>Only non-damaging spells are allowed to be cast.<br/>Quitouts allowed.</p>";
+    let weapon = "<a href=\"https://darksouls3.wiki.fextralife.com/Morne's+Great+Hammer\" class=\"font-semibold hover:underline text-[#105D97]\" rel=\"nofollow\">Morne's Great Hammer</a>";
+    let challenge = "<div class=\" italic text-lg font-medium mt-2\">Bosses allowed to be killed without Morne's Great Hammer:</div><p>Iudex Gundyr<br/>Vordt of the Boreal Valley<br/>Dancer of the Boreal Valley</p><br/><div class=\" italic text-lg font-medium mt-2\">Extra restrictions</div><p>May not use any other weapon/item for damage after obtaining Morne's Great Hammer.<br/>Once in Undead Settlement, must rush to obtain Morne's Great Hammer before doing anything else.<br/>General <a href=\"https://www.speedrun.com/darksouls3?h=Any_Glitchless&x=jdz6v9v2\" class=\"font-semibold hover:underline text-[#105D97]\" rel=\"nofollow\">Any% Glitchless rules apply.</a><br/>Fall Damage Cancel Allowed.<br/>Fence Skip Allowed.<br/>Greatwood Skip Allowed.<br/>Scream Skip Allowed.<br/>Wyvern Skip Allowed.<br/>Only non-damaging spells are allowed to be cast.<br/>Quitouts allowed.</p>";
     let deadline = "August 31st, 2023"
     let buttonEnabled = false;
 
@@ -39,7 +39,7 @@
                 <div class="inline-flex justify-between"><p class="font-semibold">Main Weapon:</p><p>{@html weapon}</p></div><br/>
                 <div class="flex flex-col justify-between"><h2 class="font-bold text-2xl">Challenge</h2><p>{@html challenge}</p></div><br/>
                 <div class="inline-flex justify-between"><p class="font-semibold">Submission Deadline:</p><p>{deadline}</p></div><br/>
-                <a href="/submit?Game=Dark%20Souls%203&Category=Halflight%&Glitches%3F=Glitchless&Starting%20Class=Sorcerer&Weapon%20(Only%20use%20this%20weapon)=Morne%27s%20Great%20Hammer&Challenge=Challenge%20of%20the%20Month%20July%20August"><button class="mr-6 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Submit a Run {#if buttonEnabled == false}<div class="inline-flex ">(must be logged in)</div>{/if}</button></a>
+                <div class="flex justify-end mt-2"><a href="/submit?Game=Dark%20Souls%203&Category=Halflight%&Glitches%3F=Glitchless&Starting%20Class=Sorcerer&Weapon%20(Only%20use%20this%20weapon)=Morne%27s%20Great%20Hammer&Challenge=Challenge%20of%20the%20Month%20July%20August"><button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-4 px-10 border border-blue-500 hover:border-transparent rounded">Submit a Run {#if buttonEnabled == false}<div class="inline-flex ">(must be logged in)</div>{/if}</button></a></div>
             </div>
         </div>
     </div>  
