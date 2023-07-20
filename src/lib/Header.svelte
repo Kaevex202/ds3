@@ -41,9 +41,11 @@
 		<button
 		on:click={() => goto('https://discord.com/api/oauth2/authorize?client_id=1130486833101406239&redirect_uri=https%3A%2F%2Fsoulsbornechallenges.com%2Fauth%2Fdiscord%2Fcallback&response_type=code&scope=identify%20email')}
 		id="loggedIn"
-		class="mr-8 flex flex-row items-center border py-4 w-[7vw] justify-center rounded-xl bg-blue-200 hover:bg-blue-300 text-black"
+		class="mr-8 flex flex-row items-center border py-4 w-[7vw] lg:w-[9vw] justify-center rounded-xl bg-blue-200 hover:bg-blue-300 text-black"
 		type="button"
-		><h4 class="font-bold">Log In Using Discord</h4></button>
+		>
+			<h4 class="font-bold">Log In Using Discord</h4>
+		</button>
 	</div>
 	{/if}
 </div>
