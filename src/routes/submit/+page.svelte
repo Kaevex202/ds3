@@ -19,6 +19,7 @@
     let startingClass: string;
     let statRestriction: string;
     let challenge: string;
+    let hardcoreChallenge: string;
     let randomizer: string;
 
     //Code to get urlSearchParams and prefill it in form
@@ -38,6 +39,7 @@
         statRestriction = $page.url.searchParams.get('Stat Restrictions')?.toString().replace(" Only","");
         if(!statRestriction){statRestriction = $page.url.searchParams.get('Stat Restrictions Full')?.toString().replace(" Only","")}
         challenge = $page.url.searchParams.get('Challenge')?.toString();
+        hardcoreChallenge = $page.url.searchParams.get('Hardcore Restrictions')?.toString();
         randomizer = $page.url.searchParams.get('Modded Runs')?.toString();
     })
 
@@ -92,6 +94,10 @@
         <div class="mb-6 lg:w-[25vw]">
             <label for="Challenge" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white flex-initial">Challenge *</label>
             <input type="Challenge" id="ChallengeInput" bind:value={challenge} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="SL1" required>
+        </div>
+        <div class="mb-6 lg:w-[25vw]">
+            <label for="Challenge" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white flex-initial">Hardcore Challenge</label>
+            <input type="Challenge" id="ChallengeInput" bind:value={hardcoreChallenge} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="SL1" required>
         </div>
         <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Randomizer Type</label>
         <select id="countriesInput" bind:value={randomizer} class="mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
