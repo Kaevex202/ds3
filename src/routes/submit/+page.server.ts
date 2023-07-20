@@ -7,7 +7,7 @@ let disco_refresh_token;
 
 /** @type {import('./$types').Actions} */
 export const actions = {
-    default: async ({ request, fetch , cookies }) => {
+    default: async ({ request, fetch , cookies, url }) => {
 
         disco_access_token = cookies.get('disco_access_token');
         disco_refresh_token = cookies.get('disco_refresh_token');

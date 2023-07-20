@@ -1,5 +1,7 @@
 <script lang="ts">
-
+    import {page} from '$app/stores'
+    import {onMount} from 'svelte'
+    
     let games = [
         "Elden Ring",
         "Dark Souls 3",
@@ -7,10 +9,38 @@
         "Dark Souls",
         "Demon's Souls",
         "Sekiro",
-        "Bloodborne"
+        
     ]
+    let category: string;
+    let selectedGame: string;
+    let glitchless: string;
+    let glitchlessBox = false;
+    let startingWeapon: string;
+    let startingClass: string;
+    let statRestriction: string;
+    let challenge: string;
+    let randomizer: string;
 
-    let selectedGame: String;
+    //Code to get urlSearchParams and prefill it in form
+    onMount(async () =>{
+        $page.url.searchParams.forEach((key, value)=> console.log(value+": "+key))
+        selectedGame = $page.url.searchParams.get('Game')?.toString();
+        category = $page.url.searchParams.get('Category')?.toString();
+        glitchless = $page.url.searchParams.get('Glitches?')?.toString();
+        if (glitchless == "Glitches Allowed"){
+            glitchlessBox = false;
+        }
+        else{
+            glitchlessBox = true;
+        }
+        startingWeapon = $page.url.searchParams.get('Weapon (Only use this weapon)')?.toString();
+        startingClass = $page.url.searchParams.get('Starting Class')?.toString();
+        statRestriction = $page.url.searchParams.get('Stat Restrictions')?.toString().replace(" Only","");
+        if(!statRestriction){statRestriction = $page.url.searchParams.get('Stat Restrictions Full')?.toString().replace(" Only","")}
+        challenge = $page.url.searchParams.get('Challenge')?.toString();
+        randomizer = $page.url.searchParams.get('Modded Runs')?.toString();
+    })
+
 
 </script>
 
@@ -27,24 +57,24 @@
         <div id="categoryglitchlessrow" class="flex justify-between">
             <div class="mb-6 lg:w-[20vw] ">
                 <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white flex-initial">Category *</label>
-                <input type="category" id="categoryInput" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="any%" required>
+                <input type="category" id="categoryInput" bind:value={category} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="any%" required>
               </div>
               <div class="flex items-center">
-                <input checked id="glitchless" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
+                <input id="glitchless" type="checkbox" bind:checked={glitchlessBox} class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
                 <label for="glitchlessInput" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Glitchless</label>
             </div>
         </div>
 
         <div class="mb-6 lg:w-[25vw]">
           <label for="weapon" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white flex-initial">Starting Weapon</label>
-          <input type="weapon" id="weaponInput" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="any%" >
+          <input type="weapon" id="weaponInput" bind:value={startingWeapon} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="any%" >
         </div>
         <div class="mb-6 lg:w-[25vw]">
             <label for="class" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white flex-initial">Class *</label>
-            <input type="class" id="classInput" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Cleric" required>
+            <input type="class" id="classInput" bind:value={startingClass} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Cleric" required>
         </div>
         <label for="statrestriction" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Stat Restriction</label>
-        <select id="statrestrictionInput" class=" mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <select id="statrestrictionInput" bind:value={statRestriction} class=" mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             <option>None</option>
             <option>Vigor</option>
             {#if selectedGame == "Dark Souls 3"}<option>Attunement</option>{/if}
@@ -61,10 +91,10 @@
         </select>
         <div class="mb-6 lg:w-[25vw]">
             <label for="Challenge" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white flex-initial">Challenge *</label>
-            <input type="Challenge" id="ChallengeInput" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="SL1" required>
+            <input type="Challenge" id="ChallengeInput" bind:value={challenge} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="SL1" required>
         </div>
         <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Randomizer Type</label>
-        <select id="countriesInput" class="mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <select id="countriesInput" bind:value={randomizer} class="mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             <option>Not Randomized</option>
             <option>Enemy Randomizer</option>
             <option>Fog Gate Randomizer</option>
