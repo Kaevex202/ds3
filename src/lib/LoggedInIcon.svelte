@@ -12,7 +12,7 @@ function expandMenu(){
     <button
     on:click={expandMenu}
     id="loggedIn"
-    class="mr-8 flex flex-row items-center justify-evenly border w-[7vw] lg:w-[9vw]items-center py-2 rounded-xl bg-blue-200 hover:bg-blue-300 focus:ring-2 focus:outline-none focus:ring-blue-300 text-black"
+    class="mr-8 flex flex-row items-center justify-evenly border w-[7vw] lg:w-[12vw] items-center py-2 rounded-xl bg-blue-200 hover:bg-blue-300 focus:ring-2 focus:outline-none focus:ring-blue-300 text-black"
     type="button"
     >
         <img src="{$avatarurl}" alt="your Discord profile" class="rounded-full mr-4" height=40 width=40 />
