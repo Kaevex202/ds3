@@ -1,6 +1,7 @@
 <script lang="ts">
     import {page} from '$app/stores'
     import {onMount} from 'svelte'
+    import { enhance } from '$app/forms'
 
     export let data;
 
@@ -50,11 +51,10 @@
 
 
 </script>
-
-<div class="justify-center items-center flex flex-col mx-auto mt-16"><h1 class="text-4xl font-extrabold md:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0">SUBMIT A RUN</h1></div>
-<p class="flex justify-center">SUBMIT IS UNDER CONSTRUCTION AND NOT FUNCTIONAL YET.</p>
-<div class="flex justify-center mb-20">
-    <form method="POST">
+<div class="justify-center items-center flex flex-col mx-auto mt-16"><h1 class="text-4xl font-extrabold md:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0">SUBMIT A RUN</h1><p class="w-1/2 flex justify-center">I don't have a confirmation screen yet for the submission, if click submit and don't get an error tho, it should be sent. Feel free to DM me on discord to verify (username: Kaevex).</p>
+</div>
+<div class="flex justify-center mb-20 mt-12">
+    <form method="POST" use:enhance>
         <label for="game" class="block mb-2 text-sm font-medium text-gray-900 ">Game *</label>
         <select id="gameInput" bind:value={selectedGame} name="game" class=" mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
             {#each games as game}
