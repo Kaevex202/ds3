@@ -3,6 +3,7 @@
 	import { onMount } from 'svelte';
 
     let bounty = "€ 50"
+    let patch = "Current patch"
     let category = "Midir%";
     let glitches = "Glitchless";
     let startingClass = "Thief";
@@ -33,6 +34,7 @@
                 <h2 class="text-4xl font-extrabold ">Dark Souls 3 - Midora%</h2><br/>
                 <div id="challengeInfo" class="flex flex-col w-9/12 justify-between">
                 <div class="inline-flex justify-between"><p class="font-semibold">Bounty (fastest IGT):</p><p>{bounty}</p></div>
+                <div class="inline-flex justify-between"><p class="font-semibold">Patch:</p><p>{patch}</p></div>
                 <div class="inline-flex justify-between"><p class="font-semibold">Category:</p><p>{category}</p></div>
                 <div class="inline-flex justify-between"><p class="font-semibold">Glitchless?:</p><p>{glitches}</p></div>
                 <div class="inline-flex justify-between"><p class="font-semibold">Starting Class:</p><p>{startingClass}</p></div>
