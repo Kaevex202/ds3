@@ -33,7 +33,7 @@ onMount (async()=>{
                 <p>{data.username}</p>
             </div>
             <div>
-                <h4 class="font-bold">Finshed Runs</h4>
+                <h4 class="font-bold">Finshed Runs (placeholder)</h4>
                 <p>1</p>
             </div>
             <div>
@@ -42,7 +42,7 @@ onMount (async()=>{
             </div>
         </div>
         <div id="runlist" class="mt-16">
-            <h3 class="font-bold text-xl">Runs</h3>
+            <h3 class="font-bold text-xl">Runs (placeholder)</h3>
             <ul>
                 <li>Elden Ring - Malenia%, Starting Class: Bandit, Strength Only, Challenge: Kill Blaidd at Ranni's Rise.</li>
             </ul>
