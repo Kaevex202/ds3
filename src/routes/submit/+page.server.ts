@@ -7,6 +7,24 @@ const STRAPI_SERVER_ADMIN_TOKEN = import.meta.env.VITE_STRAPI_SERVER_ADMIN_TOKEN
 let disco_access_token;
 let disco_refresh_token;
 
+let game = "";
+let category = "";
+let glitchless ="";
+let glitches:boolean;
+let weapon = "";
+let startingClass = "";
+let statRestriction = "";
+let challenge = "";
+let hardcoreChallenge = "";
+let randomizerOption = "";
+let videoUrl = "";
+let timeHr;
+let timeMins:number;
+let timeSecs:number;
+let comment:number;
+let username = "";
+
+
 /** @type {import('./$types').Actions} */
 export const actions = {
     default: async ({ request, fetch , cookies, url }) => {
@@ -58,8 +76,6 @@ export const actions = {
             }
         });
         const discordUserInfo = await discordinfo.json();
-
-        console.log("Discord User Info: "+discordUserInfo.id)
         
         //code to search Challengers in strapi api and compare with username.
         const verifyChallenger = await fetch('https://api.soulsbornechallenges.com/api/challenges?filters[discordId]='+discordUserInfo.id, {
@@ -73,8 +89,45 @@ export const actions = {
         console.log(verifychallengerInfo.data[0].attributes.discordId);
 
         const formData = await request.formData();
+        game = formData.get('game');
+        category = formData.get('category')?.toString();
+        glitchless = formData.get('glitchless');
+        if (glitchless == "on"){glitches = false}
+        else if(glitchless !== "on"){glitches=true}
+        weapon = formData.get('startingweapon');
+        startingClass = formData.get('class');
+        statRestriction = formData.get('stat restriction');
+        challenge = formData.get('challenge');
+        hardcoreChallenge = formData.get('hardcoreChallenge');
+        randomizerOption = formData.get('randomizerOption');
+        videoUrl = formData.get('videoURL');
+        timeHr = formData.get('timeHr');
+        timeMins = formData.get('timeMins');
+        timeSecs = formData.get('timeSecs');
+        comment = formData.get('comment');
+        const time = new Date(Date.now())
+        username = discordUserInfo.username;
 
-        formData.forEach((key, value) => {console.log(value+": "+key)})
+
+        let bodyContent = {
+              "game": game,
+              "category": category,
+              "glitchless": glitches,
+              "startingWeapon": weapon,
+              "class": startingClass,
+              "statRestriction": statRestriction,
+              "challenge": challenge,
+              "hardcoreChallenge": hardcoreChallenge,
+              "randomizerType": randomizerOption,
+              "videoUrl": videoUrl,
+              "timeHr": timeHr || null,
+              "timeMins": timeMins || null,
+              "timeSecs": timeSecs || null,
+              "comment": comment,
+              "username": username,
+              "submissionDate": time
+          }
+
 
         if (discordUserInfo.id !== verifychallengerInfo.data[0].attributes.discordId){
             return {
@@ -85,7 +138,19 @@ export const actions = {
         else if(discordUserInfo.id == verifychallengerInfo.data[0].attributes.discordId)
         {
             //Post formData to api backend with POST request.
+            const res = await fetch('https://api.soulsbornechallenges.com/api/rundata',{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}`
+                },
+                body: JSON.stringify({data:bodyContent}),
+            })
+            const responseJson = await res.json()
+            console.log(responseJson)
+            return{
+                body: responseJson,
+            }
         }
-
     }
 };

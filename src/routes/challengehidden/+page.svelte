@@ -39,7 +39,7 @@
                 <div class="inline-flex justify-between"><p class="font-semibold">Main Weapon:</p><p>{@html weapon}</p></div><br/>
                 <div class="flex flex-col justify-between"><h2 class="font-bold text-2xl">Challenge</h2><p>{@html challenge}</p></div><br/>
                 <div class="inline-flex justify-between"><p class="font-semibold">Submission Deadline:</p><p>{deadline}</p></div><br/>
-                <div class="flex justify-end mt-2"><a href="/submit?Game=Dark%20Souls%203&Category=Halflight%&Glitches%3F=Glitchless&Starting%20Class=Sorcerer&Weapon%20(Only%20use%20this%20weapon)=Morne%27s%20Great%20Hammer&Challenge=Challenge%20of%20the%20Month%20July%20August"><button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-4 px-10 border border-blue-500 hover:border-transparent rounded">Submit a Run {#if buttonEnabled == false}<div class="inline-flex ">(must be logged in)</div>{/if}</button></a></div>
+                <div class="flex justify-end mt-2"><a href="/submit?Game=Dark%20Souls%203&Category=Midir%&Glitches%3F=Glitchless&Starting%20Class=Thief&Weapon%20(Only%20use%20this%20weapon)=Astora%20Greatsword&Challenge=Challenge%20of%20the%20Month%20July%20August"><button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-4 px-10 border border-blue-500 hover:border-transparent rounded">Submit a Run {#if buttonEnabled == false}<div class="inline-flex ">(must be logged in)</div>{/if}</button></a></div>
             </div>
         </div>
     </div>  

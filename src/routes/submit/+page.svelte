@@ -30,7 +30,6 @@
 
     //Code to get urlSearchParams and prefill it in form
     onMount(async () =>{
-        $page.url.searchParams.forEach((key, value)=> console.log(value+": "+key))
         selectedGame = $page.url.searchParams.get('Game')?.toString();
         category = $page.url.searchParams.get('Category')?.toString();
         glitchless = $page.url.searchParams.get('Glitches?')?.toString();
