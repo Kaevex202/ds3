@@ -22,7 +22,7 @@
 				<a href="/about" class="block mt-4 lg:inline-block lg:mt-0 text-[#000] hover:text-[#105D97] mr-12 text-lg" aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
 				About
 				</a>
-				<a href="/leaderboards" class="block mt-4 lg:inline-block lg:mt-0 text-[#000] hover:text-[#105D97] mr-12 text-lg" aria-current={$page.url.pathname === '/leaderboards' ? 'page' : undefined}>
+				<a href="/leaderboards" class="hidden mt-4 lg:mt-0 text-[#000] hover:text-[#105D97] mr-12 text-lg" aria-current={$page.url.pathname === '/leaderboards' ? 'page' : undefined}>
 					Leaderboards
 					</a>
 				<a href="/challenge" class="block mt-4 lg:mt-0 text-[#000] hover:text-[#105D97] mr-12 text-lg" aria-current={$page.url.pathname.startsWith('/challenge') ? 'page' : undefined} >
@@ -35,9 +35,11 @@
 		<MobileMenu bind:open />
 	</nav>
 	{#if $loggedIn == "true"}
+	<div id="discordLogin" class="hidden lg:block" >
 		<LoggedInIcon/>
+	</div>
 	{:else}
-	<div id="discordLogin" >
+	<div id="discordLogin" class="hidden lg:block" >
 		<button
 		on:click={() => goto('https://discord.com/api/oauth2/authorize?client_id=1130486833101406239&redirect_uri=https%3A%2F%2Fsoulsbornechallenges.com%2Fauth%2Fdiscord%2Fcallback&response_type=code&scope=identify%20email')}
 		id="loggedIn"
