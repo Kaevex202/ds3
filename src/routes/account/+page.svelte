@@ -58,10 +58,15 @@ onMount (async()=>{
             </ul>
         </div>
     </div>
-    <div id="accountOption" class="flex justify-end w-3/12 mx-auto mt-16">
+    <div id="accountOption" class="flex justify-center lg:justify-end w-10/12 lg:w-3/12 mx-auto mt-16">
         <button  on:click={() => alert("Not functional yet.")} class="mr-6 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
             Remove Account Data
         </button>
+        <a href="/submit">
+            <button class="mr-6 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                Submit a run
+            </button>
+        </a>
         <a href="/auth/discord/signout">
             <button  class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                 Logout
