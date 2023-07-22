@@ -27,10 +27,10 @@ onMount (async()=>{
     <div id="accountInfo" class="items-start w-4/12 mx-auto">...Loading</div>
 </div>
 {:then}
-<div class=" flex flex-col mx-auto mt-16 px-6 lg:px-0">
+<div class=" flex flex-col mx-auto lg:mt-16">
     <h1 class="flex text-4xl font-extrabold items-center md:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0 mx-auto">ACCOUNT</h1>
     <div id="accountInfo" class="items-start w-4/12 mx-auto">
-        <div class="flex flex-row gap-6">
+        <div class="flex lg:flex-row gap-2 lg:gap-6">
             <img src="https://cdn.discordapp.com/avatars/{data.discordResponse.id}/{data.discordResponse.avatar}.png" alt="profile photo"/>
             <div>
                 <h4 class="font-bold">Username</h4>
