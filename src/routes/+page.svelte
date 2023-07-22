@@ -40,8 +40,8 @@
 </section>
 
 <style>
-select:focus {
-    outline:none;
-	border:none;
-}
+	select:focus {
+		outline:none;
+		border:none;
+	}
 </style>

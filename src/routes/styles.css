@@ -6,3 +6,8 @@ body{
     background-color: #FAF9F6;
     overflow-y: scroll;
 }
+
+p{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}

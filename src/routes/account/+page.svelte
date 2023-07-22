@@ -5,11 +5,15 @@
 
     let username:string;
     let image;
+    let userRunCount:Number;
+    let runsData=[];
 
 onMount (async()=>{
 
-    username = data.username;
-    image = `https://cdn.discordapp.com/avatars/${data.id}/${data.avatar}.png`;
+    username = data.discordResponse.username;
+    userRunCount = data.strapiResponse.data[0].attributes.rundata.data.length;
+    runsData = Object.values(data.strapiResponse.data[0].attributes.rundata.data);
+    image = `https://cdn.discordapp.com/avatars/${data.discordResponse.id}/${data.discordResponse.avatar}.png`;
 
 })
 
@@ -27,24 +31,30 @@ onMount (async()=>{
     <h1 class="flex text-4xl font-extrabold items-center md:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0 mx-auto">ACCOUNT</h1>
     <div id="accountInfo" class="items-start w-4/12 mx-auto">
         <div class="flex flex-row gap-6">
-            <img src="https://cdn.discordapp.com/avatars/{data.id}/{data.avatar}.png" alt="profile photo"/>
+            <img src="https://cdn.discordapp.com/avatars/{data.discordResponse.id}/{data.discordResponse.avatar}.png" alt="profile photo"/>
             <div>
                 <h4 class="font-bold">Username</h4>
-                <p>{data.username}</p>
+                <p>{data.discordResponse.username}</p>
             </div>
             <div>
-                <h4 class="font-bold">Finshed Runs (placeholder)</h4>
-                <p>1</p>
+                <h4 class="font-bold">Finshed Runs</h4>
+                <p>{userRunCount}</p>
             </div>
-            <div>
+            <div id="score" class="hidden">
                 <h4 class="font-bold">Score</h4>
                 <p>1240</p>
             </div>
         </div>
         <div id="runlist" class="mt-16">
-            <h3 class="font-bold text-xl">Runs (placeholder)</h3>
+            <h3 class="font-bold text-xl">Runs finished</h3>
             <ul>
-                <li>Elden Ring - Malenia%, Starting Class: Bandit, Strength Only, Challenge: Kill Blaidd at Ranni's Rise.</li>
+                {#if runsData.length > 0}
+                    {#each runsData as runs}
+                    <li><div class="mt-4 border-2 rounded px-6 py-4"><span class="font-semibold">{runs.attributes.game}</span><div class="flex"><p>{runs.attributes.category} - Starting Class: {runs.attributes.class}, {runs.attributes.statRestriction}, Challenge: {runs.attributes.challenge}</p></div></div></li>
+                    {/each}
+                {:else}
+                    <p>No runs completed.</p>
+                {/if}
             </ul>
         </div>
     </div>

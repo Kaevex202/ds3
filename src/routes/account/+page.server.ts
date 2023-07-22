@@ -39,8 +39,9 @@ export async function load({url, cookies}) {
         // returns a discord user if JWT was valid
         const discordResponse = await request.json();
 
+        console.log("discordresponse.id: "+discordResponse.id)
         //Check if a user exist with that specific discord id.
-        const strapiUserSearch = await fetch(`https://api.soulsbornechallenges.com/api/users?filters[discordid]=`+discordResponse.id, {
+        const strapiUserSearch = await fetch(`https://api.soulsbornechallenges.com/api/challenges?filters[username]=`+discordResponse.username+'&populate=*', {
           method: 'GET',
           headers: {
             "Authorization": `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}`
@@ -49,7 +50,11 @@ export async function load({url, cookies}) {
 
         const strapiResponse = await strapiUserSearch.json();
 
-        return discordResponse;
+        return {
+          discordResponse: discordResponse,
+          strapiResponse: strapiResponse,
+          status: 200,
+        };
     }
 
 
