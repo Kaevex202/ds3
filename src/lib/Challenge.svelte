@@ -10,8 +10,8 @@
     import dsCategoryList from '$lib/ds/dscategoryList.json'
     import { loggedIn } from '$lib/localstores'
     import { onMount } from 'svelte'
+    export let game = "";
 
-    export let value = "";
 
     let challenge;
     let bosslist;
@@ -30,24 +30,25 @@
     let buttonEnabled = false;
 
     onMount( ()=>{
-        if($loggedIn == "true"){
-        buttonEnabled = true;
-    }
-    })
+            if($loggedIn == "true"){
+            buttonEnabled = true;
+        }
+        }
+    )
 
     function selectedCategory(){
 
-        if(value == "ds3"){
+        if(game == "ds3"){
             challenge = ds3Challenge;
             bosslist = ds3BossList;
             categoryList = ds3CategoryList
         }
-        else if(value == "er"){
+        else if(game == "er"){
             challenge = erChallenge;
             bosslist = erBossList;
             categoryList = erCategoryList;
         }
-        else if(value="ds"){
+        else if(game="ds"){
             challenge = dsChallenge;
             bosslist = dsBossList;
             categoryList = dsCategoryList;
