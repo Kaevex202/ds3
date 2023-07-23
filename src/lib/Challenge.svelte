@@ -9,6 +9,7 @@
     import dsBossList from '$lib/ds/dsbosses.json'
     import dsCategoryList from '$lib/ds/dscategoryList.json'
     import { loggedIn } from '$lib/localstores'
+    import { onMount } from 'svelte'
 
     export let value = "";
 
@@ -25,6 +26,14 @@
     let arr = [];
 
     let submissionstring="";
+
+    let buttonEnabled = false;
+
+    onMount( ()=>{
+        if($loggedIn == "true"){
+        buttonEnabled = true;
+    }
+    })
 
     function selectedCategory(){
 
@@ -133,10 +142,10 @@ function getRandomInt(max) {
         {#each arr as items}
             <div class="flex lg:w-11/12  2xl:w-3/5 justify-between mt-2 lg:mt-0"><p class="font-bold">{items.categoryName}: </p><p class="text-right items-right">{items.randomOption}</p></div>
         {/each}
-        {#if arr.length > 0 && $loggedIn == "true"}
+        {#if arr.length > 0}
             <div id="buttoncontainer" class="flex justify-end w-3/5 mt-4 items-center">
                 <a href="/submit?Game=Dark Souls 3&{submissionstring}"><div class="flex text-base font-semibold items-center justify-center inline-block px-6 py-4 leading-none border rounded text-[#000] border-[#000] hover:border-[#105D97] hover:text-[#105D97] hover:bg-[#fff] mt-4 ">
-                    <button type="submit" name="challengeSubmission" value={arr}>Submit This Challenge</button>
+                    <button type="submit" name="challengeSubmission" value={arr}>Submit This Challenge {#if buttonEnabled == false}<div class="inline-flex ">(must be logged in)</div>{/if} </button>
                 </div></a>
             </div>  
         {/if}
