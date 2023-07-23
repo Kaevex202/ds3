@@ -1,7 +1,25 @@
 <script>
 	import "./styles.css";
 	import Header from '../lib/Header.svelte'
+
+try {
+if(typeof window !== 'undefined' 
+&& window) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+  gtag('config', 'G-T9RDP6VHQL');
+}
+} catch(error) {
+console.error("Failed to initialize Analytics")
+}
+
   </script>
+
+<svelte:head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-T9RDP6VHQL"></script>
+</svelte:head>
 
 <div class="app">
 
