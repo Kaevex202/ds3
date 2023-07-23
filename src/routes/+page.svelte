@@ -1,8 +1,10 @@
 <script>
 	import Challenge from "$lib/Challenge.svelte";
 	import Faq from "$lib/FAQ.svelte";
+	import {page} from '$app/stores'
 
-	let game = "ds3";
+	let urlParams = $page.url.searchParams;
+	let game = urlParams.get('game') || "ds3";
 </script>
 
 <svelte:head>
@@ -22,11 +24,11 @@
         </select>
     </label> CHALLENGE RUN</h1>
 	{#if game == "ds3"}
-		<Challenge bind:value={game}/>
+		<Challenge bind:game={game}/>
 	{:else if game == "er" }
-		<Challenge bind:value={game}/>
+		<Challenge bind:game={game}/>
 	{:else if game == "ds" }
-		<Challenge bind:value={game}/>
+		<Challenge bind:game={game}/>
 	{:else if game == "ds2"}
 		<h2 class="flex justify-center text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 ">COMING SOON</h2>
 	{:else if game == "des"}
