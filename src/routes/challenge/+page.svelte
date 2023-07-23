@@ -4,7 +4,7 @@
 
     let bounty = "€ 50"
     let firstBounty = "€ 15"
-    let patch = "Current patch"
+    let patch = "1.12, Regulation 1.35 or higher."
     let category = "Midir%";
     let glitches = "Glitchless";
     let startingClass = "Thief";
