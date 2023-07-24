@@ -22,9 +22,9 @@
             <option value="ds3"class=" text-4xl font-extrabold md:text-7xl text-[#000000]">DARK SOULS 3</option>
             <option value="er" class=" text-4xl font-extrabold md:text-7xl text-[#000000]">ELDEN RING</option>
 			<option value="ds" class=" text-4xl font-extrabold md:text-7xl text-[#000000]">DARK SOULS</option>
-			<option value="ds2" class=" text-4xl font-extrabold md:text-7xl text-[#000000]">DARK SOULS 2</option>
-			<option value="des" class=" text-4xl font-extrabold md:text-7xl text-[#000000]">DEMON'S SOULS</option>
-			<option value="sk" class=" text-4xl font-extrabold md:text-7xl text-[#000000]">SEKIRO</option>
+			<option value="ds2" class="hidden text-4xl font-extrabold md:text-7xl text-[#000000]">DARK SOULS 2</option>
+			<option value="des" class="hidden text-4xl font-extrabold md:text-7xl text-[#000000]">DEMON'S SOULS</option>
+			<option value="sk" class="hidden text-4xl font-extrabold md:text-7xl text-[#000000]">SEKIRO</option>
         </select>
     </label> CHALLENGE RUN</h1>
 	{#if game == "ds3"}
@@ -34,11 +34,11 @@
 	{:else if game == "ds" }
 		<Challenge bind:game={game}/>
 	{:else if game == "ds2"}
-		<h2 class="flex justify-center text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 ">COMING SOON</h2>
+		<h2 class="flex hidden justify-center text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 ">COMING SOON</h2>
 	{:else if game == "des"}
-		<h2 class="flex justify-center text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 ">COMING SOON</h2>
+		<h2 class="flex hidden justify-center text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 ">COMING SOON</h2>
 	{:else if game == "sk"}
-		<h2 class="flex justify-center text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 ">COMING SOON</h2>
+		<h2 class="flex hidden justify-center text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 ">COMING SOON</h2>
 	{:else}
 		<p>Select a game.</p>
 	{/if}
