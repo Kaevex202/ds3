@@ -1,5 +1,5 @@
 <div id="footer" class=" flex  mx-auto pb-3 pl-4 bg-gray-100 border-t pt-3">
-    <div id="copyright" class="flex w-auto mr-6"><p class="text-sm">This is a DS3 fan site |</p></div>
+    <div id="copyright" class="flex w-auto mr-6"><p class="text-sm">This is a SoulsBorne Games fan site |</p></div>
     <div id="discord" class="flex flex-row w-auto">
         <a href="https://discord.gg/x4yajYKrZE" class="flex flex-row-reverse"><p class="flex text-sm">Join our Discord</p>
             <div id="icon" class="flex h-full w-auto items-center mr-2">
