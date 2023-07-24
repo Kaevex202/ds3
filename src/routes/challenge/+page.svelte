@@ -1,6 +1,7 @@
-<script>
+<script lang="ts">
     import {loggedIn} from '$lib/localstores'    
 	import { onMount } from 'svelte';
+	import { run } from 'svelte/internal';
 
     let bounty = "€ 50"
     let firstBounty = "€ 15"
@@ -12,13 +13,21 @@
     let challenge = "<div class=\" italic text-lg font-medium mt-2\">Bosses allowed to be killed without the Astora Greatsword:</div><p>Iudex Gundyr<br/>Vordt of the Boreal Valley<br/>Crystal Sage</p><br/><div class=\" italic text-lg font-medium mt-2\">Extra restrictions</div><p>May not use any other weapon/item for damage after obtaining the Astora Greatsword.<br/>Must run to the Astora Greatsword and pick it up immediately after killing the Crystal Sage. (Grabbing the Cleansing Chapel bonfire first is allowed.)<br/>General <a href=\"https://www.speedrun.com/darksouls3?h=Any_Glitchless&x=jdz6v9v2\" class=\"font-semibold hover:underline text-[#105D97]\" rel=\"nofollow\">Any% Glitchless rules apply.</a><br/>Angel Skip Allowed.<br/>Fall Damage Cancel Allowed.<br/>Fence Skip Allowed.<br/>Greatwood Skip Allowed.<br/>Resin/Bundles Allowed<br/>Scream Skip Allowed.<br/>Wyvern Skip Allowed.<br/>Only non-damaging spells are allowed to be cast.<br/>Quitouts allowed.</p>";
     let deadline = "August 31st, 2023"
     let buttonEnabled = false;
+    export let data;
+
+    let runData=[];
+    let runDataFiltered;
+
 
     onMount( ()=>{
         if($loggedIn == "true"){
         buttonEnabled = true;
+        runData = data.verifiedRuns;
+        console.log(runData)
+
+
     }
     })
-
 
 </script>
 
@@ -47,7 +56,18 @@
             </div>
         </div>
     </div>  
+
+
+    <h2 class="font-bold text-2xl mt-16 mb-4">Verified Runs</h2>
+    <div class="flex  justify-center mb-32"><ul>
+        {#if buttonEnabled == true}
+            {#each runData.reverse() as run}<li class="inline-flex mt-4 "><div class="flex justify-between border-2 rounded px-48 py-4 w-[40vw]"><div class="user flex flex-row"><div class="font-semibold">User:&nbsp;</div><div>{run.username}</div></div><div class="time flex flex-row"><div class="font-semibold">Time:</div><div>{run.timeHr}:{#if run.timeMins == 0}00{:else}{run.timeMins}{/if}:{run.timeSecs}</div></div><div><a href={run.video} target="_blank" rel="nofollow"><button>Watch Video</button></a></div></div></li><br/>{/each}
+        {/if}
+    </ul>
+    </div>
 </div>
+
+
 
 
 <style>

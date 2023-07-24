@@ -1,22 +1,29 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
     import type { PageData } from './$types';
+    import { username, avatarurl , loggedIn } from '$lib/localstores'
     export let data: PageData;
 
-    let username:string;
     let image;
     let userRunCount:Number;
     let runsData=[];
+    let embedDiv;
 
 onMount (async()=>{
 
-    username = data.discordResponse.username;
     userRunCount = data.strapiResponse.data[0].attributes.rundata.data.length;
     runsData = Object.values(data.strapiResponse.data[0].attributes.rundata.data);
     image = `https://cdn.discordapp.com/avatars/${data.discordResponse.id}/${data.discordResponse.avatar}.png`;
 
-})
+    if($username !== data.discordResponse.username){
+        $username = data.discordResponse.username;
+    }
 
+    if($avatarurl !== `https://cdn.discordapp.com/avatars/${data.discordResponse.id}/${data.discordResponse.avatar}.png`){
+        $avatarurl = `https://cdn.discordapp.com/avatars/${data.discordResponse.id}/${data.discordResponse.avatar}.png`;
+    }
+
+})
 
 
 </script>
@@ -50,7 +57,8 @@ onMount (async()=>{
             <ul>
                 {#if runsData.length > 0}
                     {#each runsData as runs}
-                    <li><div class="mt-4 border-2 rounded px-6 py-4"><span class="font-semibold">{runs.attributes.game}</span><div class="flex"><p>{runs.attributes.category} - Starting Class: {runs.attributes.class}, {runs.attributes.statRestriction}, Challenge: {runs.attributes.challenge}</p></div></div></li>
+                    <li><div class="mt-4 border-2 rounded px-6 py-4"><span class="font-semibold">{runs.attributes.game}</span><div class="flex"><p>{runs.attributes.category} - Starting Class: {runs.attributes.class}, {runs.attributes.statRestriction}, Challenge: {runs.attributes.challenge}</p></div>
+                    <div bind:this={embedDiv}><a href={runs.attributes.videoUrl} rel="_nofollow" target="_blank" class="font-semibold">Watch Video</a></div></li>
                     {/each}
                 {:else}
                     <p>No runs completed.</p>
