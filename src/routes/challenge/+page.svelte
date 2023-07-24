@@ -4,7 +4,7 @@
 	import { run } from 'svelte/internal';
 
     let bounty = "€ 50"
-    let firstBounty = "€ 15"
+    let firstBounty = "€ 15 (COMPLETED)"
     let patch = "1.12 or higher."
     let category = "Midir%";
     let glitches = "Glitchless";
