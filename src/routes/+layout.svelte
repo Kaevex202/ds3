@@ -1,6 +1,7 @@
 <script>
 	import "./styles.css";
 	import Header from '../lib/Header.svelte'
+	import Footer from "$lib/Footer.svelte";
 
 try {
 if(typeof window !== 'undefined' 
@@ -28,6 +29,8 @@ console.error("Failed to initialize Analytics")
 	<main>
 		<slot />
 	</main>
+
+	<Footer/>
 
 </div>
 
