@@ -35,5 +35,7 @@ console.error("Failed to initialize Analytics")
 </div>
 
 <style>
-
+main{
+	min-height:90vh;
+}
 </style>
