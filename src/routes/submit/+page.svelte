@@ -52,6 +52,12 @@
 
 
 </script>
+
+<svelte:head>
+    <title>SoulsBorneChallenges - Submit your run</title> 
+    <meta name="description" content="Soulsbornechallenges is a Soulsborne Challenge Run Generator. Submit your run on this page.">
+</svelte:head>
+
 <div class="justify-center items-center flex flex-col mx-auto mt-16"><h1 class="text-4xl font-extrabold md:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0">SUBMIT A RUN</h1>
 </div>
 {#if form?.body.data.id}

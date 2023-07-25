@@ -1,8 +1,10 @@
-<h1>Cookie Policy for SOULSBORNECHALLENGES</h1>
+<div id="cookies" class="flex flex-col justify-center mx-auto w-9/12">
 
-<p>This is the Cookie Policy for SOULSBORNECHALLENGES, accessible from http://soulsbornechallenges.com/</p>
+    <div><h1 class="text-4xl font-extrabold md:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0">Cookie Policy for SOULSBORNECHALLENGES</h1></div>
 
-<p><strong>What Are Cookies</strong></p>
+    <div><p>This is the Cookie Policy for SOULSBORNECHALLENGES, accessible from http://soulsbornechallenges.com/</p></div>
+
+    <div><p><strong>What Are Cookies</strong></p></div>
 
 <p>As is common practice with almost all professional websites this site uses cookies, which are tiny files that are downloaded to your computer, to improve your experience. This page describes what information they gather, how we use it and why we sometimes need to store these cookies. We will also share how you can prevent these cookies from being stored however this may downgrade or 'break' certain elements of the sites functionality.</p>
 
@@ -75,3 +77,5 @@
 <li>Email: </li>
 <li>By visiting this link: </li>
 </ul>
+
+</div>

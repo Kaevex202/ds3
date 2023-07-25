@@ -31,6 +31,11 @@
 
 </script>
 
+<svelte:head>
+    <title>SoulsBorneChallenges - Challenge of the Month</title> 
+    <meta name="description" content="Every month, we'll have a Soulsborne bounty on a challenge for players to accomplish.">
+</svelte:head>
+
 <div class="justify-center items-center flex flex-col mx-auto mt-16">
     <h1 class="text-4xl font-extrabold md:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0">CHALLENGE OF THE MONTH</h1>
     <div id="maintext" class="px-4 lg:px-0 lg:w-2/3">
