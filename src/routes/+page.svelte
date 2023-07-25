@@ -4,7 +4,7 @@
 	import {page} from '$app/stores'
 
 	let urlParams = $page.url.searchParams;
-	let game = urlParams.get('game') || "ds3";
+	let game =  "ds3";
 
 	//function updateURL(){
 	//	window.history.replaceState(history.state, '', `?game=`+game)
