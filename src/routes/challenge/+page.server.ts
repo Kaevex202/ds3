@@ -27,7 +27,6 @@ export async function load({}) {
         verifiedRuns.push({id:element.id,username:test,video:element.attributes.videoUrl,timeHr:element.attributes.timeHr,timeMins:element.attributes.timeMins,timeSecs:element.attributes.timeSecs})
         })
 
-    console.log(verifiedRuns)
     return {
         verifiedRuns
     }
