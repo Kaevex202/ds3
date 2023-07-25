@@ -19,6 +19,7 @@ console.error("Failed to initialize Analytics")
   </script>
 
 <svelte:head>
+	<meta name="google-site-verification" content="V7LLrFlxJaNRpxpgLh94DdsYvGJf9wWly18wWlsOeJg" />
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-T9RDP6VHQL"></script>
 </svelte:head>
 
