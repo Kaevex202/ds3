@@ -1,3 +1,8 @@
+<svelte:head>
+    <title>SoulsBorneChallenges - About</title> 
+    <meta name="description" content="Hi! I'm Kaevex, and I made SoulsBorneChallenges on a bored night. The site is still being finished so for now, but I would love to get your feedback. If you have any suggestions, feel free to contact me on Discord.">
+</svelte:head>
+
 <div class=" flex flex-col mx-auto mt-16 items-center px-6 lg:px-0">
     <h1 class="text-4xl font-extrabold md:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0 ">ABOUT</h1>
     <div class="lg:w-4/5 xl:w-7/12 2xl:w-5/12">
