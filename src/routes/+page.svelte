@@ -3,7 +3,7 @@
 	import Faq from "$lib/FAQ.svelte";
 	import {page} from '$app/stores'
 
-	let urlParams = $page.url.searchParams;
+	//let urlParams = $page.url.searchParams;
 	let game =  "ds3";
 
 	//function updateURL(){
