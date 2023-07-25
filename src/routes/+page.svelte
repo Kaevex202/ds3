@@ -3,12 +3,12 @@
 	import Faq from "$lib/FAQ.svelte";
 	import {page} from '$app/stores'
 
-	let urlParams = $page.url.searchParams;
-	let game = urlParams.get('game') || "ds3";
+	//let urlParams = $page.url.searchParams;
+	let game = "ds3"; //urlParams.get('game') ||
 
-	function updateURL(){
-		window.history.replaceState(history.state, '', `?game=`+game)
-	}
+	//function updateURL(){
+	//	window.history.replaceState(history.state, '', `?game=`+game)
+	//}
 </script>
 
 <svelte:head>
