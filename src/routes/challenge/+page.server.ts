@@ -1,6 +1,6 @@
 const STRAPI_SERVER_ADMIN_TOKEN = import.meta.env.VITE_STRAPI_SERVER_ADMIN_TOKEN;
 
-let verifiedRunIDs = ["22","23"];
+let verifiedRunIDs = ["25","22"];
 let verifiedRunIDsParameter = "";
 let challengerInformation = [];
 let verifiedRuns=[];
