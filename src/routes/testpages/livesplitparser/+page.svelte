@@ -6,11 +6,7 @@
     let isLoaded = false;
     let openPersonalbest = false;
     let completedRuns = [];
-
-    //to make clicken open actually open up the times.
-    function clickOpenPersonalBest(){
-        openPersonalbest = !openPersonalbest;
-    }
+    let fastestRun;
 
     //Turn array of Hr,Mins,Sec,Milisec into t('miliseconds') and then convert it back.
     function getTimeDuration(time){
@@ -51,12 +47,21 @@
         data.Run.AttemptHistory.Attempt.forEach(element =>{
             if(element.GameTime !== undefined){
                 completedRuns.push({id:element["@_id"],gameTime:getTimeDuration(element.GameTime.slice(0,-4).split(":")).total});
-            }}
-        )
-        //get Values in completedRuns
-        completedRuns.reduce((prev, curr) => prev.gameTime > curr.gameTime ? prev : curr);
-        console.log(completedRuns);
-        return completedRuns;
+            }})
+            let fastestRunMiliSec = completedRuns.reduce(function(prev, curr) {
+                return prev.gameTime < curr.gameTime ? prev : curr;
+            })
+            fastestRun = (milisecondsToTime(fastestRunMiliSec.gameTime));
+        console.log(completedRuns.length)
+        return {
+            'completedAttempts':completedRuns.length,
+            'personalBest':`${fastestRun.hours}:${fastestRun.minutes}:${fastestRun.seconds}`,
+        }
+    }
+
+    //to make clicken open actually open up the times.
+    function clickOpenPersonalBest(){
+        openPersonalbest = !openPersonalbest;
     }
 
     onMount(async ()=>{
@@ -69,17 +74,17 @@
         });
     })
 </script>
-<div class="ml-16">
+<div class="ml-16 mb-32">
     {#if isLoaded == true}
         <h1>Hi</h1>
         <p>Game: {data.Run.GameName}</p>
         <p>Category: {data.Run.CategoryName}</p>
         <p>Attempts: {data.Run.AttemptCount}</p>
-        <p>Completed Attempts: {data.Run.AttemptHistory.Attempt.filter(Boolean).length}</p>
-        <p>Personal Best: {getPersonalBest()}</p>
+        <p>Completed Attempts: {getPersonalBest().completedAttempts}</p>
+        <p>Personal Best: {getPersonalBest().personalBest}</p>
         <p>Sum of Best: {milisecondsToTime(sumOfBest).hours}:{milisecondsToTime(sumOfBest).minutes}:{milisecondsToTime(sumOfBest).seconds}</p>
 <br/><br/>
-        <h3 class="font-bold text-xl">Personal Best</h3>
+        <h3 class="font-bold text-xl">Best Segments</h3>
     <button on:click={clickOpenPersonalBest}><h4>OPEN</h4></button>
         {#if openPersonalbest == true}
         <div class="flex flex-col w-1/3">
