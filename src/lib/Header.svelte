@@ -13,8 +13,8 @@
 	<div class="w-full flex items-center">
 	<nav class="inline-flex lg:flex justify-between flex-wrap p-6 w-full lg:w-[85%] mx-auto h-min items-center">
 		<div id="logo" class="flex items-center flex-shrink-0 text-white mr-6 flex-[100] w-fit h-1/2">
-			<a href="/" aria-current={$page.url.pathname === '/' ? 'page' : undefined}><h1 class="w-full hidden lg:flex lg:text-4xl font-black px-6 lg:px-0 text-black ">SOULSBORNECHALLENGES</h1></a>
-			<a href="/" aria-current={$page.url.pathname === '/' ? 'page' : undefined}><h1 class="w-full flex lg:hidden text-lg text-black font-black items-start">SOULSBORNECHALLENGES</h1></a>
+			<a href="/" ><h1 class="w-full hidden lg:flex lg:text-4xl font-black px-6 lg:px-0 text-black ">SOULSBORNECHALLENGES</h1></a>
+			<a href="/" ><h1 class="w-full flex lg:hidden text-lg text-black font-black items-start">SOULSBORNECHALLENGES</h1></a>
 		</div>
 
 		<div class="w-full block flex-grow hidden lg:flex lg:w-auto font-medium ml-8">
