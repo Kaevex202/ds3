@@ -22,19 +22,19 @@
             "No Slash Attacks",
             "No Deflect",
             "(Ignore Category) End the game with the Purification Ending",
-            "Ignore Category) End the game with the Return Ending",
+            "(Ignore Category) End the game with the Return Ending",
             "Obtain the Promissory Note.",
             "Obtain the Mibu Pilgrimage Balloon",
             "Obtain Jinza's Jizo Statue",
             "No Stealth Blows"
         ]
     },
-    {        "Hardcore Restrictions": [
-        "No hit run (reset on hit)",
-        "All Achievements",
-        "No Prosthetics Run",
-        "No Damage Run"
-    ]
+{        "Hardcore Restrictions": [
+            "No hit run (reset on hit)",
+            "All Achievements",
+            "No Prosthetics Run",
+            "No Damage Run"
+        ]
     },
     {
         "Randomizer": [
