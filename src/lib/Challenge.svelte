@@ -8,6 +8,9 @@
     import dsChallenge from '$lib/ds/dschallenge.json'
     import dsBossList from '$lib/ds/dsbosses.json'
     import dsCategoryList from '$lib/ds/dscategoryList.json'
+    import bbChallenge from '$lib/bb/bbchallenge.json'
+    import bbBossList from '$lib/bb/bbbosses.json'
+    import bbCategoryList from '$lib/bb/bbcategory.json'
     import { loggedIn } from '$lib/localstores'
     import { onMount } from 'svelte'
     export let game = "";
@@ -40,6 +43,7 @@
         if(game == "ds3"){return "Dark Souls 3"}
         else if(game == "er"){return "Elden Ring"}
         else if(game="ds"){return "Dark Souls"}
+        else if(game="bb"){return "Bloodborne"}
     }
 
     function selectedCategory(){
@@ -53,6 +57,11 @@
             challenge = erChallenge;
             bosslist = erBossList;
             categoryList = erCategoryList;
+        }
+        else if(game="bb"){
+            challenge = bbChallenge;
+            bosslist = bbBossList;
+            categoryList = bbCategoryList;
         }
         else if(game="ds"){
             challenge = dsChallenge;
@@ -98,12 +107,10 @@
                 );
             }
         )
+
         submissionstring = arrParts.join('&');
-        console.log(arr);
-
-
         submissionstring = new URLSearchParams(arr).toString();
-        console.log(submissionstring);
+        
     }
 
     function getRandomRunCategory(element){

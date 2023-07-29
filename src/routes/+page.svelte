@@ -24,6 +24,7 @@
             <option value="er" class=" text-4xl font-extrabold md:text-7xl text-[#000000]">ELDEN RING</option>
 			<option value="ds" class=" text-4xl font-extrabold md:text-7xl text-[#000000]">DARK SOULS</option>
 			<option value="ds2" class="hidden text-4xl font-extrabold md:text-7xl text-[#000000]">DARK SOULS 2</option>
+			<option value="bb" class="hidden text-4xl font-extrabold md:text-7xl text-[#000000]">BLOODBORNE</option>
 			<option value="des" class="hidden text-4xl font-extrabold md:text-7xl text-[#000000]">DEMON'S SOULS</option>
 			<option value="sk" class=" text-4xl font-extrabold md:text-7xl text-[#000000]">SEKIRO</option>
         </select>
@@ -36,6 +37,8 @@
 		<Challenge bind:game={game}/>	
 	{:else if game == "ds2"}
 		<h2 class="flex hidden justify-center text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 ">COMING SOON</h2>
+	{:else if game == "bb"}
+		<Challenge bind:game={game}/>	
 	{:else if game == "des"}
 		<h2 class="flex hidden justify-center text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 ">COMING SOON</h2>
 	{:else if game == "sk"}
