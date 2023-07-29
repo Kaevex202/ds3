@@ -48,6 +48,7 @@
         }
     }
 
+    //Get the actual PB of the run.
     function getPersonalBest(){
         form?.Run.AttemptHistory.Attempt.forEach(element =>{
             if(element.GameTime !== undefined){
@@ -64,6 +65,7 @@
         }
     }
 
+    //Get the segment times of the file's PB
     function getPersonalBestSegment(i){
         let split = form?.Run.Segments.Segment[i].SegmentHistory.Time.filter(x => x['@_id']===fastestRunMiliSec.id)[0].GameTime.slice(0,-4).split(":");
         let time = getTimeDuration(split);
@@ -75,8 +77,14 @@
         }
     }
 
+    //gets the percentage a certain segment is of the full run.
+    function getSegmentPercentage(){
+        
+    }
+
     onMount(async ()=>{
 
+        //checks if there's a form submitted.
         if(form?.Run?.AttemptCount > 0){
             formLoaded = true;
         }
@@ -87,6 +95,8 @@
             sumOfBest = +sumOfBest + +getTimeDuration(element.BestSegmentTime.GameTime.slice(0,-4).split(":")).total;
         });
     })
+
+
 </script>
 <div class="ml-16 mb-32">
     {#if isLoaded == true}

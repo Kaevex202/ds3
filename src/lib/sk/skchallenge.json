@@ -1,0 +1,42 @@
+[
+    {
+        "Category": [
+            "Shura",
+            "Immortal Severance",
+            "All Memories",
+            "All Bosses/Minibosses"
+        ]
+    },
+    {
+        "Glitches?": [
+            "Glitchless",
+            "No Airswim",
+            "Unrestricted"
+        ]
+    },
+    {
+        "Challenge": [
+            "AP 1 run",
+            "Charmless + Demon Bell Run",
+            "Deathless (Reset run on death)",
+            "No Slash Attacks",
+            "No Deflect",
+            "(Ignore Category) End the game with the Purification Ending",
+            "Ignore Category) End the game with the Return Ending"
+        ]
+    },
+    {        "Hardcore Restrictions": [
+        "No hit run (reset on hit)",
+        "All Achievements",
+        "No Prosthetics Run",
+        "No Damage Run"
+    ]
+    },
+    {
+        "Randomizer": [
+            "Item Randomizer",
+            "Enemy Randomizer",
+            "Item + Enemy Randomizer Random"
+        ]
+    }
+]
