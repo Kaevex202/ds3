@@ -32,22 +32,22 @@
 
     //Code to get urlSearchParams and prefill it in form
     onMount(async () =>{
-        selectedGame = $page.url.searchParams.get('Game')?.toString();
-        category = $page.url.searchParams.get('Category')?.toString();
-        glitchless = $page.url.searchParams.get('Glitches?')?.toString();
+        selectedGame = $page.url.searchParams.get('Game')?.toString()!;
+        category = $page.url.searchParams.get('Category')?.toString()!;
+        glitchless = $page.url.searchParams.get('Glitches?')?.toString()!;
         if (glitchless == "Glitches Allowed"){
             glitchlessBox = false;
         }
         else{
             glitchlessBox = true;
         }
-        startingWeapon = $page.url.searchParams.get('Weapon (Only use this weapon)')?.toString();
-        startingClass = $page.url.searchParams.get('Starting Class')?.toString();
-        statRestriction = $page.url.searchParams.get('Stat Restrictions')?.toString().replace(" Only","");
-        if(!statRestriction){statRestriction = $page.url.searchParams.get('Stat Restrictions Full')?.toString().replace(" Only","")}
-        challenge = $page.url.searchParams.get('Challenge')?.toString();
-        hardcoreChallenge = $page.url.searchParams.get('Hardcore Restrictions')?.toString();
-        randomizer = $page.url.searchParams.get('Modded Runs')?.toString();
+        startingWeapon = $page.url.searchParams.get('Weapon (Only use this weapon)')?.toString()!;
+        startingClass = $page.url.searchParams.get('Starting Class')?.toString()!;
+        statRestriction = $page.url.searchParams.get('Stat Restrictions')?.toString().replace(" Only","")!;
+        if(!statRestriction){statRestriction = $page.url.searchParams.get('Stat Restrictions Full')?.toString().replace(" Only","")!}
+        challenge = $page.url.searchParams.get('Challenge')?.toString()!;
+        hardcoreChallenge = $page.url.searchParams.get('Hardcore Restrictions')?.toString()!;
+        randomizer = $page.url.searchParams.get('Modded Runs')?.toString()!;
     })
 
 

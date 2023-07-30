@@ -16,7 +16,7 @@
     let buttonEnabled = false;
     export let data;
 
-    let runData=[];
+    let runData: any[]=[];
     let runDataFiltered;
 
 

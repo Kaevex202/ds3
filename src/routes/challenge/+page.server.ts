@@ -3,7 +3,7 @@ const STRAPI_SERVER_ADMIN_TOKEN = import.meta.env.VITE_STRAPI_SERVER_ADMIN_TOKEN
 let verifiedRunIDs = ["25","22"];
 let verifiedRunIDsParameter = "";
 let challengerInformation = [];
-let verifiedRuns=[];
+let verifiedRuns: { id: any; username: any; video: any; timeHr: any; timeMins: any; timeSecs: any; }[]=[];
 
 export async function load({}) {
 

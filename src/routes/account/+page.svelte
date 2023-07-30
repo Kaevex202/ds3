@@ -6,7 +6,7 @@
 
     let image;
     let userRunCount:Number;
-    let runsData=[];
+    let runsData: string | any[]=[];
     let embedDiv;
 
 onMount (async()=>{

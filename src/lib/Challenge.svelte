@@ -17,9 +17,9 @@
     export let game = "";
 
 
-    let challenge;
-    let bosslist;
-    let categoryList;
+    let challenge: any[];
+    let bosslist: { Bosses: string[]; }[];
+    let categoryList: { runCategories: string[]; }[];
     let randomBossPercent = false;
     let startingClass = false;
     let weaponRestrictions = false;
@@ -27,7 +27,7 @@
     let fullStatRestrictions = false;
     let HCRestrictions = false;
     let modRestrictions = false;
-    let arr = [];
+    let arr: string | any[] | Record<string, string> | URLSearchParams | undefined = [];
 
     let submissionstring="";
 
@@ -117,17 +117,17 @@
         
     }
 
-    function getRandomRunCategory(element){
+    function getRandomRunCategory(element: { runCategories: any[]; }[]){
         var randomNumb = getRandomInt(element[0].runCategories.length);
         return element[0].runCategories[randomNumb];
     }
 
-    function getRandomBoss(element){
+    function getRandomBoss(element: { Bosses: string[]; }[]){
         var randomNumb = getRandomInt(element[0].Bosses.length);
         return element[0].Bosses[randomNumb]+" %";
     }
 
-    function getRandomObject(element){
+    function getRandomObject(element: { [x: string]: any[]; }){
         var req = element
         var options = Object.keys(req)[0];
         var randomNumb = getRandomInt(element[options].length);
@@ -137,7 +137,7 @@
         })
     }
 
-function getRandomInt(max) {
+function getRandomInt(max: number) {
     return Math.floor(Math.random() * max);
 }
 
