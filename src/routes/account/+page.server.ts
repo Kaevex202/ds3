@@ -1,6 +1,3 @@
-const DISCORD_CLIENT_ID = import.meta.env.VITE_DISCORD_CLIENT_ID;
-const DISCORD_CLIENT_SECRET = import.meta.env.VITE_DISCORD_CLIENT_SECRET;
-const DISCORD_REDIRECT_URI = import.meta.env.VITE_DISCORD_REDIRECT_URI;
 const DISCORD_API_URL = import.meta.env.VITE_DISCORD_API_URL;
 const STRAPI_SERVER_ADMIN_TOKEN = import.meta.env.VITE_STRAPI_SERVER_ADMIN_TOKEN;
 
@@ -15,7 +12,7 @@ export async function load({url, cookies}) {
     const refresh_token = cookies.get("disco_refresh_token");
 
     if (refresh_token && !access_token){
-        const discord_request = await fetch(`https://soulsbornchallenges.com/api/refresh?code=${refresh_token}`);
+        const discord_request = await fetch(`https://soulsbornchallenges.com/auth/discord/refresh?code=${refresh_token}`);
         const discord_response = await discord_request.json();
 
         if (discord_response.disco_access_token) {
