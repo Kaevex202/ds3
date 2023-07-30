@@ -42,8 +42,8 @@
     function setGame(){
         if(game == "ds3"){return "Dark Souls 3"}
         else if(game == "er"){return "Elden Ring"}
-        else if(game="ds"){return "Dark Souls"}
-        else if(game="bb"){return "Bloodborne"}
+        else if(game=="ds"){return "Dark Souls"}
+        else if(game== "bb"){return "Bloodborne"}
     }
 
     function selectedCategory(){
@@ -58,15 +58,18 @@
             bosslist = erBossList;
             categoryList = erCategoryList;
         }
+        else if(game="ds"){
+            challenge = dsChallenge;
+            bosslist = dsBossList;
+            categoryList = dsCategoryList;
+        }
         else if(game="bb"){
             challenge = bbChallenge;
             bosslist = bbBossList;
             categoryList = bbCategoryList;
         }
-        else if(game="ds"){
-            challenge = dsChallenge;
-            bosslist = dsBossList;
-            categoryList = dsCategoryList;
+        else{
+            console.error("Something went wrong with the game selector.")
         }
 
         arr = [];
@@ -139,15 +142,15 @@ function getRandomInt(max) {
 </script>
 
 <div class="justify-center items-center flex flex-col mx-auto mt-16">
-    <form on:submit|preventDefault={selectedCategory} class="mt-8 flex flex-col items-start lg:w-[30%] px-6 lg:px-0">
+    <form on:submit|preventDefault={selectedCategory} class="mt-8 flex flex-col items-start lg:w-[30%] px-6 lg:px-0" id="challengeSelector">
         <h4 class="flex lg:items-center w-full mx-auto">Options</h4>
-        <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" bind:checked={randomBossPercent}><p>Add Random Boss%</p></label>
-        <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" bind:checked={startingClass}><p>Pick my Starting Class</p></label>
-        <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" bind:checked={weaponRestrictions}><p>Pick my Weapon Restrictions</p></label>
-        <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" bind:checked={statRestrictions} disabled={fullStatRestrictions}><p>Stat restrictions (Main stats only)</p></label>
-        <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" bind:checked={fullStatRestrictions} disabled={statRestrictions}><p>Full Stat restrictions (include Vigor, Attunement, etc.)</p></label>
-        <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" bind:checked={HCRestrictions}><p>Hardcore Challenges</p></label>
-        <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" bind:checked={modRestrictions}><p>Randomizer run</p></label>
+        <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" id="randomBoss" bind:checked={randomBossPercent}><p>Add Random Boss%</p></label>
+        <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" id="startingClass" bind:checked={startingClass}><p>Pick my Starting Class</p></label>
+        <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" id="weaponRestriction" bind:checked={weaponRestrictions}><p>Pick my Weapon Restrictions</p></label>
+        <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" id="statRestriction" bind:checked={statRestrictions} disabled={fullStatRestrictions}><p>Stat restrictions (Main stats only)</p></label>
+        <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" id="fullStatRestriction" bind:checked={fullStatRestrictions} disabled={statRestrictions}><p>Full Stat restrictions (include Vigor, Attunement, etc.)</p></label>
+        <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" id="hcRestrictions" bind:checked={HCRestrictions}><p>Hardcore Challenges</p></label>
+        <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" id="modRestrictions" bind:checked={modRestrictions}><p>Randomizer run</p></label>
         <label class="flex items-center w-full mx-auto justify-center"><button type="submit" class="text-base font-semibold inline-block px-6 py-4 leading-none border rounded text-[#000] border-[#000] hover:border-[#105D97] hover:text-[#105D97] hover:bg-[#fff] mt-4 ">GIVE ME A CHALLENGE</button></label>
     </form>
 </div>
@@ -159,7 +162,7 @@ function getRandomInt(max) {
         {/each}
         {#if arr.length > 0}
             <div id="buttoncontainer" class="flex justify-end w-3/5 mt-4 items-center">
-                <a href="/submit?Game={setGame()}&{submissionstring}"><div class="flex text-base font-semibold items-center justify-center inline-block px-6 py-4 leading-none border rounded text-[#000] border-[#000] hover:border-[#105D97] hover:text-[#105D97] hover:bg-[#fff] mt-4 ">
+                <a href="/submit?{setGame()}&{submissionstring}"><div class="flex text-base font-semibold items-center justify-center inline-block px-6 py-4 leading-none border rounded text-[#000] border-[#000] hover:border-[#105D97] hover:text-[#105D97] hover:bg-[#fff] mt-4 ">
                     <button type="submit" name="challengeSubmission" value={arr}>Submit This Challenge {#if buttonEnabled == false}<div class="inline-flex ">(must be logged in)</div>{/if} </button>
                 </div></a>
             </div>  
