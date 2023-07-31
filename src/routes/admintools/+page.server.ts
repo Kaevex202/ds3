@@ -71,11 +71,11 @@ async function updateLeaderBoard(){
     strapiResponse.data.forEach(async element => {
         let bodyContent = {
             "username": element.attributes.username,
-            "score": element.attributes.score,
+            "score": element.attributes.totalScore,
             "runsCompleted": element.attributes.runsCompleted,
         }
 
-        const res = await fetch('http://api.soulsbornechallenges.com/api/leaderboards',{
+        const res = await fetch('https://api.soulsbornechallenges.com/api/leaderboards',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -85,7 +85,7 @@ async function updateLeaderBoard(){
         })
         const responseJson = await res.json()
         console.log(responseJson)
-    })
+        })
 
 
     //save leaderboard in db.
