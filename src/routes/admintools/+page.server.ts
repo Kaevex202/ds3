@@ -75,7 +75,7 @@ async function updateLeaderBoard(){
             "runsCompleted": element.attributes.runsCompleted,
         }
 
-        const res = await fetch('http://api.soulsbornechallenges.com/api/leaderboard',{
+        const res = await fetch('http://api.soulsbornechallenges.com/api/leaderboards',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
