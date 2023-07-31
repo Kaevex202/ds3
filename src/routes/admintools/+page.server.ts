@@ -1,19 +1,3 @@
-import { run } from 'svelte/internal';
-import { FSWatcher } from 'vite';
-import ds3Challenge from '$lib/ds3/ds3challenge_new.json'
-import ds3BossList from '$lib/ds3/ds3bosses.json'
-import ds3CategoryList from '$lib/ds3/ds3categoryList.json'
-import erChallenge from '$lib/er/erchallenge.json'
-import erBossList from '$lib/er/erbosses.json'
-import erCategoryList from '$lib/er/ercategory.json'
-import dsChallenge from '$lib/ds/dschallenge.json'
-import dsBossList from '$lib/ds/dsbosses.json'
-import dsCategoryList from '$lib/ds/dscategoryList.json'
-import bbChallenge from '$lib/bb/bbchallenge.json'
-import bbBossList from '$lib/bb/bbbosses.json'
-import bbCategoryList from '$lib/bb/bbcategory.json'
-import { writeFileSync } from 'fs'
-
 const DISCORD_API_URL = import.meta.env.VITE_DISCORD_API_URL;
 const STRAPI_SERVER_ADMIN_TOKEN = import.meta.env.VITE_STRAPI_SERVER_ADMIN_TOKEN;
 const ADMIN_USERNAME = import.meta.env.VITE_ADMIN_USERNAME;
