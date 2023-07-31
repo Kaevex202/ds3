@@ -35,12 +35,12 @@ onMount (async()=>{
 
 
 {#await data}
-<div class=" flex flex-col mx-auto mt-16 px-6 lg:px-0">
+<div class=" flex flex-col mx-auto mt-16 px-6 lg:px-0 dark:text-[#F7EBE8]">
     <h1 class="flex text-4xl font-extrabold items-center md:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0 mx-auto">ACCOUNT</h1>
     <div id="accountInfo" class="items-start w-4/12 mx-auto">...Loading</div>
 </div>
 {:then}
-<div class=" flex flex-col mx-auto lg:mt-16">
+<div class=" flex flex-col mx-auto lg:mt-16 dark:text-[#F7EBE8]">
     <h1 class="flex text-4xl font-extrabold items-center md:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0 mx-auto">ACCOUNT</h1>
     <div id="accountInfo" class="items-start px-4 lg:px-0 lg:w-4/12 mx-auto">
         <div class="flex lg:flex-row gap-2 lg:gap-6">
@@ -59,7 +59,7 @@ onMount (async()=>{
             </div>
         </div>
         <div id="runlist" class="mt-16">
-            <h3 class="font-bold text-xl">Runs finished</h3>
+            <h3 class="font-bold text-xl ">Runs finished</h3>
             <ul>
                 {#if runsData.length > 0}
                     {#each runsData as runs}
@@ -72,17 +72,17 @@ onMount (async()=>{
             </ul>
         </div>
     </div>
-    <div id="accountOption" class="flex justify-center lg:justify-end w-10/12 lg:w-3/12 mx-auto mt-16">
-        <button  on:click={() => alert("Not functional yet.")} class="mr-6 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+    <div id="accountOption" class="flex justify-center lg:justify-end w-10/12 lg:w-3/12 mx-auto mt-16 dark:text-[#F7EBE8]">
+        <button  on:click={() => alert("Not functional yet.")} class="mr-6 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded dark:text-[#F7EBE8] dark:border-[#F7EBE8] dark:hover:bg-[#1E1E24] dark:hover:text-[#F7EBE8] dark:hover:border-[#F7EBE8]">
             Remove Account Data
         </button>
         <a href="/submit">
-            <button class="mr-6 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+            <button class="mr-6 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded dark:text-[#F7EBE8] dark:border-[#F7EBE8] dark:hover:bg-[#1E1E24] dark:hover:text-[#F7EBE8] dark:hover:border-[#F7EBE8]">
                 Submit a run
             </button>
         </a>
         <a href="/auth/discord/signout">
-            <button  class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+            <button  class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded dark:text-[#F7EBE8] dark:border-[#F7EBE8] dark:hover:bg-[#1E1E24] dark:hover:text-[#F7EBE8] dark:hover:border-[#F7EBE8]">
                 Logout
             </button>
         </a>

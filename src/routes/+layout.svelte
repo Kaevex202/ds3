@@ -22,7 +22,7 @@ console.error("Failed to initialize Analytics")
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-T9RDP6VHQL"></script>
 </svelte:head>
 
-<div class="app">
+<div class="app bg-[#FAF9F6] dark:bg-[#444140]">
 
 	<Header/>
 

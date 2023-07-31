@@ -45,7 +45,7 @@ function submitChallenge(){
     <meta name="description" content="Every month, we'll have a Soulsborne bounty on a challenge for players to accomplish.">
 </svelte:head>
 
-<div class="justify-center items-center flex flex-col mx-auto mt-16">
+<div class="justify-center items-center flex flex-col mx-auto mt-16 dark:text-[#F7EBE8]">
     <h1 class="text-4xl font-extrabold md:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0">CHALLENGE OF THE MONTH</h1>
     <div id="maintext" class="px-4 lg:px-0 lg:w-2/3">
         <div class="">
@@ -66,7 +66,7 @@ function submitChallenge(){
                 <div class="inline-flex justify-between"><p class="font-semibold">Main Weapon:</p><p>{@html weapon}</p></div><br/>
                 <div class="flex flex-col justify-between"><h2 class="font-bold text-2xl">Challenge</h2><p>{@html challenge}</p></div><br/>
                 <div class="inline-flex justify-between"><p class="font-semibold">Submission Deadline:</p><p>{deadline}</p></div><br/>
-                <div class="flex justify-end mt-2"><button on:click={() => submitChallenge()} class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-4 px-10 border border-blue-500 hover:border-transparent rounded">Submit a Run {#if buttonEnabled == false}<div class="inline-flex ">(must be logged in)</div>{/if}</button></div>
+                <div class="flex justify-end mt-2"><button on:click={() => submitChallenge()} class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-4 px-10 border border-blue-500 hover:border-transparent rounded dark:text-[#F7EBE8] dark:border-[#F7EBE8] dark:hover:bg-[#1E1E24] dark:hover:text-[#F7EBE8] dark:hover:border-[#F7EBE8]">Submit a Run {#if buttonEnabled == false}<div class="inline-flex ">(must be logged in)</div>{/if}</button></div>
             </div>
         </div>
     </div>  

@@ -18,15 +18,15 @@
 </svelte:head>
 
 <section class=" flex-row mx-auto mt-16 ">
-	<h1 class="flex flex-col lg:flex-row justify-center items-center text-4xl font-extrabold md:text-5xl 2xl:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0"><label>
-        <select name="gameName" id="game" bind:value={game} class="underline hover:text-[#105D97] bg-[#FAF9F6]">
-            <option value="ds3"class=" text-4xl font-extrabold md:text-7xl text-[#000000]">DARK SOULS 3</option>
-            <option value="er" class=" text-4xl font-extrabold md:text-7xl text-[#000000]">ELDEN RING</option>
-			<option value="ds" class=" text-4xl font-extrabold md:text-7xl text-[#000000]">DARK SOULS</option>
-			<option value="ds2" class="hidden text-4xl font-extrabold md:text-7xl text-[#000000]">DARK SOULS 2</option>
-			<option value="bb" class="hidden text-4xl font-extrabold md:text-7xl text-[#000000]">BLOODBORNE</option>
-			<option value="des" class="hidden text-4xl font-extrabold md:text-7xl text-[#000000]">DEMON'S SOULS</option>
-			<option value="sk" class=" text-4xl font-extrabold md:text-7xl text-[#000000]">SEKIRO</option>
+	<h1 class="flex flex-col lg:flex-row justify-center items-center text-4xl font-extrabold md:text-5xl 2xl:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0 dark:text-[#F7EBE8]"><label>
+        <select name="gameName" id="game" bind:value={game} class="underline hover:text-[#105D97] bg-[#FAF9F6] dark:bg-[#444140] dark:hover:text-[#EC625F]">
+            <option value="ds3"class=" text-4xl font-extrabold md:text-7xl text-[#000000] dark:text-[#F7EBE8]">DARK SOULS 3</option>
+            <option value="er" class=" text-4xl font-extrabold md:text-7xl text-[#000000] dark:text-[#F7EBE8]">ELDEN RING</option>
+			<option value="ds" class=" text-4xl font-extrabold md:text-7xl text-[#000000] dark:text-[#F7EBE8]">DARK SOULS</option>
+			<option value="ds2" class="hidden text-4xl font-extrabold md:text-7xl text-[#000000] dark:text-[#F7EBE8]">DARK SOULS 2</option>
+			<option value="bb" class="hidden text-4xl font-extrabold md:text-7xl text-[#000000] dark:text-[#F7EBE8]">BLOODBORNE</option>
+			<option value="des" class="hidden text-4xl font-extrabold md:text-7xl text-[#000000] dark:text-[#F7EBE8]">DEMON'S SOULS</option>
+			<option value="sk" class=" text-4xl font-extrabold md:text-7xl text-[#000000] dark:text-[#F7EBE8]">SEKIRO</option>
         </select>
     </label> CHALLENGE RUN</h1>
 	{#if game == "ds3"}

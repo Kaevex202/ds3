@@ -1,4 +1,4 @@
-<div class="justify-center flex flex-col mx-auto mt-16 text-left lg:w-9/12 2xl:w-1/2 lg:items-center px-6 pb-32">
+<div class="justify-center flex flex-col mx-auto mt-16 text-left lg:w-9/12 2xl:w-1/2 lg:items-center px-6 pb-32 dark:text-[#F7EBE8]">
     <h2 class="lg:w-3/5 flex text-left items-start text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 ">FAQ</h2>
     <div class="lg:w-3/5 question items-start">
         <p class="flex font-semibold ">What is this website used for?</p>

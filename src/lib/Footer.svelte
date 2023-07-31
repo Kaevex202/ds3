@@ -1,4 +1,4 @@
-<div id="footer" class=" flex  mx-auto pb-3 pl-4 bg-gray-100 border-t pt-3">
+<div id="footer" class=" flex  mx-auto pb-3 pl-4 bg-gray-100 border-t pt-3 dark:bg-[#1E1E24] dark:text-[#F7EBE8] dark:border-[#F7EBE8] dark:hover:bg-[#1E1E24] dark:hover:text-[#F7EBE8] dark:hover:border-[#F7EBE8]">
     <div id="copyright" class="flex w-auto mr-6"><p class="text-sm">This is a SoulsBorne Games fan site |</p></div>
     <div id="discord" class="flex flex-row w-auto">
         <a href="https://discord.gg/x4yajYKrZE" class="flex flex-row-reverse"><p class="flex text-sm">Join our Discord</p>
