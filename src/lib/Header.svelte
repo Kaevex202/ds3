@@ -14,7 +14,7 @@
 	<nav class="inline-flex lg:flex justify-between flex-wrap p-6 w-full lg:w-[85%] mx-auto h-min items-center">
 		<div id="logo" class="flex items-center flex-shrink-0 text-white mr-6 flex-[100] w-fit h-1/2">
 			<a href="/" ><h1 class="w-full hidden lg:flex lg:text-4xl font-black px-6 lg:px-0 text-black dark:text-[#F7EBE8]">SOULSBORNECHALLENGES</h1></a>
-			<a href="/" ><h1 class="w-full flex lg:hidden text-lg text-black font-black items-start">SOULSBORNECHALLENGES</h1></a>
+			<a href="/" ><h1 class="w-full flex lg:hidden text-lg text-black font-black items-start dark:text-[#F7EBE8]">SOULSBORNECHALLENGES</h1></a>
 		</div>
 
 		<div class="w-full block flex-grow hidden lg:flex lg:w-auto font-medium ml-8">
@@ -22,7 +22,7 @@
 				<a href="/about" class="block mt-4 lg:inline-block lg:mt-0 text-[#000] hover:text-[#105D97] mr-12 text-lg dark:text-[#F7EBE8] dark:hover:text-[#E54B4B]" aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
 				About
 				</a>
-				<a href="/leaderboards" class="hidden mt-4 lg:mt-0 text-[#000] hover:text-[#105D97] mr-12 text-lg  dark:hover:text-[#E54B4B]" aria-current={$page.url.pathname === '/leaderboards' ? 'page' : undefined}>
+				<a href="/leaderboards" class="mt-4 lg:mt-0 text-[#000] hover:text-[#105D97] mr-12 text-lg  dark:text-[#F7EBE8] dark:hover:text-[#E54B4B]" aria-current={$page.url.pathname === '/leaderboards' ? 'page' : undefined}>
 					Leaderboards
 					</a>
 				<a href="/challenge" class="block mt-4 lg:mt-0 text-[#000] hover:text-[#105D97] mr-12 text-lg dark:text-[#F7EBE8] dark:hover:text-[#E54B4B]" aria-current={$page.url.pathname.startsWith('/challenge') ? 'page' : undefined} >
@@ -39,7 +39,7 @@
 		<LoggedInIcon/>
 	</div>
 	{:else}
-	<div id="discordLogin" class="hidden lg:block" >
+	<div id="discordLogin" class="hidden lg:block " >
 		<button
 		on:click={() => goto('https://discord.com/api/oauth2/authorize?client_id=1130486833101406239&redirect_uri=https%3A%2F%2Fsoulsbornechallenges.com%2Fauth%2Fdiscord%2Fcallback&response_type=code&scope=identify%20email')}
 		id="loggedIn"

@@ -10,20 +10,20 @@
 </script>
 
 {#if open}
-    <div>
-        <a href="/" on:click={() =>open=false } class="block mt-16 text-[#000] font-semibold hover:text-[#105D97]text-lg" aria-current={$page.url.pathname === '/' ? 'page' : undefined} >
+    <div class="">
+        <a href="/" on:click={() =>open=false } class="block mt-16 text-[#000] font-semibold hover:text-[#105D97]text-lg dark:text-[#F7EBE8]" aria-current={$page.url.pathname === '/' ? 'page' : undefined} >
             Home
             </a>
-            <a href="/about" on:click={() =>open=false } class="block mt-16 text-[#000] font-semibold hover:text-[#105D97]text-lg" aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
+            <a href="/about" on:click={() =>open=false } class="block mt-16 text-[#000] font-semibold hover:text-[#105D97]text-lg dark:text-[#F7EBE8]" aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
             About
             </a>
-            <a href="/challenge" on:click={() =>open=false } class="block mt-16 text-[#000] font-semibold hover:text-[#105D97]text-lg " aria-current={$page.url.pathname.startsWith('/challenge') ? 'page' : undefined} >
+            <a href="/challenge" on:click={() =>open=false } class="block mt-16 text-[#000] font-semibold hover:text-[#105D97]text-lg dark:text-[#F7EBE8]" aria-current={$page.url.pathname.startsWith('/challenge') ? 'page' : undefined} >
             Challenge of the Month
             </a>
             {#if $loggedIn == false}
-            <a href="https://discord.com/oauth2/authorize?client_id=1130486833101406239&redirect_uri=https%3A%2F%2Fsoulsbornechallenges.com%2Fauth%2Fdiscord%2Fcallback&response_type=code&scope=identify%20email" on:click={() =>open=false } class="text-base mt-16 font-semibold block px-8 py-4 leading-none border rounded text-[#000] border-[#000] hover:border-[#105D97] hover:text-[#105D97] hover:bg-[#fff]">LOGIN</a>
+            <a href="https://discord.com/oauth2/authorize?client_id=1130486833101406239&redirect_uri=https%3A%2F%2Fsoulsbornechallenges.com%2Fauth%2Fdiscord%2Fcallback&response_type=code&scope=identify%20email" on:click={() =>open=false } class="text-base mt-16 font-semibold block px-8 py-4 leading-none border rounded text-[#000] border-[#000] hover:border-[#105D97] hover:text-[#105D97] hover:bg-[#fff]  dark:text-[#F7EBE8]">LOGIN</a>
             {:else}
-                <a href="/account" on:click={() =>open=false } class="block mt-16 text-[#000] font-semibold hover:text-[#105D97]text-lg " aria-current={$page.url.pathname.startsWith('/account') ? 'page' : undefined} >
+                <a href="/account" on:click={() =>open=false } class="block mt-16 text-[#000] font-semibold hover:text-[#105D97]text-lg  dark:text-[#F7EBE8]" aria-current={$page.url.pathname.startsWith('/account') ? 'page' : undefined} >
                     Account
                 </a>            
             {/if}
