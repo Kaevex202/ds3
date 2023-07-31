@@ -1,28 +1,28 @@
 [
     {
-    "Bosses": [
-        "Aldrich, Devourer of Gods",
-        "Ancient Wyvern",
-        "Champion Gundyr",
-        "Champion's Gravetender",
-        "Dancer of the Boreal Valley",
-        "Darkeater Midir",
-        "Deacons of the Deep",
-        "Demon Prince",
-        "Dragonslayer Armour",
-        "Fire Demon",
-        "Great Sand Worm",
-        "Halflight, Spear of the Church",
-        "Lothric, Younger Prince",
-        "Nameless King",
-        "Oceiros, the Consumed King",
-        "Old Demon King",
-        "Outrider Beast",
-        "Pontiff Sulyvahn",
-        "Sister Friede",
-        "Slave Knight Gael",
-        "Stray Demon",
-        "Yhorm the Giant"
-    ]
+    "Bosses": [{
+        "Aldrich, Devourer of Gods":1000,
+        "Ancient Wyvern":1000,
+        "Champion Gundyr":1000,
+        "Champion's Gravetender":1100,
+        "Dancer of the Boreal Valley":1000,
+        "Darkeater Midir":1100,
+        "Deacons of the Deep":1000,
+        "Demon Prince":1100,
+        "Dragonslayer Armour":1000,
+        "Fire Demon":1000,
+        "Great Sand Worm":1000,
+        "Halflight, Spear of the Church":1100,
+        "Lothric, Younger Prince":1000,
+        "Nameless King":1000,
+        "Oceiros, the Consumed King":1000,
+        "Old Demon King":1000,
+        "Outrider Beast":1000,
+        "Pontiff Sulyvahn":1000,
+        "Sister Friede":1100,
+        "Slave Knight Gael":1150,
+        "Stray Demon":1000,
+        "Yhorm the Giant":1000
+    }]
     }
 ]

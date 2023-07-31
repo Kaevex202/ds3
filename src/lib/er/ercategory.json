@@ -1,9 +1,9 @@
 [
     {
-    "runCategories": [
-        "Any%",
-        "Any% No Wrong Warp",
-        "All Remembrances"
-    ]
+    "Category": [{
+        "Any%":1000,
+        "Any% No Wrong Warp":1050,
+        "All Remembrances":1250
+    }]
     }
 ]

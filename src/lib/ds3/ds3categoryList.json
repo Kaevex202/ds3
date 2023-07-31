@@ -1,10 +1,10 @@
 [
     {
-    "runCategories": [
-        "Any%",
-        "All Bosses",
-        "All Bosses no DLC",
-        "All Bosses (with DLC1)"
-    ]
+        "Category": [{
+            "Any%":1000,
+            "All Bosses":1250,
+            "All Bosses no DLC":1150,
+            "All Bosses (with DLC1)":1200
+        }]
     }
 ]

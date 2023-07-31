@@ -1,27 +1,27 @@
 [
     {
-    "Bosses": [
-        "Capra Demon",
-        "Moonlight Butterfly",
-        "Gaping Dragon",
-        "Stray Demon",
-        "Great Grey Wolf Sif",
-        "Iron Golem",
-        "Crossbreed Priscilla",
-        "Ornstein and Smough",
-        "Dark Sun Gwyndolin",
-        "Pinwheel",
-        "Gravelord Nito",
-        "Seath the Scaleless",
-        "The Four Kings",
-        "Ceaseless Discharge",
-        "Centipede Demon",
-        "Firesage Demon",
-        "Bed of Chaos",
-        "Sanctuary Guardian",
-        "Artorias the Abysswalker",
-        "Black Dragon Kalameet",
-        "Manus, Father of the Abyss" 
-    ]
+    "Bosses": [{
+        "Capra Demon":1000,
+        "Moonlight Butterfly":1000,
+        "Gaping Dragon":1000,
+        "Stray Demon":1000,
+        "Great Grey Wolf Sif":1000,
+        "Iron Golem":1000,
+        "Crossbreed Priscilla":1000,
+        "Ornstein and Smough":1000,
+        "Dark Sun Gwyndolin":1000,
+        "Pinwheel":1000,
+        "Gravelord Nito":1050,
+        "Seath the Scaleless":1050,
+        "The Four Kings":1050,
+        "Ceaseless Discharge":1000,
+        "Centipede Demon":1000,
+        "Firesage Demon":1000,
+        "Bed of Chaos":1050,
+        "Sanctuary Guardian":1000,
+        "Artorias the Abysswalker":1100,
+        "Black Dragon Kalameet":1100,
+        "Manus, Father of the Abyss":1100
+    }]
     }
 ]

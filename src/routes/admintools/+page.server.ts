@@ -1,4 +1,18 @@
 import { run } from 'svelte/internal';
+import { FSWatcher } from 'vite';
+import ds3Challenge from '$lib/ds3/ds3challenge_new.json'
+import ds3BossList from '$lib/ds3/ds3bosses.json'
+import ds3CategoryList from '$lib/ds3/ds3categoryList.json'
+import erChallenge from '$lib/er/erchallenge.json'
+import erBossList from '$lib/er/erbosses.json'
+import erCategoryList from '$lib/er/ercategory.json'
+import dsChallenge from '$lib/ds/dschallenge.json'
+import dsBossList from '$lib/ds/dsbosses.json'
+import dsCategoryList from '$lib/ds/dscategoryList.json'
+import bbChallenge from '$lib/bb/bbchallenge.json'
+import bbBossList from '$lib/bb/bbbosses.json'
+import bbCategoryList from '$lib/bb/bbcategory.json'
+import { writeFileSync } from 'fs'
 
 const DISCORD_API_URL = import.meta.env.VITE_DISCORD_API_URL;
 const STRAPI_SERVER_ADMIN_TOKEN = import.meta.env.VITE_STRAPI_SERVER_ADMIN_TOKEN;
@@ -6,6 +20,7 @@ const ADMIN_USERNAME = import.meta.env.VITE_ADMIN_USERNAME;
 
 
 let userid: String;
+let leaderboard = [];
 
 /**
  * @type {import('@sveltejs/kit').RequestHandler}
@@ -18,7 +33,7 @@ export async function load({url, cookies}) {
         //Add code to regain access token here
         console.log("No access token, log out and log in again.");
     }
-
+    
 
     if (access_token) {
         console.log('setting discord user via refresh token..')
@@ -51,29 +66,46 @@ export const actions = {
         console.log("Update Leaderboard, "+"Discord tokens: "+disco_access_token+" refreshtoken: "+disco_refresh_token)
         updateLeaderBoard()
         //update leaderboard function
+
+        
     }
 }
 
 async function updateLeaderBoard(){
-    const runData = await fetch('https://api.soulsbornechallenges.com/api/rundata?populate=*');
-    const runDataResponse = await runData.json();
-    console.log(runDataResponse.data);
-    runDataResponse.data.forEach(element =>{
-        if (element.attributes.score == null)
-        {
-            //calculate score
-            //setScore(element,score)
-        }
-        else{
-        }
-    }
-    
-)
-    //(if run has no scorevalue) => assign scores to runs
     //grab all score value for each user.
-    //tally score values up per user and assign score to users.
-    //sort users by score
+    const strapiUserSearch = await fetch(`https://api.soulsbornechallenges.com/api/challenges?populate=*`, {
+        method: 'GET',
+        headers: {
+          "Authorization": `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}`
+        }
+      })
+
+    const strapiResponse = await strapiUserSearch.json();
+    leaderboard = [];
+
+
+    strapiResponse.data.forEach(async element => {
+        let bodyContent = {
+            "username": element.attributes.username,
+            "score": element.attributes.score,
+            "runsCompleted": element.attributes.runsCompleted,
+        }
+
+        const res = await fetch('http://api.soulsbornechallenges.com/api/leaderboard',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}`
+            },
+            body: JSON.stringify({data:bodyContent}),
+        })
+        const responseJson = await res.json()
+        console.log(responseJson)
+    })
+
+
     //save leaderboard in db.
+    //write to static leaderBoard when wanting to cache it.
 }
 
 

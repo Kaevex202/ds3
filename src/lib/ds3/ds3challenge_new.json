@@ -250,7 +250,7 @@
             "Intelligence Only":50,
             "Faith Only":50,
             "Luck Only":50,
-            "Mundane Build (all stats same level)":75
+            "Mundane Build (all stats same level)":100
     }]
     },
     {
@@ -263,8 +263,7 @@
             "Dexterity Only":50,
             "Intelligence Only":50,
             "Faith Only":50,
-            "Luck Only":100,
-            "Mundane Build (all stats same level)":75
+            "Luck Only":100
     }]
     },
     {

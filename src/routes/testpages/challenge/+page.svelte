@@ -18,8 +18,8 @@
 
 
     let challenge: any[];
-    let bosslist;
-    let categoryList;
+    let bosslist: { Bosses: string[]; }[];
+    let categoryList: { runCategories: string[]; }[];
     let randomBossPercent = false;
     let startingClass = false;
     let weaponRestrictions = false;
@@ -101,13 +101,13 @@
         if(randomBossPercent == true && arr[0].randomOption == "Other boss %"){
             arr[0].randomOption = getRandomBoss(bosslist);
             let selectedCategory = arr[0].randomOption.toString();
-            arr[0].score = bosslist[0].Bosses[0][selectedCategory];
+            arr[0].score = ds3BossList[0].Bosses[0][selectedCategory];
             arr[0].randomOption = selectedCategory + " %";
         }
         if(randomBossPercent == false && arr[0].randomOption == "Other boss %"){
-            arr[0].randomOption = getRandomRunCategory(categoryList);
+            arr[0].randomOption = getRandomRunCategory(ds3CategoryList);
             let selectedCategory = arr[0].randomOption.toString();
-            arr[0].score = categoryList[0].Category[0][selectedCategory];
+            arr[0].score = ds3CategoryList[0].Category[0][selectedCategory];
         }
 
         score = 0;

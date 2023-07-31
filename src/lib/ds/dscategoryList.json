@@ -1,10 +1,10 @@
 [
     {
-    "runCategories": [
-        "Any%",
-        "Any% No Wrong Warp",
-        "All Bosses",
-        "All Bosses no DLC"
-    ]
+    "Category": [{
+        "Any%":1000,
+        "Any% No Wrong Warp":1050,
+        "All Bosses":1250,
+        "All Bosses no DLC":1150
+    }]
     }
 ]
