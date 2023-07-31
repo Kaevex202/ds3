@@ -75,7 +75,7 @@ function submitChallenge(){
     <h2 class="font-bold text-2xl mt-16 mb-4">Verified Runs</h2>
     <div class="flex justify-center mb-32"><ul>
         {#if runData}
-            {#each runData.reverse() as run, i}<li class="inline-flex mt-4 "><div class="flex justify-between border-2 rounded mx-2 px-2 lg:px-8 py-4 w-[95vw] lg:w-[40vw]"><div class="rank justify-start">{i+1}</div><div class="user flex flex-row"><div class="font-semibold">User:&nbsp;</div><div>{run.username}</div></div><div class="time flex flex-row"><div class="font-semibold">Time:</div><div>{run.timeHr}:{#if run.timeMins == 0}00{:else}{run.timeMins}{/if}:{run.timeSecs}</div></div><div><a href={run.video} target="_blank" rel="nofollow"><button>Watch Video</button></a></div></div></li><br/>{/each}
+            {#each runData.reverse() as run, i}<li class="inline-flex mt-4 "><div class="flex justify-between border-2 rounded mx-2 px-2 lg:px-8 py-4 w-[95vw] lg:w-[40vw]"><div class="rank justify-start">{i+1}</div><div class="user flex flex-row"><div class="font-semibold">User:&nbsp;</div><div>{run.username}</div></div><div class="time flex flex-row"><div class="font-semibold">Time:</div><div>{run.timeHr}:{#if run.timeMins == 0}00{:else}{run.timeMins}{/if}:{run.timeSecs}</div></div><div><a href={run.video} target="_blank" rel="nofollow"><button class="hover:text-[#105D97] dark:hover:text-[#E54B4B]">Watch Video</button></a></div></div></li><br/>{/each}
         {/if}
     </ul>
     </div>
