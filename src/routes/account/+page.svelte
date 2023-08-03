@@ -10,7 +10,6 @@
     let embedDiv;
 
 onMount (async()=>{
-
     userRunCount = data.strapiResponse.data[0].attributes.rundata.data.length;
     runsData = Object.values(data.strapiResponse.data[0].attributes.rundata.data);
     image = `https://cdn.discordapp.com/avatars/${data.discordResponse.id}/${data.discordResponse.avatar}.png`;
@@ -53,9 +52,9 @@ onMount (async()=>{
                 <h4 class="font-bold">Finshed Runs</h4>
                 <p>{userRunCount}</p>
             </div>
-            <div id="score" class="hidden">
+            <div id="score" class="">
                 <h4 class="font-bold">Score</h4>
-                <p>1240</p>
+                <p>{data.strapiResponse.data[0].attributes.totalScore}</p>
             </div>
         </div>
         <div id="runlist" class="mt-16">
