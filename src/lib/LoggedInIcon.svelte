@@ -22,7 +22,7 @@ function expandMenu(){
         </svg>
     </button>
     {#if dropdownExpanded}
-        <div id="dropdown" class="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow 2xl:w-[7vw] xl:w-[9vw] lg:w-[12vw] absolute">
+        <div id="dropdown" class="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow lg:px-6 absolute">
             <ul class="py-2 text-sm text-gray-700 " >
                 <li>
                     <a href="/account" class="block px-4 py-2 hover:bg-gray-100 " on:click={expandMenu}>Account</a>
