@@ -7,7 +7,6 @@
     let admin = false;
 
     onMount(() => {
-        console.log(data);
         if ($loggedIn == "true" && data.discordResponse.id.length > 0){
             admin=true;
         }
@@ -20,11 +19,12 @@
 </script>
 
 {#if admin == true}
-<div class="justify-center items-center flex flex-col mx-auto mt-16 text-white">
-    <div id="link1" class="font-bold"><a href="/admintools/updateleaderboard">Update Leaderboard</a></div>
-    <div id="link2" class="font-bold"><a href="/admintools/twitchlive">Twitch Live Status</a></div>
+<div class="justify-center items-center flex flex-col mx-auto mt-16">
+    <h1 class="text-4xl font-extrabold md:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0 text-white">Admin Tools</h1>
+    <form method="POST">
+        <button class="bg-transparent bg-white hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-4 px-10 border border-blue-500 hover:border-transparent rounded">Set Twitch to Live</button>
+    </form>
 </div>
 {:else}
     <h1 class="text-4xl font-extrabold md:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0">UNATHORIZED</h1>
 {/if}
-
