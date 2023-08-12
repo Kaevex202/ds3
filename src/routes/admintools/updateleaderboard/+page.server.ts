@@ -42,4 +42,57 @@ export async function load({url, cookies}) {
     }
 }
 
+/** @type {import('./$types').Actions} */
+export const actions = {
+    default: async ({ request, fetch , cookies, url }) => {
+        let disco_access_token = cookies.get('disco_access_token');
+        let disco_refresh_token = cookies.get('disco_refresh_token');
+        console.log("Update Leaderboard, "+"Discord tokens: "+disco_access_token+" refreshtoken: "+disco_refresh_token)
+        updateLeaderBoard()
+        //update leaderboard function
 
+        
+    }
+}
+
+async function updateLeaderBoard(){
+    //grab all score value for each user.
+    const strapiUserSearch = await fetch(`https://api.soulsbornechallenges.com/api/challenges?populate=*`, {
+        method: 'GET',
+        headers: {
+          "Authorization": `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}`
+        }
+      })
+
+    const strapiResponse = await strapiUserSearch.json();
+    leaderboard = [];
+
+
+    strapiResponse.data.forEach(async element => {
+        let bodyContent = {
+            "username": element.attributes.username,
+            "score": element.attributes.totalScore,
+            "runsCompleted": element.attributes.runsCompleted,
+        }
+
+        const res = await fetch('https://api.soulsbornechallenges.com/api/leaderboards',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}`
+            },
+            body: JSON.stringify({data:bodyContent}),
+        })
+        const responseJson = await res.json()
+        console.log(responseJson)
+        })
+
+
+    //save leaderboard in db.
+    //write to static leaderBoard when wanting to cache it.
+}
+
+
+async function checkAccessToken(){
+
+}

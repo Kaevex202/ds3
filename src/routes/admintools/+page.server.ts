@@ -49,7 +49,5 @@ export const actions = {
         let disco_refresh_token = cookies.get('disco_refresh_token');
         console.log("Update Leaderboard, "+"Discord tokens: "+disco_access_token+" refreshtoken: "+disco_refresh_token)
         //update leaderboard function
-
-        
     }
 }

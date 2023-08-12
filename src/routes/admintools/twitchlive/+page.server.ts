@@ -43,3 +43,24 @@ export async function load({url, cookies}) {
 }
 
 
+/** @type {import('./$types').Actions} */
+export const actions = {
+    default: async ({ request, fetch , cookies, url }) => {
+        let disco_access_token = cookies.get('disco_access_token');
+        let disco_refresh_token = cookies.get('disco_refresh_token');
+        console.log("Update Leaderboard, "+"Discord tokens: "+disco_access_token+" refreshtoken: "+disco_refresh_token)
+        setTwitch()
+        //update leaderboard function
+
+        
+    }
+}
+
+async function setTwitch(){
+    const strapiUserSearch = await fetch(`https://api.soulsbornechallenges.com/api/website-settings`, {
+        method: 'GET',
+        headers: {
+          "Authorization": `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}`
+        }
+      })
+}
