@@ -27,7 +27,7 @@
 
 {#if data.twitchLive == "true"}
 	<div id="twitch-embed" class="hidden lg:block lg:fixed bottom-0 right-0">
-		<iframe src="https://player.twitch.tv/?channel=kaevex&parent=http://soulsbornechallenges.com" frameborder="0" allowfullscreen="true" scrolling="no" height="240" width="360"></iframe>
+		<iframe src="https://player.twitch.tv/?channel=kaevex&parent=soulsbornechallenges.com" frameborder="0" allowfullscreen="true" scrolling="no" height="240" width="360"></iframe>
 	</div>
 	{:else}
 {/if}
