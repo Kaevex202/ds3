@@ -57,10 +57,47 @@ export const actions = {
 }
 
 async function setTwitch(){
-    const strapiUserSearch = await fetch(`https://api.soulsbornechallenges.com/api/website-settings`, {
+    const strapiWebsiteSettings = await fetch(`https://api.soulsbornechallenges.com/api/website-settings`, {
         method: 'GET',
         headers: {
           "Authorization": `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}`
         }
       })
+      const strapiWebsiteSettingsJson = await strapiWebsiteSettings.json();
+      console.log(strapiWebsiteSettingsJson.data[0].attributes.twitchLive);
+
+      if (strapiWebsiteSettingsJson.data[0].attributes.twitchLive == "false")
+      {
+        let bodyContent = {
+            "twitchLive": "true",
+        }
+        
+        const res = await fetch('https://api.soulsbornechallenges.com/api/website-settings/6',{
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}`
+            },
+            body: JSON.stringify({data:bodyContent}),
+        })
+        const responseJson = await res.json()
+        console.log(responseJson);
+      }
+      if (strapiWebsiteSettingsJson.data[0].attributes.twitchLive == "true")
+      {
+        let bodyContent = {
+            "twitchLive": "false",
+        }
+        
+        const res = await fetch('https://api.soulsbornechallenges.com/api/website-settings/6',{
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}`
+            },
+            body: JSON.stringify({data:bodyContent}),
+        })
+        const responseJson = await res.json()
+        console.log(responseJson);
+      }
 }
