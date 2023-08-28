@@ -13,6 +13,12 @@ export async function load({url, cookies}) {
     const access_token = cookies.get("disco_access_token");
     const refresh_token = cookies.get("disco_refresh_token");
 
+    const strapiTwitchSearch = await fetch(`https://api.soulsbornechallenges.com/api/website-settings`, {
+        method: 'GET'}
+    )
+    const twitchResponse = await strapiTwitchSearch.json();
+    const twitchLive = twitchResponse.data[0].attributes.twitchLive;
+
     if (refresh_token && !access_token){
         //Add code to regain access token here
         console.log("No access token, log out and log in again.");
@@ -30,6 +36,7 @@ export async function load({url, cookies}) {
         if (discordResponse.username == ADMIN_USERNAME)
         {
             return {
+                twitchLive: twitchLive,
                 discordResponse: discordResponse,
                 status: 200,
               };
@@ -50,8 +57,6 @@ export const actions = {
         let disco_refresh_token = cookies.get('disco_refresh_token');
         console.log("Update Leaderboard, "+"Discord tokens: "+disco_access_token+" refreshtoken: "+disco_refresh_token)
         setTwitch()
-        //update leaderboard function
-
         
     }
 }
