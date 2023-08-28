@@ -3,6 +3,9 @@
 	import SekiroChallenge from "$lib/SekiroChallenge.svelte";
 	import Faq from "$lib/FAQ.svelte";
 	import {page} from '$app/stores'
+	import { onMount } from "svelte"
+
+	export let data;
 
 	//let urlParams = $page.url.searchParams;
 	let game = "ds3"; //urlParams.get('game') ||
@@ -10,12 +13,27 @@
 	//function updateURL(){
 	//	window.history.replaceState(history.state, '', `?game=`+game)
 	//}
+
+	onMount(()=>{
+		console.log(data.twitchLive);
+	})
+
 </script>
 
 <svelte:head>
 	<title>SOULSBORNECHALLENGES</title>
 	<meta name="description" content="A Soulsborne challenge generator" />
 </svelte:head>
+
+{#if data.twitchLive == "true"}
+	<div id="twitch-embed" class="hidden lg:block lg:fixed bottom-0 right-0">
+		<iframe src="https://player.twitch.tv/?channel=kaevex&parent=localhost" frameborder="0" allowfullscreen="true" scrolling="no" height="240" width="360"></iframe>
+	</div>
+	{:else}
+{/if}
+
+
+
 
 <section class=" flex-row mx-auto mt-16 ">
 	<h1 class="flex flex-col lg:flex-row justify-center items-center text-4xl font-extrabold md:text-5xl 2xl:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0 dark:text-[#F7EBE8]"><label>
@@ -47,6 +65,7 @@
 		<p>Select a game.</p>
 	{/if}
 	<Faq/>
+
 </section>
 
 <style>
