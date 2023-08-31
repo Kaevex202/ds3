@@ -15,6 +15,6 @@
         </div>
         <div id="privacy" class="flex w-auto mr-6 "><a href="/privacy-policy"><p class="text-sm">Privacy Policy</p></a></div>
     </div>
-    <div class="flex w-auto mr-6 dark:hidden"><SocialIcons/></div>
-    <div class="flex w-auto mr-6 hidden dark:flex"><DarkSocialIcons/></div>
+    <div class="w-auto mr-6 hidden lg:flex lg:dark:hidden"><SocialIcons/></div>
+    <div class="flex w-auto mr-6 hidden lg:hidden lg:dark:flex"><DarkSocialIcons/></div>
 </div>
