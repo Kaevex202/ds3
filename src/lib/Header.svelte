@@ -24,7 +24,10 @@
 				</a>
 				<a href="/leaderboards" class="mt-4 lg:mt-0 text-[#000] hover:text-[#105D97] mr-12 text-lg  dark:text-[#F7EBE8] dark:hover:text-[#E54B4B]" aria-current={$page.url.pathname === '/leaderboards' ? 'page' : undefined}>
 					Leaderboards
-					</a>
+				</a>
+				<a href="/articles" class="block mt-4 lg:mt-0 text-[#000] hover:text-[#105D97] mr-12 text-lg dark:text-[#F7EBE8] dark:hover:text-[#E54B4B]" aria-current={$page.url.pathname.startsWith('/articles') ? 'page' : undefined} >
+					Articles
+				</a>
 				<a href="/challenge" class="block mt-4 lg:mt-0 text-[#000] hover:text-[#105D97] mr-12 text-lg dark:text-[#F7EBE8] dark:hover:text-[#E54B4B]" aria-current={$page.url.pathname.startsWith('/challenge') ? 'page' : undefined} >
 				Challenge of the Month
 				</a>

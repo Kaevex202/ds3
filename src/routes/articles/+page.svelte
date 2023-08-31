@@ -7,8 +7,8 @@
 
     import sbcimage from '$lib/images/sbcimage.jpg'
 
-    const siteUrl = "https://www.soulsbornechallenges.com"
-    const siteTitle = "SoulsBorneChallenges | Blog";
+    const siteUrl = "https://www.soulsbornechallenges.com/articles"
+    const siteTitle = "SoulsBorneChallenges | Articles";
     const siteDescription = "The blog for SoulsBorneChallenges. A challenge run generator for your SoulsBorne games. Stay up to date with new challenges of the week and more!"
 </script>
 
@@ -34,7 +34,7 @@
         handle: '@SB_Challenges',
         site: siteUrl,
         cardType: 'summary_large_image',
-        title: "SoulsBorneChallenges | Blog",
+        title: "SoulsBorneChallenges | Articles",
         description: siteDescription,
         image: sbcimage,
         imageAlt: 'photo of a character in Elden Ring'
@@ -49,19 +49,19 @@ console.log(posts)
 </script>
 
 <svelte:head>
-    <title>SoulsBorneChallenges - Blog</title> 
+    <title>SoulsBorneChallenges - Articles</title> 
     <meta name="description" content={siteDescription}/>
 </svelte:head>
 
 <div class="flex flex-col align-center lg:w-4/5 2xl:w-2/5 mx-auto mt-20 lg:mt-36 gap-8 text-center px-8 lg:px-0 dark:text-[#F7EBE8]">
-    <h1 class="text-6xl font-extrabold md:text-7xl mt-4 mb-8 2xl:mt-12 ">Blog</h1>
+    <h1 class="text-6xl font-extrabold md:text-7xl mt-4 mb-8 2xl:mt-12 ">Articles</h1>
     <p>Want to know more about me and what I'm working on? Make sure to also check out my social media channels.</p>
     <div id="socialicons" class="mx-auto dark:hidden"><SocialIcons/></div>
     <div id="darksocialicons" class="mx-auto hidden dark:block"><DarkSocialIcons/></div>
 </div>
 
 <Saos animation={".text-focus-in .5s cubic-bezier(.55,.085,.68,.53) both;animation:text-focus-in .6s cubic-bezier(.55,.085,.68,.53) both"}>
-    <div class="flex flex-col align-center lg:w-3/5 2xl:w-2/5 mx-auto mt-20 gap-8 text-center min-h-[30vw] px-4 lg:px-0 dark:text-[#F7EBE8] lg:mb-36">
+    <div class="flex flex-col align-center lg:w-3/5 2xl:w-2/5 mx-auto mt-20 gap-8 text-center min-h-[30vw] px-4 lg:px-0 dark:text-[#F7EBE8] lg:mb-36 mb-24">
         {#each posts.data as post, i}
         <div class="flex w-full cursor-pointer border-t-2 pt-8">
             <div class=" " on:click={() => goto('/articles/' + post.attributes.slug)}>

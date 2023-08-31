@@ -17,6 +17,9 @@
             <a href="/about" on:click={() =>open=false } class="block mt-16 text-[#000] font-semibold hover:text-[#105D97]text-lg dark:text-[#F7EBE8]" aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
             About
             </a>
+            <a href="/articles" on:click={() =>open=false } class="block mt-16 text-[#000] font-semibold hover:text-[#105D97]text-lg dark:text-[#F7EBE8]" aria-current={$page.url.pathname === '/articles' ? 'page' : undefined}>
+                Articles
+            </a>
             <a href="/challenge" on:click={() =>open=false } class="block mt-16 text-[#000] font-semibold hover:text-[#105D97]text-lg dark:text-[#F7EBE8]" aria-current={$page.url.pathname.startsWith('/challenge') ? 'page' : undefined} >
             Challenge of the Month
             </a>
