@@ -10,6 +10,7 @@
     const siteUrl = "https://www.soulsbornechallenges.com/articles"
     const siteTitle = "SoulsBorneChallenges | Articles";
     const siteDescription = "The blog for SoulsBorneChallenges. A challenge run generator for your SoulsBorne games. Stay up to date with new challenges of the week and more!"
+    const siteThumb = "https://soulsbornechallenges.com/img/sbcimage.jpg"
 </script>
 
 <MetaTags
@@ -22,7 +23,7 @@
         description: siteDescription,
         images: [
     {
-        url: sbcimage,
+        url: siteThumb,
         width: 800,
         height: 800,
         alt: 'photo of a character in Elden Ring'
@@ -36,7 +37,7 @@
         cardType: 'summary_large_image',
         title: "SoulsBorneChallenges | Articles",
         description: siteDescription,
-        image: sbcimage,
+        image: siteThumb,
         imageAlt: 'photo of a character in Elden Ring'
 }}
 />
