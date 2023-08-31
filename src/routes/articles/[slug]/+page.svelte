@@ -59,7 +59,7 @@
 </svelte:head>
 
 <div class="flex flex-col align-center lg:w-4/5 2xl:w-2/5 mx-auto mt-20 lg:mt-36 gap-8 text-center px-8 lg:px-0">
-    <h2 class="text-2xl font-extrabold md:text-6xl mt-4 2xl:mt-12 mb-0 lg:text-left dark:text-[#F7EBE8] dark:hover:text-[#E54B4B]">{blogPosts.blogPost.data[0].attributes.title}</h2>
+    <h2 class="text-2xl font-extrabold md:text-6xl mt-4 2xl:mt-12 mb-0 lg:text-left dark:text-[#F7EBE8]">{blogPosts.blogPost.data[0].attributes.title}</h2>
     <hr class="mb-0 pb-0"/>
     <div class="flex flex-col mt-[-2%]">
     <p class="flex mt-0 text-gray-600 text-lg dark:text-[#F7EBE8]">Written by: {blogPosts.blogPost.data[0].attributes.authortext}</p>
