@@ -62,7 +62,7 @@ console.log(posts)
 </div>
 
 <Saos animation={".text-focus-in .5s cubic-bezier(.55,.085,.68,.53) both;animation:text-focus-in .6s cubic-bezier(.55,.085,.68,.53) both"}>
-    <div class="flex flex-col align-center lg:w-3/5 2xl:w-2/5 mx-auto mt-20 gap-8 text-center min-h-[30vw] px-4 lg:px-0 dark:text-[#F7EBE8] lg:mb-36 mb-24">
+    <div class="flex flex-col align-center lg:w-3/5 2xl:w-2/5 mx-auto mt-20 gap-8 text-center min-h-[30vw] px-4 lg:px-0 dark:text-[#F7EBE8]">
         {#each posts.data as post, i}
         <div class="flex w-full cursor-pointer border-t-2 pt-8">
             <div class=" " on:click={() => goto('/articles/' + post.attributes.slug)}>
@@ -80,7 +80,7 @@ console.log(posts)
             <div class="featuredimg mx-auto flex justify-center w-full"><img src="https://api.soulsbornechallenges.com{post.attributes.featuredimg.data.attributes.url}" class="w-4/5 justify-center"/></div>
             <p class="mt-2 text-gray-800 text-lg text-left dark:text-[#F7EBE8]">{post.attributes.description}</p>
             <div class=" " on:click={() => goto('/articles/' + post.attributes.slug)}>
-                <div class="lg:w-1/5 mx-auto flex text-base font-semibold items-center justify-center inline-block px-6 py-4 leading-none border rounded text-[#000] border-[#000] hover:border-[#105D97] hover:text-[#105D97] hover:bg-[#fff] mt-4 dark:text-[#F7EBE8] dark:border-[#F7EBE8] dark:hover:bg-[#1E1E24] dark:hover:text-[#F7EBE8] dark:hover:border-[#F7EBE8]">Read more</div>
+                <div class="lg:w-1/5 mx-auto flex text-base font-semibold items-center justify-center inline-block px-6 py-4 mb-24 leading-none border rounded text-[#000] border-[#000] hover:border-[#105D97] hover:text-[#105D97] hover:bg-[#fff] mt-4 dark:text-[#F7EBE8] dark:border-[#F7EBE8] dark:hover:bg-[#1E1E24] dark:hover:text-[#F7EBE8] dark:hover:border-[#F7EBE8]">Read more</div>
             </div>
         {/each}
     </div>
