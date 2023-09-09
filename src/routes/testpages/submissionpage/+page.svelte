@@ -62,7 +62,7 @@
 			categoryList = Object.keys(dsCategoryList[0].Category[0]);
 		}
         else if(selectedGame=="Sekiro"){
-            challengeList = dsChallenge;
+            challengeList = [];
 			bosslist = dsBossList;
 			categoryList = Object.keys(skCategoryList[0].Category[0]);
 		}
@@ -70,7 +70,7 @@
 			console.error("Something went wrong with the game selector.")
             categoryList = [];
 		}
-		console.log(selectedGame);
+		console.log(Object.keys(challengeList[3]['Weapon (Only use this weapon)'][0]));
 	}
 
 
