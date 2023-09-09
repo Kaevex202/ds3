@@ -11,6 +11,7 @@
     import bbChallenge from '$lib/bb/bbchallenge.json'
     import bbBossList from '$lib/bb/bbbosses.json'
     import bbCategoryList from '$lib/bb/bbcategory.json'
+    
     import { loggedIn } from '$lib/localstores'
     import { onMount } from 'svelte'
     import { goto } from '$app/navigation'
@@ -60,12 +61,12 @@
             bosslist = erBossList;
             categoryList = erCategoryList;
         }
-        else if(game="ds"){
+        else if(game=="ds"){
             challenge = dsChallenge;
             bosslist = dsBossList;
             categoryList = dsCategoryList;
         }
-        else if(game="bb"){
+        else if(game=="bb"){
             challenge = bbChallenge;
             bosslist = bbBossList;
             categoryList = bbCategoryList;

@@ -2,6 +2,19 @@
     import {page} from '$app/stores'
     import {onMount} from 'svelte'
     import { enhance } from '$app/forms'
+	import ds3Challenge from '$lib/ds3/ds3challenge_new.json'
+    import ds3BossList from '$lib/ds3/ds3bosses.json'
+    import ds3CategoryList from '$lib/ds3/ds3categoryList.json'
+    import erChallenge from '$lib/er/erchallenge.json'
+    import erBossList from '$lib/er/erbosses.json'
+    import erCategoryList from '$lib/er/ercategory.json'
+    import dsChallenge from '$lib/ds/dschallenge.json'
+    import dsBossList from '$lib/ds/dsbosses.json'
+    import dsCategoryList from '$lib/ds/dscategoryList.json'
+    import bbChallenge from '$lib/bb/bbchallenge.json'
+    import bbBossList from '$lib/bb/bbbosses.json'
+    import bbCategoryList from '$lib/bb/bbcategory.json'
+	import skCategoryList from '$lib/sk/skcategory.json'
 
     export let data;
 
@@ -16,6 +29,11 @@
         "Dark Souls",
         "Sekiro",
     ]
+
+	let challengeList;
+	let bosslist;
+	let categoryList: any[] = [];
+
     let category: string;
     let selectedGame: string;
     let glitchless: string;
@@ -26,6 +44,35 @@
     let challenge: string;
     let hardcoreChallenge: string;
     let randomizer: string;
+
+	function selectedCategory(){
+		if(selectedGame == "Dark Souls 3"){
+			challengeList = ds3Challenge;
+			bosslist = ds3BossList;
+			categoryList = Object.keys(ds3CategoryList[0].Category[0]);
+		}
+		else if(selectedGame == "Elden Ring"){
+			challengeList = erChallenge;
+			bosslist = erBossList;
+			categoryList = Object.keys(erCategoryList[0].Category[0]);
+		}
+		else if(selectedGame=="Dark Souls"){
+			challengeList = dsChallenge;
+			bosslist = dsBossList;
+			categoryList = Object.keys(dsCategoryList[0].Category[0]);
+		}
+        else if(selectedGame=="Sekiro"){
+            challengeList = dsChallenge;
+			bosslist = dsBossList;
+			categoryList = Object.keys(skCategoryList[0].Category[0]);
+		}
+		else{
+			console.error("Something went wrong with the game selector.")
+            categoryList = [];
+		}
+		console.log(selectedGame);
+	}
+
 
     //Code to get urlSearchParams and prefill it in form
     onMount(async () =>{
@@ -63,7 +110,7 @@
 <div class="flex justify-center mb-20 mt-12 px-4 lg:px-0">
     <form method="POST">
         <label for="game" class="block mb-2 text-sm font-medium text-gray-900 dark:text-[#F7EBE8]">Game *</label>
-        <select id="gameInput" bind:value={selectedGame} name="game" class=" mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+        <select id="gameInput" bind:value={selectedGame} on:change={() => selectedCategory()} name="game" class=" mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
             {#each games as game}
             <option value={game}>{game}</option>
             {/each}
@@ -71,10 +118,14 @@
         <div id="categoryglitchlessrow" class="flex justify-between ">
             <div class="mb-6 lg:w-[20vw] ">
                 <label for="category" class="block mb-2 text-sm font-medium text-gray-900  flex-initial dark:text-[#F7EBE8]">Category *</label>
-                <input type="category" id="categoryInput" bind:value={category} name="category" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%" required>
+                <select id="categoryInput" bind:value={category} name="category" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%" required>
+					{#each categoryList as category}
+					<option value={category}>{category}</option>
+					{/each}
+				</select>
               </div>
               <div class="flex items-center">
-                <input id="glitchless" type="checkbox" bind:checked={glitchlessBox} name="glitchless" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 " >
+                <input id="glitchless" type="checkbox" bind:checked={glitchlessBox} name="glitchless" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 ml-4" >
                 <label for="glitchlessInput" class="ml-2 text-sm font-medium text-gray-900 dark:text-[#F7EBE8]">Glitchless</label>
             </div>
         </div>
