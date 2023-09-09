@@ -23,7 +23,7 @@
 
     $: totalPointsToDistribute = 1000 + +(1000*log(4,5));
 
-    function calculateRatioPoints(){
+    function calculateBonusPoints(){
         let arr=[];
         arr.push(time1,time2,time3,time4,time5)
         let maxValue = Math.max(...arr);
@@ -93,4 +93,4 @@
     <div class="flex-row flex justify-between w-1/2"><div><p>Fifth player points: </p></div><div>{points5}</div></div>
 </div>
 
-<button on:click={() => calculateRatioPoints()}>CALCULATE POINTS</button>
+<button on:click={() => calculateBonusPoints()}>CALCULATE POINTS</button>

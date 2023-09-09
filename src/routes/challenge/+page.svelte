@@ -44,8 +44,9 @@ function submitChallenge(){
     <title>SoulsBorneChallenges - Challenge of the Month</title> 
     <meta name="description" content="Every month, we'll have a Soulsborne bounty on a challenge for players to accomplish.">
 </svelte:head>
+<h1 class="text-4xl font-extrabold md:text-7xl mt-32 mb-8 2xl:mt-12 px-4 lg:px-0 dark:text-[#F7EBE8] mx-auto justify-center items-center text-center">CHALLENGE OF THE MONTH (COMING SOON)</h1>
 
-<div class="justify-center items-center flex flex-col mx-auto mt-16 dark:text-[#F7EBE8]">
+<div class="justify-center items-center hidden flex-col mx-auto mt-16 dark:text-[#F7EBE8]">
     <h1 class="text-4xl font-extrabold md:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0">CHALLENGE OF THE MONTH</h1>
     <div id="maintext" class="px-4 lg:px-0 lg:w-2/3">
         <div class="">
