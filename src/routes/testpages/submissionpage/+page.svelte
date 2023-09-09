@@ -30,9 +30,13 @@
         "Sekiro",
     ]
 
-	let challengeList;
-	let bosslist;
+
+	let bossList;
 	let categoryList: any[] = [];
+    let weaponsList: any[] = [];
+    let classesList: any[] = [];
+    let fullStatRestrictionList: any[] = [];
+    let challengeList: any[] = [];
 
     let category: string;
     let selectedGame: string;
@@ -48,35 +52,45 @@
 	function selectedCategory(){
 		if(selectedGame == "Dark Souls 3"){
 			challengeList = ds3Challenge;
-			bosslist = ds3BossList;
+			bossList = ds3BossList;
 			categoryList = Object.keys(ds3CategoryList[0].Category[0]);
+            weaponsList = Object.keys(ds3Challenge[3]['Weapon (Only use this weapon)'][0]);
+            classesList = Object.keys(ds3Challenge[2]['Starting Class'][0])
+            fullStatRestrictionList = Object.keys(ds3Challenge[5]['Stat Restrictions Full'][0])
 		}
 		else if(selectedGame == "Elden Ring"){
 			challengeList = erChallenge;
-			bosslist = erBossList;
+			bossList = erBossList;
 			categoryList = Object.keys(erCategoryList[0].Category[0]);
+            weaponsList = Object.keys(erChallenge[3]['Weapon (Only use this weapon)'][0]);
+            classesList = Object.keys(erChallenge[2]['Starting Class'][0])
+            fullStatRestrictionList = Object.keys(erChallenge[5]['Stat Restrictions Full'][0])
 		}
 		else if(selectedGame=="Dark Souls"){
 			challengeList = dsChallenge;
-			bosslist = dsBossList;
+			bossList = dsBossList;
 			categoryList = Object.keys(dsCategoryList[0].Category[0]);
+            weaponsList = Object.keys(dsChallenge[3]['Weapon (Only use this weapon)'][0]);
+            classesList = Object.keys(dsChallenge[2]['Starting Class'][0])
+            fullStatRestrictionList = Object.keys(dsChallenge[5]['Stat Restrictions Full'][0])
 		}
         else if(selectedGame=="Sekiro"){
             challengeList = [];
-			bosslist = dsBossList;
+			bossList = dsBossList;
 			categoryList = Object.keys(skCategoryList[0].Category[0]);
 		}
 		else{
 			console.error("Something went wrong with the game selector.")
             categoryList = [];
 		}
-		console.log(Object.keys(challengeList[3]['Weapon (Only use this weapon)'][0]));
+		console.log(Object.keys(ds3Challenge[6].Challenge[0]));
 	}
 
 
-    //Code to get urlSearchParams and prefill it in form
-    onMount(async () =>{
+    //Code to get urlSearchParams and prefill it in form. Everything for now works except for the startingweapon one.
+    onMount(() =>{
         selectedGame = $page.url.searchParams.get('Game')?.toString()!;
+        selectedCategory();
         category = $page.url.searchParams.get('Category')?.toString()!;
         glitchless = $page.url.searchParams.get('Glitches?')?.toString()!;
         if (glitchless == "Glitches Allowed"){
@@ -131,28 +145,26 @@
         </div>
 
         <div class="mb-6 lg:w-[25vw]">
-          <label for="weapon" class="block mb-2 text-sm font-medium text-gray-900 flex-initial dark:text-[#F7EBE8]">Starting Weapon</label>
-          <input type="weapon" id="weaponInput" bind:value={startingWeapon} name="startingweapon" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="any%" >
+            <label for="weapon" class="block mb-2 text-sm font-medium text-gray-900 flex-initial dark:text-[#F7EBE8]">Starting Weapon</label>
+            <select id="weaponInput" bind:value={startingWeapon} name="startingweapon" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%" required>
+                {#each weaponsList as weapon}
+                <option value={startingWeapon}>{weapon}</option>
+                {/each}
+            </select>
         </div>
         <div class="mb-6 lg:w-[25vw]">
             <label for="class" class="block mb-2 text-sm font-medium text-gray-900 flex-initial dark:text-[#F7EBE8]">Class *</label>
-            <input type="class" id="classInput" bind:value={startingClass} name="class" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Cleric" required>
+            <select id="classInput" bind:value={startingClass} name="class" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%" required>
+                {#each classesList as startingClass}
+                <option value={startingClass}>{startingClass}</option>
+                {/each}
+            </select>
         </div>
         <label for="statrestriction" class="block mb-2 text-sm font-medium text-gray-900 dark:text-[#F7EBE8]">Stat Restriction</label>
         <select id="statrestrictionInput" bind:value={statRestriction} name="stat restriction" class=" mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
-            <option>None</option>
-            <option>Vigor</option>
-            {#if selectedGame == "Dark Souls 3"}<option>Attunement</option>{/if}
-            {#if selectedGame == "Elden Ring"}<option>Mind</option>{/if}
-            <option>Endurance</option>
-            {#if selectedGame != "Elden Ring"}<option>Vitality</option>{/if}
-            <option>Strength</option>
-            <option>Dexterity</option>
-            {#if selectedGame == "Dark Souls"}<option>Resistance</option>{/if}
-            <option>Intelligence</option>
-            <option>Faith</option>
-            {#if selectedGame == "Elden Ring"}<option>Arcane</option>{/if}
-            {#if selectedGame == "Dark Souls 3"}<option>Luck</option>{/if}
+            {#each fullStatRestrictionList as statRestriction}
+            <option value={statRestriction}>{statRestriction}</option>
+            {/each}
         </select>
         <div class="mb-6 lg:w-[25vw]">
             <label for="Challenge" class="block mb-2 text-sm font-medium text-gray-900 flex-initial dark:text-[#F7EBE8]">Challenge *</label>
