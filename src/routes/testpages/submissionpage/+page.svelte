@@ -29,7 +29,7 @@
         "Dark Souls",
     ]
 
-
+    let challenges: any[] = [];
 	let bossList;
 	let categoryList: any[] = [];
     let weaponsList: any[] = [];
@@ -53,39 +53,33 @@
 
 	function selectedCategory(){
 		if(selectedGame == "Dark Souls 3"){
-			challengeList = Object.keys(ds3Challenge[6].Challenge[0]).sort();
-            hcChallengeList = Object.keys(ds3Challenge[7]['Hardcore Restrictions'][0]).sort();
-			bossList = ds3BossList;
-			categoryList = Object.keys(ds3CategoryList[0].Category[0]);
-            weaponsList = Object.keys(ds3Challenge[3]['Weapon (Only use this weapon)'][0]).sort();
-            classesList = Object.keys(ds3Challenge[2]['Starting Class'][0])
-            fullStatRestrictionList = Object.keys(ds3Challenge[5]['Stat Restrictions Full'][0])
-		}
-		else if(selectedGame == "Elden Ring"){
-			challengeList = Object.keys(erChallenge[6].Challenge[0]).sort();
-            hcChallengeList = Object.keys(er3Challenge[7]['Hardcore Restrictions'][0]).sort()
-			bossList = erBossList;
-			categoryList = Object.keys(erCategoryList[0].Category[0]);
-            weaponsList = Object.keys(erChallenge[3]['Weapon (Only use this weapon)'][0]).sort();
-            classesList = Object.keys(erChallenge[2]['Starting Class'][0])
-            fullStatRestrictionList = Object.keys(erChallenge[5]['Stat Restrictions Full'][0])
-		}
-		else if(selectedGame=="Dark Souls"){
-			challengeList = Object.keys(dsChallenge[6].Challenge[0]).sort();
-            hcChallengeList = Object.keys(ds3Challenge[7]['Hardcore Restrictions'][0]).sort()
-			bossList = dsBossList;
-			categoryList = Object.keys(dsCategoryList[0].Category[0]);
-            weaponsList = Object.keys(dsChallenge[3]['Weapon (Only use this weapon)'][0]).sort();
-            classesList = Object.keys(dsChallenge[2]['Starting Class'][0])
-            fullStatRestrictionList = Object.keys(dsChallenge[5]['Stat Restrictions Full'][0])
-		}
+            challenges = ds3Challenge;
+        }
+        else if(selectedGame == "Elden Ring"){
+            challenges = erChallenge;
+        }
+        else if(selectedGame=="Dark Souls"){
+            challenges = dsChallenge;
+        }
 		else{
 			console.error("Something went wrong with the game selector.")
             categoryList = [];
 		}
+
+        challengeList = Object.keys(challenges[6].Challenge[0]).sort();
+        hcChallengeList = Object.keys(challenges[7]['Hardcore Restrictions'][0]).sort();
+        bossList = ds3BossList;
+        categoryList = Object.keys(challenges[0].Category[0]);
+        weaponsList = Object.keys(challenges[3]['Weapon (Only use this weapon)'][0]).sort();
+        classesList = Object.keys(challenges[2]['Starting Class'][0])
+        fullStatRestrictionList = Object.keys(challenges[5]['Stat Restrictions Full'][0])
 		console.log();
 	}
 
+
+    function calculateScore(){
+
+    }
 
     //Code to get urlSearchParams and prefill it in form. Everything for now works except for the startingweapon one.
     onMount(() =>{
@@ -122,7 +116,8 @@
 <p class="justify-center items-center flex flex-col">Submission succesful</p>
 {:else}
 <div class="flex justify-center mb-20 mt-12 px-4 lg:px-0">
-    <form method="POST">
+    <!--<form method="POST">-->
+        <form>
         <label for="game" class="block mb-2 text-sm font-medium text-gray-900 dark:text-[#F7EBE8]">Game *</label>
         <select id="gameInput" bind:value={selectedGame} on:change={() => selectedCategory()} name="game" class=" mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
             {#each games as game}
@@ -146,7 +141,7 @@
 
         <div class="mb-6 lg:w-[25vw]">
             <label for="weapon" class="block mb-2 text-sm font-medium text-gray-900 flex-initial dark:text-[#F7EBE8]">Starting Weapon</label>
-            <select id="weaponInput" bind:value={startingWeapon} name="startingweapon" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%" required>
+            <select id="weaponInput" bind:value={startingWeapon} name="startingweapon" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%">
                 {#each weaponsList as startingWeapon}
                 <option value={startingWeapon}>{startingWeapon}</option>
                 {/each}
@@ -154,7 +149,7 @@
         </div>
         <div class="mb-6 lg:w-[25vw]">
             <label for="class" class="block mb-2 text-sm font-medium text-gray-900 flex-initial dark:text-[#F7EBE8]">Class *</label>
-            <select id="classInput" bind:value={startingClass} name="class" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%" required>
+            <select id="classInput" bind:value={startingClass} name="class" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%">
                 {#each classesList as startingClass}
                 <option value={startingClass}>{startingClass}</option>
                 {/each}
@@ -176,7 +171,11 @@
         </div>
         <div class="mb-6 lg:w-[25vw]">
             <label for="Challenge" class="block mb-2 text-sm font-medium text-gray-900 dflex-initial dark:text-[#F7EBE8]">Hardcore Challenge</label>
-            <input type="Challenge" id="ChallengeInput" bind:value={hardcoreChallenge} name="hardcoreChallenge" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="SL1" >
+            <select id="hardcoreChallengeInput" bind:value={hardcoreChallenge} name="hardcoreChallenge" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%">
+            {#each hcChallengeList as hardcoreChallenge}
+            <option value={hardcoreChallenge}>{hardcoreChallenge}</option>
+            {/each}
+            </select>
         </div>
         <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-[#F7EBE8]">Randomizer Type</label>
         <select id="countriesInput" bind:value={randomizer} name="randomizerOption" class="mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
@@ -202,12 +201,12 @@
         <label for="message"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-[#F7EBE8]">Comment</label>
         <textarea id="message" name="comment" rows="4" class="mb-2 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Leave a comment..."></textarea>
         <div class="flex justify-end">
-            <button id="submitButton"><span class="block w-min text-base font-semibold inline-block px-6 py-4 leading-none border rounded text-[#000] border-[#000] hover:border-[#105D97] hover:text-[#105D97] hover:bg-[#fff] mt-4 dark:text-[#F7EBE8] dark:border-[#F7EBE8] dark:hover:bg-[#1E1E24] dark:hover:text-[#F7EBE8] dark:hover:border-[#F7EBE8]">Submit</span></button>
+            <button id="submitButton"><span class="block w-min text-base font-semibold inline-block px-6 py-4 leading-none border rounded text-[#000] border-[#000] hover:border-[#105D97] hover:text-[#105D97] hover:bg-[#fff] mt-4 dark:text-[#F7EBE8] dark:border-[#F7EBE8] dark:hover:bg-[#1E1E24] dark:hover:text-[#F7EBE8] dark:hover:border-[#F7EBE8]" on:click={calculateScore()}>Submit</span></button>
         </div>
     </form>
 </div>
 
 <h1>
-    SCORE: {score};
+    SCORE: {score}
 </h1>
 {/if}
