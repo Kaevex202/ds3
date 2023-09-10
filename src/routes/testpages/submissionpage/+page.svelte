@@ -27,7 +27,6 @@
         "Elden Ring",
         "Dark Souls 3",
         "Dark Souls",
-        "Sekiro",
     ]
 
 
@@ -37,6 +36,7 @@
     let classesList: any[] = [];
     let fullStatRestrictionList: any[] = [];
     let challengeList: any[] = [];
+    let hcChallengeList: any[] = [];
 
     let category: string;
     let selectedGame: string;
@@ -49,9 +49,12 @@
     let hardcoreChallenge: string;
     let randomizer: string;
 
+    let score;
+
 	function selectedCategory(){
 		if(selectedGame == "Dark Souls 3"){
 			challengeList = Object.keys(ds3Challenge[6].Challenge[0]).sort();
+            hcChallengeList = Object.keys(ds3Challenge[7]['Hardcore Restrictions'][0]).sort();
 			bossList = ds3BossList;
 			categoryList = Object.keys(ds3CategoryList[0].Category[0]);
             weaponsList = Object.keys(ds3Challenge[3]['Weapon (Only use this weapon)'][0]).sort();
@@ -60,6 +63,7 @@
 		}
 		else if(selectedGame == "Elden Ring"){
 			challengeList = Object.keys(erChallenge[6].Challenge[0]).sort();
+            hcChallengeList = Object.keys(er3Challenge[7]['Hardcore Restrictions'][0]).sort()
 			bossList = erBossList;
 			categoryList = Object.keys(erCategoryList[0].Category[0]);
             weaponsList = Object.keys(erChallenge[3]['Weapon (Only use this weapon)'][0]).sort();
@@ -68,16 +72,12 @@
 		}
 		else if(selectedGame=="Dark Souls"){
 			challengeList = Object.keys(dsChallenge[6].Challenge[0]).sort();
+            hcChallengeList = Object.keys(ds3Challenge[7]['Hardcore Restrictions'][0]).sort()
 			bossList = dsBossList;
 			categoryList = Object.keys(dsCategoryList[0].Category[0]);
             weaponsList = Object.keys(dsChallenge[3]['Weapon (Only use this weapon)'][0]).sort();
             classesList = Object.keys(dsChallenge[2]['Starting Class'][0])
             fullStatRestrictionList = Object.keys(dsChallenge[5]['Stat Restrictions Full'][0])
-		}
-        else if(selectedGame=="Sekiro"){
-            challengeList = [];
-			bossList = dsBossList;
-			categoryList = Object.keys(skCategoryList[0].Category[0]);
 		}
 		else{
 			console.error("Something went wrong with the game selector.")
@@ -99,7 +99,7 @@
         else{
             glitchlessBox = true;
         }
-        startingWeapon = $page.url.searchParams.get('Weapon (Only use this weapon)')?.toString()!;
+        startingWeapon = $page.url.searchParams.get('Weapon')?.toString()!;
         startingClass = $page.url.searchParams.get('Starting Class')?.toString()!;
         statRestriction = $page.url.searchParams.get('Stat Restrictions')?.toString().replace(" Only","")!;
         if(!statRestriction){statRestriction = $page.url.searchParams.get('Stat Restrictions Full')?.toString().replace(" Only","")!}
@@ -147,8 +147,8 @@
         <div class="mb-6 lg:w-[25vw]">
             <label for="weapon" class="block mb-2 text-sm font-medium text-gray-900 flex-initial dark:text-[#F7EBE8]">Starting Weapon</label>
             <select id="weaponInput" bind:value={startingWeapon} name="startingweapon" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%" required>
-                {#each weaponsList as weapon}
-                <option value={startingWeapon}>{weapon}</option>
+                {#each weaponsList as startingWeapon}
+                <option value={startingWeapon}>{startingWeapon}</option>
                 {/each}
             </select>
         </div>
@@ -206,4 +206,8 @@
         </div>
     </form>
 </div>
+
+<h1>
+    SCORE: {score};
+</h1>
 {/if}

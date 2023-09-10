@@ -105,9 +105,7 @@ function getRandomInt(max) {
         {/each}
         {#if arr.length > 0}
             <div id="buttoncontainer" class="flex justify-end w-3/5 mt-4 items-center">
-                <a href="/submit?Game=Sekiro&{submissionstring}"><div class="flex text-base font-semibold items-center justify-center inline-block px-6 py-4 leading-none border rounded text-[#000] border-[#000] hover:border-[#105D97] hover:text-[#105D97] hover:bg-[#fff] mt-4 dark:text-[#F7EBE8] dark:border-[#F7EBE8] dark:hover:bg-[#1E1E24] dark:hover:text-[#F7EBE8] dark:hover:border-[#F7EBE8]">
-                    <button type="submit" name="challengeSubmission" value={arr}>Submit This Challenge {#if buttonEnabled == false}<div class="inline-flex ">(must be logged in)</div>{/if} </button>
-                </div></a>
+
             </div>  
         {/if}
 </div>
