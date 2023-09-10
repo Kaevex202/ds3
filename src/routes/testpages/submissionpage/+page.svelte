@@ -51,26 +51,26 @@
 
 	function selectedCategory(){
 		if(selectedGame == "Dark Souls 3"){
-			challengeList = Object.keys(ds3Challenge[6].Challenge[0]);
+			challengeList = Object.keys(ds3Challenge[6].Challenge[0]).sort();
 			bossList = ds3BossList;
 			categoryList = Object.keys(ds3CategoryList[0].Category[0]);
-            weaponsList = Object.keys(ds3Challenge[3]['Weapon (Only use this weapon)'][0]);
+            weaponsList = Object.keys(ds3Challenge[3]['Weapon (Only use this weapon)'][0]).sort();
             classesList = Object.keys(ds3Challenge[2]['Starting Class'][0])
             fullStatRestrictionList = Object.keys(ds3Challenge[5]['Stat Restrictions Full'][0])
 		}
 		else if(selectedGame == "Elden Ring"){
-			challengeList = Object.keys(erChallenge[6].Challenge[0]);
+			challengeList = Object.keys(erChallenge[6].Challenge[0]).sort();
 			bossList = erBossList;
 			categoryList = Object.keys(erCategoryList[0].Category[0]);
-            weaponsList = Object.keys(erChallenge[3]['Weapon (Only use this weapon)'][0]);
+            weaponsList = Object.keys(erChallenge[3]['Weapon (Only use this weapon)'][0]).sort();
             classesList = Object.keys(erChallenge[2]['Starting Class'][0])
             fullStatRestrictionList = Object.keys(erChallenge[5]['Stat Restrictions Full'][0])
 		}
 		else if(selectedGame=="Dark Souls"){
-			challengeList = Object.keys(dsChallenge[6].Challenge[0]);
+			challengeList = Object.keys(dsChallenge[6].Challenge[0]).sort();
 			bossList = dsBossList;
 			categoryList = Object.keys(dsCategoryList[0].Category[0]);
-            weaponsList = Object.keys(dsChallenge[3]['Weapon (Only use this weapon)'][0]);
+            weaponsList = Object.keys(dsChallenge[3]['Weapon (Only use this weapon)'][0]).sort();
             classesList = Object.keys(dsChallenge[2]['Starting Class'][0])
             fullStatRestrictionList = Object.keys(dsChallenge[5]['Stat Restrictions Full'][0])
 		}
@@ -83,7 +83,7 @@
 			console.error("Something went wrong with the game selector.")
             categoryList = [];
 		}
-		console.log(Object.keys(erChallenge[6].Challenge[0]));
+		console.log();
 	}
 
 
