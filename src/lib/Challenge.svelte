@@ -1,5 +1,5 @@
 <script lang="ts">
-    import ds3Challenge from '$lib/ds3/ds3challenge_new.json'
+    import ds3Challenge from '$lib/ds3/ds3challenge.json'
     import ds3BossList from '$lib/ds3/ds3bosses.json'
     import ds3CategoryList from '$lib/ds3/ds3categoryList.json'
     import erChallenge from '$lib/er/erchallenge.json'
