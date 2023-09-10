@@ -51,7 +51,7 @@
 
 	function selectedCategory(){
 		if(selectedGame == "Dark Souls 3"){
-			challengeList = ds3Challenge;
+			challengeList = Object.keys(ds3Challenge[6].Challenge[0]);
 			bossList = ds3BossList;
 			categoryList = Object.keys(ds3CategoryList[0].Category[0]);
             weaponsList = Object.keys(ds3Challenge[3]['Weapon (Only use this weapon)'][0]);
@@ -59,7 +59,7 @@
             fullStatRestrictionList = Object.keys(ds3Challenge[5]['Stat Restrictions Full'][0])
 		}
 		else if(selectedGame == "Elden Ring"){
-			challengeList = erChallenge;
+			challengeList = Object.keys(erChallenge[6].Challenge[0]);
 			bossList = erBossList;
 			categoryList = Object.keys(erCategoryList[0].Category[0]);
             weaponsList = Object.keys(erChallenge[3]['Weapon (Only use this weapon)'][0]);
@@ -67,7 +67,7 @@
             fullStatRestrictionList = Object.keys(erChallenge[5]['Stat Restrictions Full'][0])
 		}
 		else if(selectedGame=="Dark Souls"){
-			challengeList = dsChallenge;
+			challengeList = Object.keys(dsChallenge[6].Challenge[0]);
 			bossList = dsBossList;
 			categoryList = Object.keys(dsCategoryList[0].Category[0]);
             weaponsList = Object.keys(dsChallenge[3]['Weapon (Only use this weapon)'][0]);
@@ -83,7 +83,7 @@
 			console.error("Something went wrong with the game selector.")
             categoryList = [];
 		}
-		console.log(Object.keys(ds3Challenge[6].Challenge[0]));
+		console.log(Object.keys(erChallenge[6].Challenge[0]));
 	}
 
 
@@ -168,7 +168,11 @@
         </select>
         <div class="mb-6 lg:w-[25vw]">
             <label for="Challenge" class="block mb-2 text-sm font-medium text-gray-900 flex-initial dark:text-[#F7EBE8]">Challenge *</label>
-            <input type="Challenge" id="ChallengeInput" bind:value={challenge} name="challenge" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="SL1" required>
+            <select id="ChallengeInput" bind:value={challenge} name="challenge" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%" required>
+                {#each challengeList as challenge}
+                <option value={challenge}>{challenge}</option>
+                {/each}
+            </select>
         </div>
         <div class="mb-6 lg:w-[25vw]">
             <label for="Challenge" class="block mb-2 text-sm font-medium text-gray-900 dflex-initial dark:text-[#F7EBE8]">Hardcore Challenge</label>
