@@ -1,6 +1,7 @@
 [
     {
-        "Category": [{
+        "Category": [
+        {
             "Any%":1000,
             "All Bosses":1250,
             "All Bosses no DLC":1150,
@@ -42,6 +43,7 @@
           "Bastard Sword":0,
           "Battle Axe":0,
           "Black Blade":0,
+          "Black Bow of Pharis":0,
           "Black Iron Greatshield":0,
           "Black Knight Glaive":0,
           "Black Knight Greataxe":0,
@@ -52,7 +54,7 @@
           "Bonewheel Shield":0,
           "Brigand Axe":0,
           "Broadsword":0,
-          "Broken Straight Sword":100,
+          "Broken Straight Sword":0,
           "Buckler":0,
           "Butcher Knife":0,
           "Caestus":0,
@@ -65,6 +67,7 @@
           "Claymore":0,
           "Cleric's Candlestick":0,
           "Club":0,
+          "Composite Bow":0,
           "Corvian Greatknife":0,
           "Crescent Axe":0,
           "Crescent Moon Sword":0,
@@ -77,13 +80,16 @@
           "Dark Hand":0,
           "Dark Sword":0,
           "Darkdrift":0,
+          "Darkmoon Longbow":0,
           "Demon's Fist":0,
           "Demon's Greataxe":0,
           "Demon's Scar":0,
           "Dragon Tooth":0,
           "Dragonhead Greatshield":0,
           "Dragonhead Shield":0,
+          "Dragonrider Bow":0,
           "Dragonslayer Greataxe":0,
+          "Dragonslayer Greatbow":0,
           "Dragonslayer Greatshield":0,
           "Dragonslayer Spear":0,
           "Dragonslayer Swordspear":0,
@@ -98,6 +104,7 @@
           "Exile Greatsword":0,
           "Falchion":0,
           "Farron Greatsword":0,
+          "Firelink Greatsword":0,
           "Flameberge":0,
           "Follower Javelin":0,
           "Follower Saber":0,
@@ -137,6 +144,7 @@
           "Large Club":0,
           "Large Leather Shield":0,
           "Ledo's Great Hammer":0,
+          "Light Crossbow":0,
           "Long Sword":0,
           "Lorian's Greatsword":0,
           "Lothric Knight Greatsword":0,
@@ -150,6 +158,7 @@
           "Man Serpent Hatchet":0,
           "Manikin Claws":0,
           "Millwood Battle Axe":0,
+          "Millwood Greatbow":0,
           "Moonlight Greatsword":0,
           "Morion Blade":0,
           "Morne's Great Hammer":0,
@@ -181,6 +190,7 @@
           "Rapier":0,
           "Red Hilted Halberd":0,
           "Reinforced Club":0,
+          "Repeating Crossbow":0,
           "Ricard's Rapier":0,
           "Ringed Knight Paired Greatswords":0,
           "Ringed Knight Spear":0,
@@ -221,6 +231,7 @@
           "Warpick":0,
           "Washing Pole":0,
           "Whip":0,
+          "White Birch Bow":0,
           "White Hair Talisman":0,
           "Winged Knight Halberd":0,
           "Winged Knight Twinaxes":0,
@@ -240,7 +251,7 @@
             "Intelligence Only":50,
             "Faith Only":50,
             "Luck Only":50,
-            "Mundane Build (all stats same level)":75
+            "Mundane Build (all stats same level)":100
     }]
     },
     {
@@ -253,8 +264,7 @@
             "Dexterity Only":50,
             "Intelligence Only":50,
             "Faith Only":50,
-            "Luck Only":100,
-            "Mundane Build (all stats same level)":75
+            "Luck Only":100
     }]
     },
     {

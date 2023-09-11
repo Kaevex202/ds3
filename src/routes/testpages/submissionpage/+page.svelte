@@ -1,20 +1,15 @@
 <script lang="ts">
     import {page} from '$app/stores'
     import {onMount} from 'svelte'
-    import { enhance } from '$app/forms'
-	import ds3Challenge from '$lib/ds3/ds3challenge_new.json'
+	import ds3Challenge from '$lib/ds3/ds3challenge.json'
     import ds3BossList from '$lib/ds3/ds3bosses.json'
-    import ds3CategoryList from '$lib/ds3/ds3categoryList.json'
     import erChallenge from '$lib/er/erchallenge.json'
     import erBossList from '$lib/er/erbosses.json'
-    import erCategoryList from '$lib/er/ercategory.json'
     import dsChallenge from '$lib/ds/dschallenge.json'
     import dsBossList from '$lib/ds/dsbosses.json'
-    import dsCategoryList from '$lib/ds/dscategoryList.json'
     import bbChallenge from '$lib/bb/bbchallenge.json'
     import bbBossList from '$lib/bb/bbbosses.json'
-    import bbCategoryList from '$lib/bb/bbcategory.json'
-	import skCategoryList from '$lib/sk/skcategory.json'
+    import ds3testjson from '$lib/ds3/ds3challengesubmittest.json'
 
     export let data;
 
@@ -38,7 +33,7 @@
     let challengeList: any[] = [];
     let hcChallengeList: any[] = [];
 
-    let category: string;
+    let category: string = "";
     let selectedGame: string;
     let glitchless: string;
     let glitchlessBox = false;
@@ -53,7 +48,7 @@
 
 	function selectedCategory(){
 		if(selectedGame == "Dark Souls 3"){
-            challenges = ds3Challenge;
+            challenges = ds3testjson;
         }
         else if(selectedGame == "Elden Ring"){
             challenges = erChallenge;
@@ -66,15 +61,18 @@
             categoryList = [];
 		}
 
-        challengeList = Object.keys(challenges[6].Challenge[0]).sort();
-        hcChallengeList = Object.keys(challenges[7]['Hardcore Restrictions'][0]).sort();
-        bossList = ds3BossList;
-        categoryList = Object.keys(challenges[0].Category[0]);
+        categoryList = challenges[0].Category;
+        classesList = challenges[2]['Starting Class'];
         weaponsList = Object.keys(challenges[3]['Weapon (Only use this weapon)'][0]).sort();
-        classesList = Object.keys(challenges[2]['Starting Class'][0])
-        fullStatRestrictionList = Object.keys(challenges[5]['Stat Restrictions Full'][0])
-		console.log();
+
+        let testArray:any[] = [];
+        ds3testjson[0].Category.forEach(element => {
+            testArray.push(element.name);
+        });
+        console.log(challenges[2]);
 	}
+
+    let categoryTestOptions = "";
 
 
     function calculateScore(){
@@ -129,7 +127,7 @@
                 <label for="category" class="block mb-2 text-sm font-medium text-gray-900  flex-initial dark:text-[#F7EBE8]">Category *</label>
                 <select id="categoryInput" bind:value={category} name="category" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%" required>
 					{#each categoryList as category}
-					<option value={category}>{category}</option>
+					<option value={category}>{category.name}</option>
 					{/each}
 				</select>
               </div>
@@ -151,7 +149,7 @@
             <label for="class" class="block mb-2 text-sm font-medium text-gray-900 flex-initial dark:text-[#F7EBE8]">Class *</label>
             <select id="classInput" bind:value={startingClass} name="class" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%">
                 {#each classesList as startingClass}
-                <option value={startingClass}>{startingClass}</option>
+                <option value={startingClass}>{startingClass.name}</option>
                 {/each}
             </select>
         </div>
@@ -209,4 +207,10 @@
 <h1>
     SCORE: {score}
 </h1>
+<select bind:value={categoryTestOptions}>
+{#each ds3testjson[0].Category as categories}
+<option value={categories}>{categories.name}</option>
+{/each}
+</select>
+<p>{categoryTestOptions.name}: {categoryTestOptions.score}</p>
 {/if}
