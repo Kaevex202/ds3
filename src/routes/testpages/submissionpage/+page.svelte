@@ -64,12 +64,19 @@
         categoryList = challenges[0].Category;
         classesList = challenges[2]['Starting Class'];
         weaponsList = Object.keys(challenges[3]['Weapon (Only use this weapon)'][0]).sort();
+        fullStatRestrictionList = challenges[5]['Stat Restrictions Full'];
+        challengeList = challenges[6]['Challenge'].sort(function (a, b) {
+            return a.name.localeCompare(b.name);
+        });
+        hcChallengeList = challenges[7]['Hardcore Restrictions'].sort(function (a, b) {
+            return a.name.localeCompare(b.name);
+        });
 
         let testArray:any[] = [];
         ds3testjson[0].Category.forEach(element => {
             testArray.push(element.name);
         });
-        console.log(challenges[2]);
+        console.log();
 	}
 
     let categoryTestOptions = "";
@@ -156,14 +163,14 @@
         <label for="statrestriction" class="block mb-2 text-sm font-medium text-gray-900 dark:text-[#F7EBE8]">Stat Restriction</label>
         <select id="statrestrictionInput" bind:value={statRestriction} name="stat restriction" class=" mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
             {#each fullStatRestrictionList as statRestriction}
-            <option value={statRestriction}>{statRestriction}</option>
+            <option value={statRestriction}>{statRestriction.name}</option>
             {/each}
         </select>
         <div class="mb-6 lg:w-[25vw]">
             <label for="Challenge" class="block mb-2 text-sm font-medium text-gray-900 flex-initial dark:text-[#F7EBE8]">Challenge *</label>
             <select id="ChallengeInput" bind:value={challenge} name="challenge" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%" required>
                 {#each challengeList as challenge}
-                <option value={challenge}>{challenge}</option>
+                <option value={challenge}>{challenge.name}</option>
                 {/each}
             </select>
         </div>
@@ -171,7 +178,7 @@
             <label for="Challenge" class="block mb-2 text-sm font-medium text-gray-900 dflex-initial dark:text-[#F7EBE8]">Hardcore Challenge</label>
             <select id="hardcoreChallengeInput" bind:value={hardcoreChallenge} name="hardcoreChallenge" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%">
             {#each hcChallengeList as hardcoreChallenge}
-            <option value={hardcoreChallenge}>{hardcoreChallenge}</option>
+            <option value={hardcoreChallenge}>{hardcoreChallenge.name}</option>
             {/each}
             </select>
         </div>
