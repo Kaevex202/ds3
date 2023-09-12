@@ -3,22 +3,22 @@
         "Category": [{
             "id": "01",
             "name":"Any%",
-            "score":"1000"
+            "score":1000
         },
         {
             "id": "02",
             "name":"All Bosses",
-            "score":"1250"
+            "score":1250
         },
         {
             "id":"03",
             "name":"All Bosses no DLC",
-            "score":"1150"
+            "score":1150
         },
         {
             "id":"04",
             "name":"All Bosses (with DLC1)",
-            "score":"1200"
+            "score":1200
         },
         {
             "id":"05",
@@ -510,62 +510,62 @@
         "Hardcore Restrictions": [        {
             "id":"01",
             "name":"No hit (reset on hit)",
-            "score":"1000"
+            "score":1000
         },
         {
             "id":"02",
             "name":"No Deaths (reset on death)",
-            "score":"500"
+            "score":500
         },
         {
             "id":"03",
             "name":"R2 Only",
-            "score":"250"
+            "score":250
         },
         {
             "id":"04",
             "name":"Shield Only",
-            "score":"250"
+            "score":250
         },
         {
             "id":"05",
             "name":"Bow Only",
-            "score":"250"
+            "score":250
         },
         {
             "id":"06",
             "name":"All Achievements.",
-            "score":"1500"
+            "score":1500
         },
         {
             "id":"07",
             "name":"Reach NG+7",
-            "score":"2000"
+            "score":2000
         },
         {
             "id":"08",
             "name":"All Endings Run",
-            "score":"1000"
+            "score":1000
         },
         {
             "id":"09",
             "name":"Consumables Only",
-            "score":"750"
+            "score":750
         },
         {
             "id":"10",
             "name":"Fist Only",
-            "score":"750"
+            "score":750
         },
         {
             "id":"11",
             "name":"Genocide Run (Kill every enemy and NPC you encounter)",
-            "score":"500"
+            "score":500
         },
         {
             "id":"12",
             "name":"No hit SL1 (reset on hit)",
-            "score":"2000"
+            "score":2000
         }]
     },
     {

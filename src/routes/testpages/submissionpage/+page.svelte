@@ -1,6 +1,7 @@
 <script lang="ts">
     import {page} from '$app/stores'
     import {onMount} from 'svelte'
+    import {enhance} from '$app/forms';
 	import ds3Challenge from '$lib/ds3/ds3challenge.json'
     import ds3BossList from '$lib/ds3/ds3bosses.json'
     import erChallenge from '$lib/er/erchallenge.json'
@@ -14,7 +15,7 @@
     export let data;
 
     export let form
-    console.log(form?.body.data.id);
+    //console.log(form?.body.data.id);
   
   $: submission_status = form?.body?.message
     
@@ -33,7 +34,7 @@
     let challengeList: any[] = [];
     let hcChallengeList: any[] = [];
 
-    let category: string = "";
+    let category: string;
     let selectedGame: string;
     let glitchless: string;
     let glitchlessBox = false;
@@ -76,14 +77,12 @@
         ds3testjson[0].Category.forEach(element => {
             testArray.push(element.name);
         });
-        console.log();
 	}
 
-    let categoryTestOptions = "";
 
 
     function calculateScore(){
-
+        console.log(category.score+hardcoreChallenge.score); //adding two scores. Have to chance all the other strings to numbers in the json file.
     }
 
     //Code to get urlSearchParams and prefill it in form. Everything for now works except for the startingweapon one.
@@ -206,18 +205,12 @@
         <label for="message"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-[#F7EBE8]">Comment</label>
         <textarea id="message" name="comment" rows="4" class="mb-2 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Leave a comment..."></textarea>
         <div class="flex justify-end">
-            <button id="submitButton"><span class="block w-min text-base font-semibold inline-block px-6 py-4 leading-none border rounded text-[#000] border-[#000] hover:border-[#105D97] hover:text-[#105D97] hover:bg-[#fff] mt-4 dark:text-[#F7EBE8] dark:border-[#F7EBE8] dark:hover:bg-[#1E1E24] dark:hover:text-[#F7EBE8] dark:hover:border-[#F7EBE8]" on:click={calculateScore()}>Submit</span></button>
+            <button id="submitButton" ><span class="block w-min text-base font-semibold inline-block px-6 py-4 leading-none border rounded text-[#000] border-[#000] hover:border-[#105D97] hover:text-[#105D97] hover:bg-[#fff] mt-4 dark:text-[#F7EBE8] dark:border-[#F7EBE8] dark:hover:bg-[#1E1E24] dark:hover:text-[#F7EBE8] dark:hover:border-[#F7EBE8]" on:click={()=>calculateScore()}>Submit</span></button>
         </div>
     </form>
 </div>
 
-<h1>
-    SCORE: {score}
-</h1>
-<select bind:value={categoryTestOptions}>
-{#each ds3testjson[0].Category as categories}
-<option value={categories}>{categories.name}</option>
-{/each}
-</select>
-<p>{categoryTestOptions.name}: {categoryTestOptions.score}</p>
+
+
+<button on:mousedown={()=>calculateScore()}>CALCULATE SCORE</button>
 {/if}

@@ -22,6 +22,7 @@ onMount (async()=>{
         $avatarurl = `https://cdn.discordapp.com/avatars/${data.discordResponse.id}/${data.discordResponse.avatar}.png`;
     }
 
+    console.log()
 })
 
 
@@ -49,8 +50,8 @@ onMount (async()=>{
                 <p>{data.discordResponse.username}</p>
             </div>
             <div>
-                <h4 class="font-bold">Finshed Runs</h4>
-                <p>{userRunCount}</p>
+                <h4 class="font-bold">Finished Runs</h4>
+                <p>{data.strapiResponse.data[0].attributes.runsCompleted}</p>
             </div>
             <div id="score" class="">
                 <h4 class="font-bold">Score</h4>
