@@ -256,7 +256,7 @@ export const actions = {
     function updateScores(scoresArray){
         const filteredArray = scoresArray.filter(item => item.id !== 999);
         filteredArray.forEach(async item => {
-            let updateContent = {"score":item.score};
+            let updateContent = {"runScore":item.score};
             const res = await fetch('https://api.soulsbornechallenges.com/api/rundata/'+item.id,{
                 method: 'PUT',
                 headers: {
