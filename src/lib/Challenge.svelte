@@ -178,7 +178,7 @@ function submitChallenge(){
         <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" id="fullStatRestriction" bind:checked={fullStatRestrictions} disabled={statRestrictions}><p>Full Stat restrictions (include Vigor, Attunement, etc.)</p></label>
         <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" id="hcRestrictions" bind:checked={HCRestrictions}><p>Hardcore Challenges</p></label>
         <label class="flex items-center w-full mx-auto"><input type="checkbox" class="mr-4" id="modRestrictions" bind:checked={modRestrictions}><p>Randomizer run</p></label>
-        <label class="flex items-center w-full mx-auto justify-center mt-8"><button type="submit" class="text-base font-semibold inline-block px-6 py-4 leading-none border rounded text-[#000] border-[#000] hover:border-[#105D97] hover:text-[#105D97] hover:bg-[#fff] mt-4 dark:text-[#F7EBE8] dark:border-[#F7EBE8] dark:hover:bg-[#1E1E24] dark:hover:text-[#F7EBE8] dark:hover:border-[#F7EBE8]">GIVE ME A CHALLENGE</button></label>
+        <label class="flex items-center w-full mx-auto justify-center lg:justify-end mt-8"><button type="submit" class="text-base font-semibold inline-block px-6 py-4 leading-none border rounded text-[#000] border-[#000] hover:border-[#105D97] hover:text-[#105D97] hover:bg-[#fff] mt-4 dark:text-[#F7EBE8] dark:border-[#F7EBE8] dark:hover:bg-[#1E1E24] dark:hover:text-[#F7EBE8] dark:hover:border-[#F7EBE8]">GIVE ME A CHALLENGE</button></label>
     </div>
     </form>
 </div>
