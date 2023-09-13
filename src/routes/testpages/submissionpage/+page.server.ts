@@ -265,6 +265,8 @@ export const actions = {
                 },
                 body: JSON.stringify({data:updateContent}),
             })
+            const responseJson = await res.json()
+            console.log(responseJson)
         })
     }
 
