@@ -163,11 +163,6 @@ export const actions = {
             //Calculate scores based on the times
             calculateScores(fastestScoresPerUser)
 
-            //Assign score to leftoverUsers
-            leftoverScoresPerUser.forEach((user, index) => {
-                user.score = Number(score)/10;
-            });
-
             //merge Array together
             fullScoresArray = fastestScoresPerUser.concat(leftoverScoresPerUser);
             console.log("fullScoresArray");
@@ -255,8 +250,9 @@ export const actions = {
 
     function updateScores(scoresArray){
         const filteredArray = scoresArray.filter(item => item.id !== 999);
+        let duplicateRunScore = Number(score)/10;
         filteredArray.forEach(async item => {
-            let updateContent = {"runScore":item.score};
+            let updateContent = {"runScore": duplicateRunScore};
             const res = await fetch('https://api.soulsbornechallenges.com/api/rundata/'+item.id,{
                 method: 'PUT',
                 headers: {
