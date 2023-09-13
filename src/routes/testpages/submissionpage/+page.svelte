@@ -91,8 +91,15 @@
 
 
     function calculateScore(){
+        let glitchlessID
         score = 0;
-        if(glitchlessBox == true){score = 50}
+        if(glitchlessBox == true){
+        score = 50;
+        glitchlessID = "01";
+        }
+        else{
+        glitchlessID = "00";
+        }
         score = score + category?.score+startingClass?.score+statRestriction?.score+challenge?.score+hardcoreChallenge?.score+randomizer?.score;
         hardcoreChallengeText = hardcoreChallenge.name;
         challengeText = challenge.name;
@@ -101,7 +108,7 @@
         classText = startingClass.name;
         categoryText = category.name;
         randomizerTest = randomizer.name;
-        categoryID = gameID + category?.id + startingWeapon?.id + startingClass.id + statRestriction.id + challenge.id + hardcoreChallenge.id + randomizer.id;
+        categoryID = gameID + category?.id + glitchlessID + startingWeapon?.id + startingClass.id + statRestriction.id + challenge.id + hardcoreChallenge.id + randomizer.id;
         console.log(categoryID);
     }
 
