@@ -26,6 +26,9 @@ let username = "";
 let score:number;
 let categoryID:number;
 
+let fastestScoresPerUser: any[] = [];
+let leftoverScoresPerUser: any[] = [];
+let fullScoresArray: any[] = [];
 
 /** @type {import('./$types').Actions} */
 export const actions = {
@@ -135,21 +138,135 @@ export const actions = {
           }
 
         if(categoryID){
+            //Fetch all the runs of the same category
             console.log(categoryID);
             const findRunsOfCategoryID = await fetch('https://api.soulsbornechallenges.com/api/rundata?filters[categoryID]='+categoryID, {
                 method: 'GET'
         })
+
+        //put all the runs in 1 array.
         let runsOfCategoryIDUsers:any[] = [];
         const runsOfCategoryID = await findRunsOfCategoryID.json();
-        runsOfCategoryID.data.forEach(element => {
-            if(runsOfCategoryIDUsers.indexOf(element.attributes.username === -1)){
-                runsOfCategoryIDUsers.push(element.attributes.username);
-            }
-        });
-        let unique = runsOfCategoryIDUsers.filter((item, i, ar) => ar.indexOf(item) === i);
-        console.log(unique.length);
+        if(runsOfCategoryID.data.length !== 0){
+            runsOfCategoryID.data.forEach(element => {
+                if(runsOfCategoryIDUsers.indexOf(element.attributes.username === -1)){
+                    let runTimeInSeconds = element.attributes.timeHr*3600 + element.attributes.timeMins*60 + element.attributes.timeSecs;
+                    runsOfCategoryIDUsers.push({'id':element.id,'username':element.attributes.username,'time':runTimeInSeconds});
+                }
+            });
+
+            runsOfCategoryIDUsers.push({'id':999,'username':username,'time':(Number(timeHr)*3600+Number(timeMins)*60+Number(timeSecs))})
+
+
+            filterOutFastestTimes(runsOfCategoryIDUsers);
+
+            //Calculate scores based on the times
+            calculateScores(fastestScoresPerUser)
+
+            //Assign score to leftoverUsers
+            leftoverScoresPerUser.forEach((user, index) => {
+                user.score = Number(score)/10;
+            });
+
+            //merge Array together
+            fullScoresArray = fastestScoresPerUser.concat(leftoverScoresPerUser);
+            console.log("fullScoresArray");
+
+            //update current score
+            const currentUserObjecct = fullScoresArray.find(item => item.id === 999);
+            score = currentUserObjecct ? currentUserObjecct.score: null;
+
+            updateScores(fullScoresArray)
+        }
     }
 
+    function filterOutFastestTimes(data){
+        // Create a map to track the fastest times per user
+        const fastestTimesMap = new Map();
+        
+        // Create an array with all other objects that are not the fastest time
+        leftoverScoresPerUser = [];
+
+        data.forEach(item => {
+        const { id, username, time } = item;
+
+        if (!fastestTimesMap.has(username) || time < fastestTimesMap.get(username)) {
+            fastestTimesMap.set(username, { id, username, time });
+            
+        if (leftoverScoresPerUser.some(obj => obj.username === username)) {
+            leftoverScoresPerUser.splice(leftoverScoresPerUser.findIndex(obj => obj.username === username), 1);
+        }
+        } else {
+            leftoverScoresPerUser.push({ id, username, time });
+        }
+        });
+
+        fastestScoresPerUser = Array.from(fastestTimesMap.values());
+
+    }
+    
+
+    function calculateScores(data){
+        let times = data.map(item => item.time);
+
+    let pointsByRatio=[];
+
+    let bonusPointsToDistribute = 1000 + (1000 * log(fastestScoresPerUser.length, 5));
+    let total = times.reduce((acc, val) => acc + val, 0);
+    let average = total / times.length;
+
+    function calculateBonusPoints(){
+        let arr = times;
+        let maxValue = Math.max(...arr);
+        let ratioValues = arr.map(
+            function(element){
+                return maxValue/element;
+            }
+        );
+
+        let shareValue = ratioValues.reduce((acc, val) => acc + val, 0).toFixed(2);
+
+        let value = bonusPointsToDistribute / shareValue;
+
+        pointsByRatio = ratioValues.map(
+            function(element){
+                return Math.round(element * value);
+            }
+        );
+
+        // Assign points to users
+        data.forEach((user, index) => {
+            user.score = Number(score)+pointsByRatio[index];
+        });
+    }
+
+    function getPercentage(x, y){
+        return (x / y) * 100;
+    }
+
+    function log(b, n) {
+        return Math.log(n) / Math.log(b);
+    }
+
+    // Calculate bonus points
+    calculateBonusPoints();
+
+    }
+
+    function updateScores(scoresArray){
+        const filteredArray = scoresArray.filter(item => item.id !== 999);
+        filteredArray.forEach(async item => {
+            let updateContent = {"score":item.score};
+            const res = await fetch('https://api.soulsbornechallenges.com/api/rundata/'+item.id,{
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${STRAPI_SERVER_ADMIN_TOKEN}`
+                },
+                body: JSON.stringify({data:updateContent}),
+            })
+        })
+    }
 
         if (discordUserInfo.id !== verifychallengerInfo.data[0].attributes.discordId){
             return {
@@ -157,7 +274,7 @@ export const actions = {
                 status: 500
             }
         }
-        else if(discordUserInfo.id == "lol") //verifychallengerInfo.data[0].attributes.discordId)
+        else if(discordUserInfo.id == verifychallengerInfo.data[0].attributes.discordId)
         {
             //Post formData to api backend with POST request.
             const res = await fetch('https://api.soulsbornechallenges.com/api/rundata',{
