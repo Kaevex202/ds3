@@ -22,7 +22,7 @@ onMount (async()=>{
         $avatarurl = `https://cdn.discordapp.com/avatars/${data.discordResponse.id}/${data.discordResponse.avatar}.png`;
     }
 
-    console.log()
+    console.log(data.strapiResponse.data[0].attributes.rundata)
 })
 
 
@@ -61,7 +61,7 @@ onMount (async()=>{
         <div id="runlist" class="mt-16">
             <h3 class="font-bold text-xl ">Runs finished</h3>
             <ul>
-                {#if runsData.length > 0}
+                {#if data.strapiResponse.data[0].attributes.runsCompleted > 0}
                     {#each runsData as runs}
                     <li><div class="mt-4 border-2 rounded px-6 py-4"><span class="font-semibold">{runs.attributes.game}</span><div class="flex"><p>{runs.attributes.category} - Starting Class: {runs.attributes.class}, {runs.attributes.statRestriction}, Challenge: {runs.attributes.challenge}</p></div>
                     <div bind:this={embedDiv}><a href={runs.attributes.videoUrl} rel="_nofollow" target="_blank" class="font-semibold">Watch Video</a></div></li>

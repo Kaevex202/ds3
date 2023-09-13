@@ -62,8 +62,7 @@
         <input type="text" class="block mb-2 text-sm font-medium text-gray-900 border" bind:value={time1}>
         <input type="text" class="block mb-2 text-sm font-medium text-gray-900 border" bind:value={time2}>
         <input type="text" class="block mb-2 text-sm font-medium text-gray-900 border" bind:value={time3}>
-        <input type="text" class="block mb-2 text-sm font-medium text-gray-900 border" bind:value={time4}>
-        <input type="text" class="block mb-2 text-sm font-medium text-gray-900 border" bind:value={time5}>
+
 </div>
 
 <div id="scores" class="ml-16 mt-16 font-semibold text-xl flex flex-col w-1/2">

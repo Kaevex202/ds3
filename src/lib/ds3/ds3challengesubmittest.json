@@ -23,8 +23,129 @@
         {
             "id":"05",
             "name":"Other Boss%",
-            "score":""
-        }]
+            "score":0
+        },
+        {
+            "id":"999",
+            "name":"-------",
+            "score":0
+        },
+        {
+            "id":"06",
+            "name":"Aldrich, Devourer of Gods",
+            "score":1000
+        },
+        {
+            "id":"07",
+            "name":"Ancient Wyvern",
+            "score":1000
+        },
+        {
+            "id":"08",
+            "name":"Champion Gundyr",
+            "score":1000
+        },
+        {
+            "id":"09",
+            "name":"Champion's Gravetender",
+            "score":1100
+        },
+        {
+            "id":"10",
+            "name":"Dancer of the Boreal Valley",
+            "score":1000
+        },
+        {
+            "id":"11",
+            "name":"Darkeater Midir",
+            "score":1100
+        },
+        {
+            "id":"12",
+            "name":"Deacons of the Deep",
+            "score":1200
+        },
+        {
+            "id":"13",
+            "name":"Demon Prince",
+            "score":1100
+        },
+        {
+            "id":"14",
+            "name":"Dragonslayer Armour",
+            "score":1000
+        },
+        {
+            "id":"15",
+            "name":"Fire Demon",
+            "score":1000
+        },
+        {
+            "id":"16",
+            "name":"Great Sand Worm",
+            "score":1000
+        },
+        {
+            "id":"17",
+            "name":"Halflight, Spear of the Church",
+            "score":1100
+        },
+        {
+            "id":"18",
+            "name":"Lothric, Younger Prince",
+            "score":1000
+        },
+        {
+            "id":"19",
+            "name":"Nameless King",
+            "score":1000
+        },
+        {
+            "id":"20",
+            "name":"Oceiros, the Consumed King",
+            "score":1000
+        },
+        {
+            "id":"21",
+            "name":"Old Demon King",
+            "score":1000
+        },
+        {
+            "id":"22",
+            "name":"Outrider Beast",
+            "score":1000
+        },
+        {
+            "id":"23",
+            "name":"Pontiff Sulyvahn",
+            "score":1000
+        },
+        {
+            "id":"24",
+            "name":"Sister Friede",
+            "score":1100
+        },
+        {
+            "id":"25",
+            "name":"Slave Knight Gael",
+            "score":1150
+        },
+        {
+            "id":"26",
+            "name":"Stray Demon",
+            "score":1150
+        },
+        {
+            "id":"27",
+            "name":"Slave Knight Gael",
+            "score":1150
+        },
+        {
+            "id":"28",
+            "name":"Yhorm the Giant",
+            "score":1000
+        }
+    ]
     },
     {
         "Glitches?": [{
@@ -36,478 +157,1344 @@
         "Starting Class": [{
             "id":"01",
             "name":"Knight",
-            "score":"0"
+            "score":0
         },
         {
             "id":"02",
             "name":"Mercenary",
-            "score":"0"
+            "score":0
         },
         {
             "id":"03",
             "name":"Warrior",
-            "score":"0"
+            "score":0
         },
         {
             "id":"04",
             "name":"Herald",
-            "score":"0"
+            "score":0
         },
         {
             "id":"05",
             "name":"Thief",
-            "score":"0"
+            "score":0
         },
         {
             "id":"06",
             "name":"Assassin",
-            "score":"0"
+            "score":0
         },
         {
             "id":"07",
             "name":"Sorcerer",
-            "score":"0"
+            "score":0
         },
         {
             "id":"08",
             "name":"Pyromancer",
-            "score":"0"
+            "score":0
         },
         {
             "id":"09",
             "name":"Cleric",
-            "score":"0"
+            "score":0
         },
         {
             "id":"10",
             "name":"Deprived",
-            "score":"50"
+            "score":50
         
     }]
     },
     {
-        "Weapon (Only use this weapon)": [{
-          "Anri's Straight Sword":0,
-          "Aquamarine Dagger":0,
-          "Arstor's Spear":0,
-          "Astora Greatsword":0,
-          "Astora Straight Sword":0,
-          "Avelyn":0,
-          "Bandit Twindaggers":0,
-          "Bandit's Knife":0,
-          "Barbed Straight Sword":0,
-          "Bastard Sword":0,
-          "Battle Axe":0,
-          "Black Blade":0,
-          "Black Bow of Pharis":0,
-          "Black Iron Greatshield":0,
-          "Black Knight Glaive":0,
-          "Black Knight Greataxe":0,
-          "Black Knight Greatsword":0,
-          "Black Knight Sword":0,
-          "Blacksmith Hammer":0,
-          "Bloodlust":0,
-          "Bonewheel Shield":0,
-          "Brigand Axe":0,
-          "Broadsword":0,
-          "Broken Straight Sword":0,
-          "Buckler":0,
-          "Butcher Knife":0,
-          "Caestus":0,
-          "Carthus Curved Greatsword":0,
-          "Carthus Curved Sword":0,
-          "Carthus Shotel":0,
-          "Cathedral Knight Greatsword":0,
-          "Chaos Blade":0,
-          "Claws":0,
-          "Claymore":0,
-          "Cleric's Candlestick":0,
-          "Club":0,
-          "Composite Bow":0,
-          "Corvian Greatknife":0,
-          "Crescent Axe":0,
-          "Crescent Moon Sword":0,
-          "Crow Quills":0,
-          "Crow Talons":0,
-          "Crucifix of the Mad King":0,
-          "Crystal Sage's Rapier":0,
-          "Dagger":0,
-          "Dancer's Enchanted Swords":0,
-          "Dark Hand":0,
-          "Dark Sword":0,
-          "Darkdrift":0,
-          "Darkmoon Longbow":0,
-          "Demon's Fist":0,
-          "Demon's Greataxe":0,
-          "Demon's Scar":0,
-          "Dragon Tooth":0,
-          "Dragonhead Greatshield":0,
-          "Dragonhead Shield":0,
-          "Dragonrider Bow":0,
-          "Dragonslayer Greataxe":0,
-          "Dragonslayer Greatbow":0,
-          "Dragonslayer Greatshield":0,
-          "Dragonslayer Spear":0,
-          "Dragonslayer Swordspear":0,
-          "Dragonslayer's Axe":0,
-          "Drakeblood Greatsword":0,
-          "Drang Hammers":0,
-          "Drang Twinspears":0,
-          "Earth Seeker":0,
-          "Eleonora":0,
-          "Estoc":0,
-          "Executioner's Greatsword":0,
-          "Exile Greatsword":0,
-          "Falchion":0,
-          "Farron Greatsword":0,
-          "Firelink Greatsword":0,
-          "Flameberge":0,
-          "Follower Javelin":0,
-          "Follower Saber":0,
-          "Follower Torch":0,
-          "Four-Pronged Plow":0,
-          "Frayed Blade":0,
-          "Friede's Great Scythe":0,
-          "Fume Ultra Greatsword":0,
-          "Gael's Greatsword":0,
-          "Gargoyle Flame Hammer":0,
-          "Gargoyle Flame Spear":0,
-          "Giant Door Shield":0,
-          "Glaive":0,
-          "Golden Ritual Spear":0,
-          "Gotthard Twinswords":0,
-          "Great Club":0,
-          "Great Corvian Scythe":0,
-          "Great Mace":0,
-          "Great Machete":0,
-          "Great Scythe":0,
-          "Great Wooden Hammer":0,
-          "Greataxe":0,
-          "Greatlance":0,
-          "Greatsword":0,
-          "Greatsword of Judgment":0,
-          "Gundyr's Halberd":0,
-          "Halberd":0,
-          "Hand Axe":0,
-          "Handmaid's Dagger":0,
-          "Harald Curved Greatsword":0,
-          "Harpe":0,
-          "Heysel Pick":0,
-          "Hollowslayer Greatsword":0,
-          "Immolation Tinder":0,
-          "Irithyll Rapier":0,
-          "Irithyll Straight Sword":0,
-          "Large Club":0,
-          "Large Leather Shield":0,
-          "Ledo's Great Hammer":0,
-          "Light Crossbow":0,
-          "Long Sword":0,
-          "Lorian's Greatsword":0,
-          "Lothric Knight Greatsword":0,
-          "Lothric Knight Long Spear":0,
-          "Lothric Knight Sword":0,
-          "Lothric War Banner":0,
-          "Lothric's Holy Sword":0,
-          "Lucerne":0,
-          "Mace":0,
-          "Mail Breaker":0,
-          "Man Serpent Hatchet":0,
-          "Manikin Claws":0,
-          "Millwood Battle Axe":0,
-          "Millwood Greatbow":0,
-          "Moonlight Greatsword":0,
-          "Morion Blade":0,
-          "Morne's Great Hammer":0,
-          "Morning Star":0,
-          "Murakumo":0,
-          "Murky Hand Scythe":0,
-          "Murky Longstaff":0,
-          "Notched Whip":0,
-          "Old King's Great Hammer":0,
-          "Old Wolf Curved Sword":0,
-          "Onikiri and Ubadachi":0,
-          "Onyx Blade":0,
-          "Painting Guardian's Curved Sword":0,
-          "Parrying Dagger":0,
-          "Partizan":0,
-          "Pickaxe":0,
-          "Pierce Shield":0,
-          "Pike":0,
-          "Plank Shield":0,
-          "Pontiff Knight Curved Sword":0,
-          "Pontiff Knight Great Scythe":0,
-          "Porcine Shield":0,
-          "Preacher's Right Arm":0,
-          "Priest's Chime":0,
-          "Profaned Greatsword":0,
-          "Pyromancer's Parting Flame":0,
-          "Pyromancy Flame":0,
-          "Quakestone Hammer":0,
-          "Rapier":0,
-          "Red Hilted Halberd":0,
-          "Reinforced Club":0,
-          "Repeating Crossbow":0,
-          "Ricard's Rapier":0,
-          "Ringed Knight Paired Greatswords":0,
-          "Ringed Knight Spear":0,
-          "Ringed Knight Straight Sword":0,
-          "Rose of Ariandel":0,
-          "Rotten Ghru Spear":0,
-          "Rotten Gru Curved Sword":0,
-          "Rotten Gru Dagger":0,
-          "Sacred Chime of Filianore":0,
-          "Saint Bident":0,
-          "Scholar's Candlestick":0,
-          "Scimitar":0,
-          "Sellsword Twinblades":0,
-          "Shortsword":0,
-          "Shotel":0,
-          "Smough's Great Hammer":0,
-          "Soldering Iron":0,
-          "Sorcerer's Staff":0,
-          "Spear":0,
-          "Spiked Mace":0,
-          "Spiked Shield":0,
-          "Splitleaf Greatsword":0,
-          "Spotted Whip":0,
-          "Storm Curved Sword":0,
-          "Storm Ruler":0,
-          "Sunlight Straight Sword":0,
-          "Tailbone Short Sword":0,
-          "Tailbone Spear":0,
-          "Talisman":0,
-          "Thrall Axe":0,
-          "Torch":0,
-          "Twin Dragon Greatshield":0,
-          "Twin Princes' Greatsword":0,
-          "Uchigatana":0,
-          "Valorheart":0,
-          "Vordt's Great Hammer":0,
-          "Warden Twinblades":0,
-          "Warpick":0,
-          "Washing Pole":0,
-          "Whip":0,
-          "White Birch Bow":0,
-          "White Hair Talisman":0,
-          "Winged Knight Halberd":0,
-          "Winged Knight Twinaxes":0,
-          "Winged Spear":0,
-          "Witch's Locks":0,
-          "Wolf Knight's Greatsword":0,
-          "Wolnir's Holy Sword":0,
-          "Yhorm's Great Machete":0,
-          "Yorshka's Spear":0,
-          "Zweihander":0
-    }]
+        "Weapon (Only use this weapon)": [
+            {
+                "id": "001",
+                "name": "Anri's Straight Sword",
+                "score": 0
+            },
+            {
+                "id": "002",
+                "name": "Aquamarine Dagger",
+                "score": 0
+            },
+            {
+                "id": "003",
+                "name": "Arstor's Spear",
+                "score": 0
+            },
+            {
+                "id": "004",
+                "name": "Astora Greatsword",
+                "score": 0
+            },
+            {
+                "id": "005",
+                "name": "Astora Straight Sword",
+                "score": 0
+            },
+            {
+                "id": "006",
+                "name": "Avelyn",
+                "score": 0
+            },
+            {
+                "id": "007",
+                "name": "Bandit Twindaggers",
+                "score": 0
+            },
+            {
+                "id": "008",
+                "name": "Bandit's Knife",
+                "score": 0
+            },
+            {
+                "id": "009",
+                "name": "Barbed Straight Sword",
+                "score": 0
+            },
+            {
+                "id": "010",
+                "name": "Bastard Sword",
+                "score": 0
+            },
+            {
+                "id": "011",
+                "name": "Battle Axe",
+                "score": 0
+            },
+            {
+                "id": "012",
+                "name": "Black Blade",
+                "score": 0
+            },
+            {
+                "id": "013",
+                "name": "Black Bow of Pharis",
+                "score": 0
+            },
+            {
+                "id": "014",
+                "name": "Black Iron Greatshield",
+                "score": 0
+            },
+            {
+                "id": "015",
+                "name": "Black Knight Glaive",
+                "score": 0
+            },
+            {
+                "id": "016",
+                "name": "Black Knight Greataxe",
+                "score": 0
+            },
+            {
+                "id": "017",
+                "name": "Black Knight Greatsword",
+                "score": 0
+            },
+            {
+                "id": "018",
+                "name": "Black Knight Sword",
+                "score": 0
+            },
+            {
+                "id": "019",
+                "name": "Blacksmith Hammer",
+                "score": 0
+            },
+            {
+                "id": "020",
+                "name": "Bloodlust",
+                "score": 0
+            },
+            {
+                "id": "021",
+                "name": "Bonewheel Shield",
+                "score": 0
+            },
+            {
+                "id": "022",
+                "name": "Brigand Axe",
+                "score": 0
+            },
+            {
+                "id": "023",
+                "name": "Broadsword",
+                "score": 0
+            },
+            {
+                "id": "024",
+                "name": "Broken Straight Sword",
+                "score": 0
+            },
+            {
+                "id": "025",
+                "name": "Buckler",
+                "score": 0
+            },
+            {
+                "id": "026",
+                "name": "Butcher Knife",
+                "score": 0
+            },
+            {
+                "id": "027",
+                "name": "Caestus",
+                "score": 0
+            },
+            {
+                "id": "028",
+                "name": "Carthus Curved Greatsword",
+                "score": 0
+            },
+            {
+                "id": "029",
+                "name": "Carthus Curved Sword",
+                "score": 0
+            },
+            {
+                "id": "030",
+                "name": "Carthus Shotel",
+                "score": 0
+            },
+            {
+                "id": "031",
+                "name": "Cathedral Knight Greatsword",
+                "score": 0
+            },
+            {
+                "id": "032",
+                "name": "Chaos Blade",
+                "score": 0
+            },
+            {
+                "id": "033",
+                "name": "Claws",
+                "score": 0
+            },
+            {
+                "id": "034",
+                "name": "Claymore",
+                "score": 0
+            },
+            {
+                "id": "035",
+                "name": "Cleric's Candlestick",
+                "score": 0
+            },
+            {
+                "id": "036",
+                "name": "Club",
+                "score": 0
+            },
+            {
+                "id": "037",
+                "name": "Composite Bow",
+                "score": 0
+            },
+            {
+                "id": "038",
+                "name": "Corvian Greatknife",
+                "score": 0
+            },
+            {
+                "id": "039",
+                "name": "Crescent Axe",
+                "score": 0
+            },
+            {
+                "id": "040",
+                "name": "Crescent Moon Sword",
+                "score": 0
+            },
+            {
+                "id": "041",
+                "name": "Crow Quills",
+                "score": 0
+            },
+            {
+                "id": "042",
+                "name": "Crow Talons",
+                "score": 0
+            },
+            {
+                "id": "043",
+                "name": "Crucifix of the Mad King",
+                "score": 0
+            },
+            {
+                "id": "044",
+                "name": "Crystal Sage's Rapier",
+                "score": 0
+            },
+            {
+                "id": "045",
+                "name": "Dagger",
+                "score": 0
+            },
+            {
+                "id": "046",
+                "name": "Dancer's Enchanted Swords",
+                "score": 0
+              },
+              {
+                "id": "047",
+                "name": "Dark Hand",
+                "score": 0
+              },
+              {
+                "id": "048",
+                "name": "Dark Sword",
+                "score": 0
+              },
+              {
+                "id": "049",
+                "name": "Darkdrift",
+                "score": 0
+              },
+              {
+                "id": "050",
+                "name": "Darkmoon Longbow",
+                "score": 0
+              },
+              {
+                "id": "051",
+                "name": "Demon's Fist",
+                "score": 0
+              },
+              {
+                "id": "052",
+                "name": "Demon's Greataxe",
+                "score": 0
+              },
+              {
+                "id": "053",
+                "name": "Demon's Scar",
+                "score": 0
+              },
+              {
+                "id": "054",
+                "name": "Dragon Tooth",
+                "score": 0
+              },
+              {
+                "id": "055",
+                "name": "Dragonhead Greatshield",
+                "score": 0
+              },
+              {
+                "id": "056",
+                "name": "Dragonhead Shield",
+                "score": 0
+              },
+              {
+                "id": "057",
+                "name": "Dragonrider Bow",
+                "score": 0
+              },
+              {
+                "id": "058",
+                "name": "Dragonslayer Greataxe",
+                "score": 0
+              },
+              {
+                "id": "059",
+                "name": "Dragonslayer Greatbow",
+                "score": 0
+              },
+              {
+                "id": "060",
+                "name": "Dragonslayer Greatshield",
+                "score": 0
+              },
+              {
+                "id": "061",
+                "name": "Dragonslayer Spear",
+                "score": 0
+              },
+              {
+                "id": "062",
+                "name": "Dragonslayer Swordspear",
+                "score": 0
+              },
+              {
+                "id": "063",
+                "name": "Dragonslayer's Axe",
+                "score": 0
+              },
+              {
+                "id": "064",
+                "name": "Drakeblood Greatsword",
+                "score": 0
+              },
+              {
+                "id": "065",
+                "name": "Drang Hammers",
+                "score": 0
+              },
+              {
+                "id": "066",
+                "name": "Drang Twinspears",
+                "score": 0
+              },
+              {
+                "id": "067",
+                "name": "Earth Seeker",
+                "score": 0
+              },
+              {
+                "id": "068",
+                "name": "Eleonora",
+                "score": 0
+              },
+              {
+                "id": "069",
+                "name": "Estoc",
+                "score": 0
+              },
+              {
+                "id": "070",
+                "name": "Executioner's Greatsword",
+                "score": 0
+              },
+              {
+                "id": "071",
+                "name": "Exile Greatsword",
+                "score": 0
+              },
+              {
+                "id": "072",
+                "name": "Falchion",
+                "score": 0
+              },
+              {
+                "id": "073",
+                "name": "Farron Greatsword",
+                "score": 0
+              },
+              {
+                "id": "074",
+                "name": "Firelink Greatsword",
+                "score": 0
+              },
+              {
+                "id": "075",
+                "name": "Flameberge",
+                "score": 0
+              },
+              {
+                "id": "076",
+                "name": "Follower Javelin",
+                "score": 0
+              },
+              {
+                "id": "077",
+                "name": "Follower Saber",
+                "score": 0
+              },
+              {
+                "id": "078",
+                "name": "Follower Torch",
+                "score": 0
+              },
+              {
+                "id": "079",
+                "name": "Four-Pronged Plow",
+                "score": 0
+              },
+              {
+                "id": "080",
+                "name": "Frayed Blade",
+                "score": 0
+              },
+              {
+                "id": "081",
+                "name": "Friede's Great Scythe",
+                "score": 0
+              },
+              {
+                "id": "082",
+                "name": "Fume Ultra Greatsword",
+                "score": 0
+              },
+              {
+                "id": "083",
+                "name": "Gael's Greatsword",
+                "score": 0
+              },
+              {
+                "id": "084",
+                "name": "Gargoyle Flame Hammer",
+                "score": 0
+              },
+              {
+                "id": "085",
+                "name": "Gargoyle Flame Spear",
+                "score": 0
+              },
+              {
+                "id": "086",
+                "name": "Giant Door Shield",
+                "score": 0
+              },
+              {
+                "id": "087",
+                "name": "Glaive",
+                "score": 0
+              },
+              {
+                "id": "088",
+                "name": "Golden Ritual Spear",
+                "score": 0
+              },
+              {
+                "id": "089",
+                "name": "Gotthard Twinswords",
+                "score": 0
+              },
+              {
+                "id": "090",
+                "name": "Great Club",
+                "score": 0
+              },
+              {
+                "id": "091",
+                "name": "Great Corvian Scythe",
+                "score": 0
+              },
+              {
+                "id": "092",
+                "name": "Great Mace",
+                "score": 0
+              },
+              {
+                "id": "093",
+                "name": "Great Machete",
+                "score": 0
+              },
+              {
+                "id": "094",
+                "name": "Great Scythe",
+                "score": 0
+              },
+              {
+                "id": "095",
+                "name": "Great Wooden Hammer",
+                "score": 0
+              },
+              {
+                "id": "096",
+                "name": "Greataxe",
+                "score": 0
+              },
+              {
+                "id": "097",
+                "name": "Greatlance",
+                "score": 0
+              },
+              {
+                "id": "098",
+                "name": "Greatsword",
+                "score": 0
+              },
+              {
+                "id": "099",
+                "name": "Greatsword of Judgment",
+                "score": 0
+              },
+              {
+                "id": "100",
+                "name": "Gundyr's Halberd",
+                "score": 0
+              },
+              {
+                "id": "101",
+                "name": "Halberd",
+                "score": 0
+              },
+              {
+                "id": "102",
+                "name": "Hand Axe",
+                "score": 0
+              },
+              {
+                "id": "103",
+                "name": "Handmaid's Dagger",
+                "score": 0
+              },
+              {
+                "id": "104",
+                "name": "Harald Curved Greatsword",
+                "score": 0
+              },
+              {
+                "id": "105",
+                "name": "Harpe",
+                "score": 0
+              },
+              {
+                "id": "106",
+                "name": "Heysel Pick",
+                "score": 0
+              },
+              {
+                "id": "107",
+                "name": "Hollowslayer Greatsword",
+                "score": 0
+              },
+              {
+                "id": "108",
+                "name": "Immolation Tinder",
+                "score": 0
+              },
+              {
+                "id": "109",
+                "name": "Irithyll Rapier",
+                "score": 0
+              },
+              {
+                "id": "110",
+                "name": "Irithyll Straight Sword",
+                "score": 0
+              },
+              {
+                "id": "111",
+                "name": "Large Club",
+                "score": 0
+              },
+              {
+                "id": "112",
+                "name": "Large Leather Shield",
+                "score": 0
+              },
+              {
+                "id": "113",
+                "name": "Ledo's Great Hammer",
+                "score": 0
+              },
+              {
+                "id": "114",
+                "name": "Light Crossbow",
+                "score": 0
+              },
+              {
+                "id": "115",
+                "name": "Long Sword",
+                "score": 0
+              },
+              {
+                "id": "116",
+                "name": "Lorian's Greatsword",
+                "score": 0
+              },
+              {
+                "id": "117",
+                "name": "Lothric Knight Greatsword",
+                "score": 0
+              },
+              {
+                "id": "118",
+                "name": "Lothric Knight Long Spear",
+                "score": 0
+              },
+              {
+                "id": "119",
+                "name": "Lothric Knight Sword",
+                "score": 0
+              },
+              {
+                "id": "120",
+                "name": "Lothric War Banner",
+                "score": 0
+              },
+              {
+                "id": "121",
+                "name": "Lothric's Holy Sword",
+                "score": 0
+              },
+              {
+                "id": "122",
+                "name": "Lucerne",
+                "score": 0
+              },
+              {
+                "id": "123",
+                "name": "Mace",
+                "score": 0
+              },
+              {
+                "id": "124",
+                "name": "Mail Breaker",
+                "score": 0
+              },
+              {
+                "id": "125",
+                "name": "Man Serpent Hatchet",
+                "score": 0
+              },
+              {
+                "id": "126",
+                "name": "Manikin Claws",
+                "score": 0
+              },
+              {
+                "id": "127",
+                "name": "Millwood Battle Axe",
+                "score": 0
+              },
+              {
+                "id": "128",
+                "name": "Millwood Greatbow",
+                "score": 0
+              },
+              {
+                "id": "129",
+                "name": "Moonlight Greatsword",
+                "score": 0
+              },
+              {
+                "id": "130",
+                "name": "Morion Blade",
+                "score": 0
+              },
+              {
+                "id": "131",
+                "name": "Morne's Great Hammer",
+                "score": 0
+              },
+              {
+                "id": "132",
+                "name": "Morning Star",
+                "score": 0
+              },
+              {
+                "id": "133",
+                "name": "Murakumo",
+                "score": 0
+              },
+              {
+                "id": "134",
+                "name": "Murky Hand Scythe",
+                "score": 0
+              },
+              {
+                "id": "135",
+                "name": "Murky Longstaff",
+                "score": 0
+              },
+              {
+                "id": "136",
+                "name": "Notched Whip",
+                "score": 0
+              },
+              {
+                "id": "137",
+                "name": "Old King's Great Hammer",
+                "score": 0
+              },
+              {
+                "id": "138",
+                "name": "Old Wolf Curved Sword",
+                "score": 0
+              },
+              {
+                "id": "139",
+                "name": "Onikiri and Ubadachi",
+                "score": 0
+              },
+              {
+                "id": "140",
+                "name": "Onyx Blade",
+                "score": 0
+              },
+              {
+                "id": "141",
+                "name": "Painting Guardian's Curved Sword",
+                "score": 0
+              },
+              {
+                "id": "142",
+                "name": "Parrying Dagger",
+                "score": 0
+              },
+              {
+                "id": "143",
+                "name": "Partizan",
+                "score": 0
+              },
+              {
+                "id": "144",
+                "name": "Pickaxe",
+                "score": 0
+              },
+              {
+                "id": "145",
+                "name": "Pierce Shield",
+                "score": 0
+              },
+              {
+                "id": "146",
+                "name": "Pike",
+                "score": 0
+              },
+              {
+                "id": "147",
+                "name": "Plank Shield",
+                "score": 0
+              },
+              {
+                "id": "148",
+                "name": "Pontiff Knight Curved Sword",
+                "score": 0
+              },
+              {
+                "id": "149",
+                "name": "Pontiff Knight Great Scythe",
+                "score": 0
+              },
+              {
+                "id": "150",
+                "name": "Porcine Shield",
+                "score": 0
+              },
+              {
+                "id": "151",
+                "name": "Preacher's Right Arm",
+                "score": 0
+              },
+              {
+                "id": "152",
+                "name": "Priest's Chime",
+                "score": 0
+              },
+              {
+                "id": "153",
+                "name": "Profaned Greatsword",
+                "score": 0
+              },
+              {
+                "id": "154",
+                "name": "Pyromancer's Parting Flame",
+                "score": 0
+              },
+              {
+                "id": "155",
+                "name": "Pyromancy Flame",
+                "score": 0
+              },
+              {
+                "id": "156",
+                "name": "Quakestone Hammer",
+                "score": 0
+              },
+              {
+                "id": "157",
+                "name": "Rapier",
+                "score": 0
+              },
+              {
+                "id": "158",
+                "name": "Red Hilted Halberd",
+                "score": 0
+              },
+              {
+                "id": "159",
+                "name": "Reinforced Club",
+                "score": 0
+              },
+              {
+                "id": "160",
+                "name": "Repeating Crossbow",
+                "score": 0
+              },
+              {
+                "id": "161",
+                "name": "Ricard's Rapier",
+                "score": 0
+              },
+              {
+                "id": "162",
+                "name": "Ringed Knight Paired Greatswords",
+                "score": 0
+              },
+              {
+                "id": "163",
+                "name": "Ringed Knight Spear",
+                "score": 0
+              },
+              {
+                "id": "164",
+                "name": "Ringed Knight Straight Sword",
+                "score": 0
+              },
+              {
+                "id": "165",
+                "name": "Rose of Ariandel",
+                "score": 0
+              },
+              {
+                "id": "166",
+                "name": "Rotten Ghru Spear",
+                "score": 0
+              },
+              {
+                "id": "167",
+                "name": "Rotten Gru Curved Sword",
+                "score": 0
+              },
+              {
+                "id": "168",
+                "name": "Rotten Gru Dagger",
+                "score": 0
+              },
+              {
+                "id": "169",
+                "name": "Sacred Chime of Filianore",
+                "score": 0
+              },
+              {
+                "id": "170",
+                "name": "Saint Bident",
+                "score": 0
+              },
+              {
+                "id": "171",
+                "name": "Scholar's Candlestick",
+                "score": 0
+              },
+              {
+                "id": "172",
+                "name": "Scimitar",
+                "score": 0
+              },
+              {
+                "id": "173",
+                "name": "Sellsword Twinblades",
+                "score": 0
+              },
+              {
+                "id": "174",
+                "name": "Shortsword",
+                "score": 0
+              },
+              {
+                "id": "175",
+                "name": "Shotel",
+                "score": 0
+              },
+              {
+                "id": "176",
+                "name": "Smough's Great Hammer",
+                "score": 0
+              },
+              {
+                "id": "177",
+                "name": "Soldering Iron",
+                "score": 0
+              },
+              {
+                "id": "178",
+                "name": "Sorcerer's Staff",
+                "score": 0
+              },
+              {
+                "id": "179",
+                "name": "Spear",
+                "score": 0
+              },
+              {
+                "id": "180",
+                "name": "Spiked Mace",
+                "score": 0
+              },
+              {
+                "id": "181",
+                "name": "Spiked Shield",
+                "score": 0
+              },
+              {
+                "id": "182",
+                "name": "Splitleaf Greatsword",
+                "score": 0
+              },
+              {
+                "id": "183",
+                "name": "Spotted Whip",
+                "score": 0
+              },
+              {
+                "id": "184",
+                "name": "Storm Curved Sword",
+                "score": 0
+              },
+              {
+                "id": "185",
+                "name": "Storm Ruler",
+                "score": 0
+              },
+              {
+                "id": "186",
+                "name": "Sunlight Straight Sword",
+                "score": 0
+              },
+              {
+                "id": "187",
+                "name": "Tailbone Short Sword",
+                "score": 0
+              },
+              {
+                "id": "188",
+                "name": "Tailbone Spear",
+                "score": 0
+              },
+              {
+                "id": "189",
+                "name": "Talisman",
+                "score": 0
+              },
+              {
+                "id": "190",
+                "name": "Thrall Axe",
+                "score": 0
+              },
+              {
+                "id": "191",
+                "name": "Torch",
+                "score": 0
+              },
+              {
+                "id": "192",
+                "name": "Twin Dragon Greatshield",
+                "score": 0
+              },
+              {
+                "id": "193",
+                "name": "Twin Princes' Greatsword",
+                "score": 0
+              },
+              {
+                "id": "194",
+                "name": "Uchigatana",
+                "score": 0
+              },
+              {
+                "id": "195",
+                "name": "Valorheart",
+                "score": 0
+              },
+              {
+                "id": "196",
+                "name": "Vordt's Great Hammer",
+                "score": 0
+              },
+              {
+                "id": "197",
+                "name": "Warden Twinblades",
+                "score": 0
+              },
+              {
+                "id": "198",
+                "name": "Warpick",
+                "score": 0
+              },
+              {
+                "id": "199",
+                "name": "Washing Pole",
+                "score": 0
+              },
+              {
+                "id": "200",
+                "name": "Whip",
+                "score": 0
+              },
+              {
+                "id": "201",
+                "name": "White Birch Bow",
+                "score": 0
+              },
+              {
+                "id": "202",
+                "name": "White Hair Talisman",
+                "score": 0
+              },
+              {
+                "id": "203",
+                "name": "Winged Knight Halberd",
+                "score": 0
+              },
+              {
+                "id": "204",
+                "name": "Winged Knight Twinaxes",
+                "score": 0
+              },
+              {
+                "id": "205",
+                "name": "Winged Spear",
+                "score": 0
+              },
+              {
+                "id": "206",
+                "name": "Witch's Locks",
+                "score": 0
+              },
+              {
+                "id": "207",
+                "name": "Wolf Knight's Greatsword",
+                "score": 0
+              },
+              {
+                "id": "208",
+                "name": "Wolnir's Holy Sword",
+                "score": 0
+              },
+              {
+                "id": "209",
+                "name": "Yhorm's Great Machete",
+                "score": 0
+              },
+              {
+                "id": "210",
+                "name": "Yorshka's Spear",
+                "score": 0
+              },
+              {
+                "id": "211",
+                "name": "Zweihander",
+                "score": 0
+              }
+    ]
     },
     {
         "Stat Restrictions": [{
             "id":"01",
             "name":"Strength Only",
-            "score":"50"
+            "score":50
         },
         {
             "id":"02",
             "name":"Dexterity Only",
-            "score":"50"
+            "score":50
         },
         {
             "id":"03",
             "name":"Intelligence Only",
-            "score":"50"
+            "score":50
         },
         {
             "id":"04",
             "name":"Faith Only",
-            "score":"50"
+            "score":50
         },
         {
             "id":"05",
             "name":"Luck Only",
-            "score":"75"
+            "score":75
         },
         {
             "id":"06",
             "name":"Mundane Build (all stats same level)",
-            "score":"100"
+            "score":100
         }
     ]
     },
     {
         "Stat Restrictions Full": [
             {
+                "id":"00",
+                "name":"—",
+                "score":0
+            },
+            {
                 "id":"01",
                 "name":"Vigor Only",
-                "score":"100"
+                "score":100
             },
             {
                 "id":"02",
                 "name":"Attunement Only",
-                "score":"100"
+                "score":100
             },
             {
                 "id":"03",
                 "name":"Endurance Only",
-                "score":"100"
+                "score":100
             },
             {
                 "id":"04",
                 "name":"Vitality Only",
-                "score":"100"
+                "score":100
             },
             {
                 "id":"05",
                 "name":"Strength Only",
-                "score":"50"
+                "score":50
             },
             {
                 "id":"06",
                 "name":"Dexterity Only",
-                "score":"50"
+                "score":50
             },
             {
                 "id":"07",
                 "name":"Intelligence Only",
-                "score":"50"
+                "score":50
             },
             {
                 "id":"08",
                 "name":"Faith Only",
-                "score":"50"
+                "score":50
             },
             {
                 "id":"09",
                 "name":"Luck Only",
-                "score":"75"
+                "score":75
             },
             {
                 "id":"10",
                 "name":"Mundane Build (all stats same level)",
-                "score":"100"
+                "score":100
             
     }]
     },
     {
-        "Challenge": [            
+        "Challenge": [
+        {
+            "id":"00",
+            "name":"—",
+            "score":0
+        },            
         {
             "id":"01",
             "name":"Miracle Only (catalyst allowed)",
-            "score":"0"
+            "score":0
         },
         {
             "id":"02",
             "name":"Pyromancy Only (catalyst allowed)",
-            "score":"0"
+            "score":0
         },
         {
             "id":"03",
             "name":"Sorcery Only (catalyst allowed)",
-            "score":"0"
+            "score":0
         },
         {
             "id":"04",
             "name":"SL1",
-            "score":"0"
+            "score":0
         },
         {
             "id":"05",
             "name":"No Rings",
-            "score":"0"
+            "score":0
         },
         {
             "id":"06",
             "name":"No Armor",
-            "score":"0"
+            "score":0
         },
         {
             "id":"07",
             "name":"No Items/Buffs",
-            "score":"0"
+            "score":0
         },
         {
             "id":"08",
             "name":"No Infusions",
-            "score":"0"
+            "score":0
         },
         {
             "id":"09",
             "name":"No Weapon Upgrades",
-            "score":"0"
+            "score":0
         },
         {
             "id":"10",
             "name":"No Parrying",
-            "score":"0"
+            "score":0
         },
         {
             "id":"11",
             "name":"No Rolling",
-            "score":"0"
+            "score":0
         },
         {
             "id":"12",
             "name":"Fat Roll Only",
-            "score":"0"
+            "score":0
         },
         {
             "id":"13",
             "name":"Left Handed Run. (Weapon in left hand:0, shield/spellcasting in right)",
-            "score":"0"
+            "score":0
         },
         {
             "id":"14",
             "name":"Get the \"The End of Fire\" Ending",
-            "score":"0"
+            "score":0
         },
         {
             "id":"15",
             "name":"Get the \"Unkindled\" Ending",
-            "score":"0"
+            "score":0
         },
         {
             "id":"16",
             "name":"Get the \"Usurpation of Fire\" Ending",
-            "score":"0"
+            "score":0
         },
         {
             "id":"17",
             "name":"Help Anri kill Aldrich",
-            "score":"0"
+            "score":0
         },
         {
             "id":"18",
             "name":"Help Siegward kill Yhorm",
-            "score":"0"
+            "score":0
         },
         {
             "id":"19",
             "name":"Kill DSA before Vordt",
-            "score":"0"
+            "score":0
         },
         {
             "id":"20",
             "name":"Max level: 50",
-            "score":"0"
+            "score":0
         },
         {
             "id":"21",
             "name":"Max leve: 25",
-            "score":"0"
+            "score":0
         },
         {
             "id":"22",
             "name":"Max level: 75",
-            "score":"0"
+            "score":0
         },
         {
             "id":"23",
             "name":"Two-handing Only",
-            "score":"0"
-        
-    }]
+            "score":0
+        },
+        {
+            "id":"900",
+            "name":"Challenge of the Month July August",
+            "score": 250
+        }
+
+        ]
     },
     {
-        "Hardcore Restrictions": [        {
+        "Hardcore Restrictions": [   
+        {
+            "id":"00",
+            "name":"—",
+            "score":0
+        },
+        {
             "id":"01",
             "name":"No hit (reset on hit)",
             "score":1000
@@ -569,25 +1556,31 @@
         }]
     },
     {
-        "Modded Runs": [        {
+        "Modded Runs": [
+            {
+            "id":"00",
+            "name":"—",
+            "score":0
+            },
+            {
             "id":"01",
             "name":"Fog Gate Randomizer",
-            "score":"500"
+            "score":500
         },
         {
             "id":"02",
             "name":"Item Randomizer",
-            "score":"500"
+            "score":500
         },
         {
             "id":"03",
             "name":"Enemy Randomizer",
-            "score":"500"
+            "score":500
         },
         {
             "id":"04",
             "name":"All Random",
-            "score":"1000"
+            "score":1000
         }]
     }
 ]
