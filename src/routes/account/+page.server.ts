@@ -12,7 +12,7 @@ export async function load({url, cookies}) {
     const refresh_token = cookies.get("disco_refresh_token");
 
     if (refresh_token && !access_token){
-        const discord_request = await fetch(`https://soulsbornchallenges.com/auth/discord/refresh?code=${refresh_token}`);
+        const discord_request = await fetch(`https://soulsbornechallenges.com/auth/discord/refresh?code=${refresh_token}`);
         const discord_response = await discord_request.json();
 
         if (discord_response.disco_access_token) {
