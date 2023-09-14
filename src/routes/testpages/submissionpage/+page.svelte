@@ -4,9 +4,9 @@
     import {enhance} from '$app/forms';
 	import ds3Challenge from '$lib/ds3/ds3challenge.json'
     import ds3BossList from '$lib/ds3/ds3bosses.json'
-    import erChallenge from '$lib/er/erchallenge.json'
+    import erChallenge from '$lib/er/erchallengesubmittest.json'
     import erBossList from '$lib/er/erbosses.json'
-    import dsChallenge from '$lib/ds/dschallenge.json'
+    import dsChallenge from '$lib/ds/dschallengesubmittest.json'
     import dsBossList from '$lib/ds/dsbosses.json'
     import bbChallenge from '$lib/bb/bbchallenge.json'
     import bbBossList from '$lib/bb/bbbosses.json'
