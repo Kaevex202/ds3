@@ -11,6 +11,8 @@
     import bbChallenge from '$lib/bb/bbchallenge.json'
     import bbBossList from '$lib/bb/bbbosses.json'
     import bbCategoryList from '$lib/bb/bbcategory.json'
+    import { submissionArray } from './stores'
+    import { selectedGameStore } from './stores'
     
     import { loggedIn } from '$lib/localstores'
     import { onMount } from 'svelte'
@@ -51,22 +53,22 @@
 
     function selectedCategory(){
 
-        if(game == "ds3"){
+        if(game == "Dark Souls 3"){
             challenge = ds3Challenge;
             bosslist = ds3BossList;
             categoryList = ds3CategoryList
         }
-        else if(game == "er"){
+        else if(game == "Elden Ring"){
             challenge = erChallenge;
             bosslist = erBossList;
             categoryList = erCategoryList;
         }
-        else if(game=="ds"){
+        else if(game=="Dark Souls"){
             challenge = dsChallenge;
             bosslist = dsBossList;
             categoryList = dsCategoryList;
         }
-        else if(game=="bb"){
+        else if(game=="Bloodborne"){
             challenge = bbChallenge;
             bosslist = bbBossList;
             categoryList = bbCategoryList;
@@ -115,7 +117,8 @@
         arr.forEach(element => {
             score = score+element.score;
         });
-        console.log(score);
+        selectedGameStore.set(game);
+        submissionArray.set(arr);
 
         const arrParts = arr.map((param) => {
             return(
@@ -124,6 +127,7 @@
                 );
             }
         )
+        console.log(arr);
 
         submissionstring = arrParts.join('&');
         submissionstring = new URLSearchParams(arr).toString();
@@ -184,7 +188,7 @@ function submitChallenge(){
 </div>
 
 <div class="justify-center flex flex-col mx-auto mt-16 text-left lg:w-1/2 items-stretch lg:items-center px-6 dark:text-[#F7EBE8]">
-    <h2 class="lg:w-11/12  2xl:w-3/5 flex text-left items-start text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 ">Run information</h2>
+    <h2 class="lg:w-11/12  2xl:w-3/5 flex text-left items-start text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 "><a href="/testpages/submissionpage">Run information</a></h2> <!--remove the <a href> when done testing submissionpage with stores.-->
         {#each arr as items}
             <div class="flex lg:w-11/12  2xl:w-3/5 justify-between mt-2 lg:mt-0"><p class="font-bold">{items.categoryName}: </p><p class="text-right items-right">{items.randomOption}</p></div>
         {/each}

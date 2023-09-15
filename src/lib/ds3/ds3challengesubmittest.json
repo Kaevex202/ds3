@@ -8,12 +8,12 @@
         {
             "id": "02",
             "name":"All Bosses",
-            "score":1250
+            "score":1200
         },
         {
             "id":"03",
             "name":"All Bosses no DLC",
-            "score":1150
+            "score":1100
         },
         {
             "id":"04",
@@ -1367,122 +1367,122 @@
         {
             "id":"01",
             "name":"Miracle Only (catalyst allowed)",
-            "score":0
+            "score":370
         },
         {
             "id":"02",
             "name":"Pyromancy Only (catalyst allowed)",
-            "score":0
+            "score":240
         },
         {
             "id":"03",
             "name":"Sorcery Only (catalyst allowed)",
-            "score":0
+            "score":240
         },
         {
             "id":"04",
             "name":"SL1",
-            "score":0
+            "score":330
         },
         {
             "id":"05",
             "name":"No Rings",
-            "score":0
+            "score":180
         },
         {
             "id":"06",
             "name":"No Armor",
-            "score":0
+            "score":200
         },
         {
             "id":"07",
             "name":"No Items/Buffs",
-            "score":0
+            "score":220
         },
         {
             "id":"08",
             "name":"No Infusions",
-            "score":0
+            "score":210
         },
         {
             "id":"09",
             "name":"No Weapon Upgrades",
-            "score":0
+            "score":350
         },
         {
             "id":"10",
             "name":"No Parrying",
-            "score":0
+            "score":170
         },
         {
             "id":"11",
             "name":"No Rolling",
-            "score":0
+            "score":450
         },
         {
             "id":"12",
             "name":"Fat Roll Only",
-            "score":0
+            "score":360
         },
         {
             "id":"13",
             "name":"Left Handed Run. (Weapon in left hand:0, shield/spellcasting in right)",
-            "score":0
+            "score":240
         },
         {
             "id":"14",
             "name":"Get the \"The End of Fire\" Ending",
-            "score":0
+            "score":160
         },
         {
             "id":"15",
             "name":"Get the \"Unkindled\" Ending",
-            "score":0
+            "score":170
         },
         {
             "id":"16",
             "name":"Get the \"Usurpation of Fire\" Ending",
-            "score":0
+            "score":200
         },
         {
             "id":"17",
             "name":"Help Anri kill Aldrich",
-            "score":0
+            "score":180
         },
         {
             "id":"18",
             "name":"Help Siegward kill Yhorm",
-            "score":0
+            "score":140
         },
         {
             "id":"19",
             "name":"Kill DSA before Vordt",
-            "score":0
+            "score":320
         },
         {
             "id":"20",
             "name":"Max level: 50",
-            "score":0
+            "score":170
         },
         {
             "id":"21",
             "name":"Max leve: 25",
-            "score":0
+            "score":210
         },
         {
             "id":"22",
             "name":"Max level: 75",
-            "score":0
+            "score":310
         },
         {
             "id":"23",
             "name":"Two-handing Only",
-            "score":0
+            "score":150
         },
         {
             "id":"900",
             "name":"Challenge of the Month July August",
-            "score": 250
+            "score": 500
         }
 
         ]
@@ -1497,62 +1497,62 @@
         {
             "id":"01",
             "name":"No hit (reset on hit)",
-            "score":1000
+            "score":1380
         },
         {
             "id":"02",
             "name":"No Deaths (reset on death)",
-            "score":500
+            "score":900
         },
         {
             "id":"03",
             "name":"R2 Only",
-            "score":250
+            "score":960
         },
         {
             "id":"04",
             "name":"Shield Only",
-            "score":250
+            "score":1200
         },
         {
             "id":"05",
             "name":"Bow Only",
-            "score":250
+            "score":1110
         },
         {
             "id":"06",
             "name":"All Achievements.",
-            "score":1500
+            "score":1110
         },
         {
             "id":"07",
             "name":"Reach NG+7",
-            "score":2000
+            "score":930
         },
         {
             "id":"08",
             "name":"All Endings Run",
-            "score":1000
+            "score":870
         },
         {
             "id":"09",
             "name":"Consumables Only",
-            "score":750
+            "score":1290
         },
         {
             "id":"10",
             "name":"Fist Only",
-            "score":750
+            "score":1350
         },
         {
             "id":"11",
             "name":"Genocide Run (Kill every enemy and NPC you encounter)",
-            "score":500
+            "score":990
         },
         {
             "id":"12",
             "name":"No hit SL1 (reset on hit)",
-            "score":2000
+            "score":1410
         }]
     },
     {

@@ -1,6 +1,6 @@
 <script lang="ts">
     import {page} from '$app/stores'
-    import {onMount} from 'svelte'
+    import {onMount, tick} from 'svelte'
     import {enhance} from '$app/forms';
 	import ds3Challenge from '$lib/ds3/ds3challenge.json'
     import ds3BossList from '$lib/ds3/ds3bosses.json'
@@ -11,6 +11,9 @@
     import bbChallenge from '$lib/bb/bbchallenge.json'
     import bbBossList from '$lib/bb/bbbosses.json'
     import ds3testjson from '$lib/ds3/ds3challengesubmittest.json'
+    import { submissionArray } from '$lib/stores.js';
+    import { selectedGameStore } from '$lib/stores.js';
+	import { writable, get } from 'svelte/store';
 
     export let data;
 
@@ -56,9 +59,20 @@
     let gameID:string;
     let categoryID:string;
 
+    let selected_category = "";
+    let selected_startingWeapon = "";
+    let selected_startingclass = "";
+    let selected_statRestriction = "";
+
     let score;
 
-	function selectedCategory(){
+    $: selectedCategory = categoryList.find((o) => o.name === selected_category);
+    $: selectedWeapon = weaponsList.find((o) => o.name === selected_startingWeapon);
+    $: selectedStartingClass = classesList.find((o) => o.name === selected_startingclass);
+    $: selectedStatRestriction = fullStatRestrictionList.find((o) => o.name === selected_statRestriction);
+
+
+	function selectCategory(){
 		if(selectedGame == "Dark Souls 3"){
             challenges = ds3testjson;
             gameID = "08";
@@ -77,6 +91,7 @@
 		}
 
         categoryList = challenges[0].Category;
+        console.log(categoryList)
         classesList = challenges[2]['Starting Class'];
         weaponsList = challenges[3]['Weapon (Only use this weapon)'];
         fullStatRestrictionList = challenges[5]['Stat Restrictions Full'];
@@ -87,6 +102,8 @@
             return a.name.localeCompare(b.name);
         });
         randomizerList = challenges[8]['Modded Runs'];
+
+        
 	}
 
 
@@ -94,7 +111,7 @@
         let glitchlessID
         score = 0;
         if(glitchlessBox == true){
-        score = 50;
+        score = 200;
         glitchlessID = "01";
         }
         else{
@@ -114,26 +131,31 @@
 
     //Code to get urlSearchParams and prefill it in form. Everything for now works except for the startingweapon one.
     onMount(() =>{
-        selectedGame = $page.url.searchParams.get('Game')?.toString()!;
-        selectedCategory();
-        category = $page.url.searchParams.get('Category')?.toString()!;
-        glitchless = $page.url.searchParams.get('Glitches?')?.toString()!;
-        if (glitchless == "Glitches Allowed"){
-            glitchlessBox = false;
-        }
-        else{
-            glitchlessBox = true;
-        }
-        startingWeapon = $page.url.searchParams.get('Weapon')?.toString()!;
-        startingClass = $page.url.searchParams.get('Starting Class')?.toString()!;
-        statRestriction = $page.url.searchParams.get('Stat Restrictions')?.toString().replace(" Only","")!;
-        if(!statRestriction){statRestriction = $page.url.searchParams.get('Stat Restrictions Full')?.toString().replace(" Only","")!}
-        challenge = $page.url.searchParams.get('Challenge')?.toString()!;
-        hardcoreChallenge = $page.url.searchParams.get('Hardcore Restrictions')?.toString()!;
-        randomizer = $page.url.searchParams.get('Modded Runs')?.toString()!;
+        selectedGame = get(selectedGameStore);
+        selectCategory();
+
+        const submissionArrayData = get(submissionArray)
+        setSubmissionData(submissionArrayData);
     })
 
+	function setSubmissionData(submissionArrayData) {
+        submissionArrayData.forEach(element => {
+            console.log(element);
+            if(element.categoryName == "Category"){
+                selected_category = element.randomOption;
+            }
+            if(element.categoryName == "Weapon (Only use this weapon)"){
+                selected_startingWeapon = element.randomOption;
+            }
+            if(element.categoryName == "Starting Class"){
+                selected_startingclass = element.randomOption;
+            }
+            if(element.categoryName == "Stat Restrictions Full" || element.categoryName == "Stat Restrictions"){
+                selected_statRestriction = element.randomOption;
+            }
+        });
 
+	}
 </script>
 
 <svelte:head>
@@ -149,7 +171,7 @@
 <div class="flex justify-center mb-20 mt-12 px-4 lg:px-0">
     <form method="POST">
         <label for="game" class="block mb-2 text-sm font-medium text-gray-900 dark:text-[#F7EBE8]">Game *</label>
-        <select id="gameInput" bind:value={selectedGame} on:change={() => selectedCategory()} name="game" class=" mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+        <select id="gameInput" bind:value={selectedGame} on:change={() => selectCategory()} name="game" class=" mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
             {#each games as game}
             <option value={game}>{game}</option>
             {/each}
@@ -157,9 +179,9 @@
         <div id="categoryglitchlessrow" class="flex justify-between ">
             <div class="mb-6 lg:w-[20vw] ">
                 <label for="category" class="block mb-2 text-sm font-medium text-gray-900  flex-initial dark:text-[#F7EBE8]">Category *</label>
-                <select id="categoryInput" bind:value={category} on:change={()=>calculateScore()} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%" required>
-					{#each categoryList as category}
-					<option value={category}>{category.name}</option>
+                <select id="categoryInput" bind:value={selected_category} on:change={()=>calculateScore()} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%" required>
+                    {#each categoryList as category}
+					<option value={category.name}>{category.name}</option>
 					{/each}
 				</select>
               </div>
@@ -171,24 +193,24 @@
 
         <div class="mb-6 lg:w-[25vw]">
             <label for="weapon" class="block mb-2 text-sm font-medium text-gray-900 flex-initial dark:text-[#F7EBE8]">Weapon Restriction</label>
-            <select id="weaponInput" bind:value={startingWeapon} on:change={()=>calculateScore()}  class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%">
+            <select id="weaponInput" bind:value={selected_startingWeapon} on:change={()=>calculateScore()}  class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%">
                 {#each weaponsList as startingWeapon}
-                <option value={startingWeapon}>{startingWeapon.name}</option>
+                <option value={startingWeapon.name}>{startingWeapon.name}</option>
                 {/each}
             </select>
         </div>
         <div class="mb-6 lg:w-[25vw]">
             <label for="class" class="block mb-2 text-sm font-medium text-gray-900 flex-initial dark:text-[#F7EBE8]">Class *</label>
-            <select id="classInput" bind:value={startingClass} on:change={()=>calculateScore()} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%" required>
+            <select id="classInput" bind:value={selected_startingclass} on:change={()=>calculateScore()} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%" required>
                 {#each classesList as startingClass}
-                <option value={startingClass}>{startingClass.name}</option>
+                <option value={startingClass.name}>{startingClass.name}</option>
                 {/each}
             </select>
         </div>
         <label for="statrestriction" class="block mb-2 text-sm font-medium text-gray-900 dark:text-[#F7EBE8]">Stat Restriction</label>
-        <select id="statrestrictionInput" bind:value={statRestriction} on:change={()=>calculateScore()} class=" mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
+        <select id="statrestrictionInput" bind:value={selected_statRestriction} on:change={()=>calculateScore()} class=" mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
             {#each fullStatRestrictionList as statRestriction}
-            <option value={statRestriction}>{statRestriction.name}</option>
+            <option value={statRestriction.name}>{statRestriction.name}</option>
             {/each}
         </select>
         <div class="mb-6 lg:w-[25vw]">
@@ -245,4 +267,6 @@
     </form>
 </div>
 
+
+<div class="text-xl font-bold text-white">{JSON.stringify(selectedCategory)} <br/> {JSON.stringify(selectedWeapon)} <br/> {JSON.stringify(selectedStartingClass)}<br/> {JSON.stringify(selectedStatRestriction)}</div>
 {/if}

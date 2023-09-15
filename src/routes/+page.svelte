@@ -8,7 +8,7 @@
 	export let data;
 
 	//let urlParams = $page.url.searchParams;
-	let game = "ds3"; //urlParams.get('game') ||
+	let game = "Dark Souls 3"; //urlParams.get('game') ||
 
 	//function updateURL(){
 	//	window.history.replaceState(history.state, '', `?game=`+game)
@@ -38,28 +38,28 @@
 <section class=" flex-row mx-auto mt-16 ">
 	<h1 class="flex flex-col lg:flex-row justify-center items-center text-4xl font-extrabold md:text-5xl 2xl:text-7xl mt-4 mb-8 2xl:mt-12 px-4 lg:px-0 dark:text-[#F7EBE8]"><label>
         <select name="gameName" id="game" bind:value={game} class="underline hover:text-[#105D97] bg-[#FAF9F6] dark:bg-[#444140] dark:hover:text-[#EC625F]">
-            <option value="ds3"class=" text-4xl font-extrabold md:text-7xl text-[#000000] dark:text-[#F7EBE8]">DARK SOULS 3</option>
-            <option value="er" class=" text-4xl font-extrabold md:text-7xl text-[#000000] dark:text-[#F7EBE8]">ELDEN RING</option>
-			<option value="ds" class=" text-4xl font-extrabold md:text-7xl text-[#000000] dark:text-[#F7EBE8]">DARK SOULS</option>
-			<option value="ds2" class="hidden text-4xl font-extrabold md:text-7xl text-[#000000] dark:text-[#F7EBE8]">DARK SOULS 2</option>
-			<option value="bb" class="hidden text-4xl font-extrabold md:text-7xl text-[#000000] dark:text-[#F7EBE8]">BLOODBORNE</option>
-			<option value="des" class="hidden text-4xl font-extrabold md:text-7xl text-[#000000] dark:text-[#F7EBE8]">DEMON'S SOULS</option>
-			<option value="sk" class=" text-4xl font-extrabold md:text-7xl text-[#000000] dark:text-[#F7EBE8]">SEKIRO</option>
+            <option value="Dark Souls 3"class=" text-4xl font-extrabold md:text-7xl text-[#000000] dark:text-[#F7EBE8]">DARK SOULS 3</option>
+            <option value="Elden Ring" class=" text-4xl font-extrabold md:text-7xl text-[#000000] dark:text-[#F7EBE8]">ELDEN RING</option>
+			<option value="Dark Souls" class=" text-4xl font-extrabold md:text-7xl text-[#000000] dark:text-[#F7EBE8]">DARK SOULS</option>
+			<option value="Dark Souls 2" class="hidden text-4xl font-extrabold md:text-7xl text-[#000000] dark:text-[#F7EBE8]">DARK SOULS 2</option>
+			<option value="Bloodborne" class="hidden text-4xl font-extrabold md:text-7xl text-[#000000] dark:text-[#F7EBE8]">BLOODBORNE</option>
+			<option value="Demon's Souls" class="hidden text-4xl font-extrabold md:text-7xl text-[#000000] dark:text-[#F7EBE8]">DEMON'S SOULS</option>
+			<option value="Sekiro" class=" text-4xl font-extrabold md:text-7xl text-[#000000] dark:text-[#F7EBE8]">SEKIRO</option>
         </select>
     </label> CHALLENGE RUN</h1>
-	{#if game == "ds3"}
+	{#if game == "Dark Souls 3"}
 		<Challenge bind:game={game}/>
-	{:else if game == "er" }
+	{:else if game == "Elden Ring" }
 		<Challenge bind:game={game}/>
-	{:else if game == "ds" }
+	{:else if game == "Dark Souls" }
 		<Challenge bind:game={game}/>	
-	{:else if game == "ds2"}
+	{:else if game == "Dark Souls 2"}
 		<h2 class="flex hidden justify-center text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 ">COMING SOON</h2>
-	{:else if game == "bb"}
+	{:else if game == "Bloodborne"}
 		<Challenge bind:game={game}/>	
-	{:else if game == "des"}
+	{:else if game == "Demon's Souls"}
 		<h2 class="flex hidden justify-center text-4xl font-extrabold mt-4 mb-8 2xl:mt-12 ">COMING SOON</h2>
-	{:else if game == "sk"}
+	{:else if game == "Sekiro"}
 		<SekiroChallenge/>
 	{:else}
 		<p>Select a game.</p>
