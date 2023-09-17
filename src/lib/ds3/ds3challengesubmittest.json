@@ -32,117 +32,117 @@
         },
         {
             "id":"06",
-            "name":"Aldrich, Devourer of Gods",
+            "name":"Aldrich, Devourer of Gods %",
             "score":1000
         },
         {
             "id":"07",
-            "name":"Ancient Wyvern",
+            "name":"Ancient Wyvern %",
             "score":1000
         },
         {
             "id":"08",
-            "name":"Champion Gundyr",
+            "name":"Champion Gundyr %",
             "score":1000
         },
         {
             "id":"09",
-            "name":"Champion's Gravetender",
+            "name":"Champion's Gravetender %",
             "score":1100
         },
         {
             "id":"10",
-            "name":"Dancer of the Boreal Valley",
+            "name":"Dancer of the Boreal Valley %",
             "score":1000
         },
         {
             "id":"11",
-            "name":"Darkeater Midir",
+            "name":"Darkeater Midir %",
             "score":1100
         },
         {
             "id":"12",
-            "name":"Deacons of the Deep",
+            "name":"Deacons of the Deep %",
             "score":1200
         },
         {
             "id":"13",
-            "name":"Demon Prince",
+            "name":"Demon Prince %",
             "score":1100
         },
         {
             "id":"14",
-            "name":"Dragonslayer Armour",
+            "name":"Dragonslayer Armour %",
             "score":1000
         },
         {
             "id":"15",
-            "name":"Fire Demon",
+            "name":"Fire Demon %",
             "score":1000
         },
         {
             "id":"16",
-            "name":"Great Sand Worm",
+            "name":"Great Sand Worm %",
             "score":1000
         },
         {
             "id":"17",
-            "name":"Halflight, Spear of the Church",
+            "name":"Halflight, Spear of the Church %",
             "score":1100
         },
         {
             "id":"18",
-            "name":"Lothric, Younger Prince",
+            "name":"Lothric, Younger Prince %",
             "score":1000
         },
         {
             "id":"19",
-            "name":"Nameless King",
+            "name":"Nameless King %",
             "score":1000
         },
         {
             "id":"20",
-            "name":"Oceiros, the Consumed King",
+            "name":"Oceiros, the Consumed King %",
             "score":1000
         },
         {
             "id":"21",
-            "name":"Old Demon King",
+            "name":"Old Demon King %",
             "score":1000
         },
         {
             "id":"22",
-            "name":"Outrider Beast",
+            "name":"Outrider Beast %",
             "score":1000
         },
         {
             "id":"23",
-            "name":"Pontiff Sulyvahn",
+            "name":"Pontiff Sulyvahn %",
             "score":1000
         },
         {
             "id":"24",
-            "name":"Sister Friede",
+            "name":"Sister Friede %",
             "score":1100
         },
         {
             "id":"25",
-            "name":"Slave Knight Gael",
+            "name":"Slave Knight Gael %",
             "score":1150
         },
         {
             "id":"26",
-            "name":"Stray Demon",
+            "name":"Stray Demon %",
             "score":1150
         },
         {
             "id":"27",
-            "name":"Slave Knight Gael",
+            "name":"Slave Knight Gael %",
             "score":1150
         },
         {
             "id":"28",
-            "name":"Yhorm the Giant",
+            "name":"Yhorm the Giant %",
             "score":1000
         }
     ]
@@ -1466,7 +1466,7 @@
         },
         {
             "id":"21",
-            "name":"Max leve: 25",
+            "name":"Max level: 25",
             "score":210
         },
         {
@@ -1521,7 +1521,7 @@
         },
         {
             "id":"06",
-            "name":"All Achievements.",
+            "name":"All Achievements",
             "score":1110
         },
         {
@@ -1553,6 +1553,11 @@
             "id":"12",
             "name":"No hit SL1 (reset on hit)",
             "score":1410
+        },
+        {
+            "id":"13",
+            "name":"No bonfire run. (unless forced)",
+            "score":1200
         }]
     },
     {

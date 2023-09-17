@@ -63,6 +63,9 @@
     let selected_startingWeapon = "";
     let selected_startingclass = "";
     let selected_statRestriction = "";
+    let selected_challenge = "";
+    let selected_hc_challenge = "";
+    let selected_randomizer = "";
 
     let score;
 
@@ -70,6 +73,9 @@
     $: selectedWeapon = weaponsList.find((o) => o.name === selected_startingWeapon);
     $: selectedStartingClass = classesList.find((o) => o.name === selected_startingclass);
     $: selectedStatRestriction = fullStatRestrictionList.find((o) => o.name === selected_statRestriction);
+    $: selectedChallenge = challengeList.find((o) => o.name === selected_challenge);
+    $: selectedHCChallenge = hcChallengeList.find((o) => o.name === selected_hc_challenge);
+    $: selectedRandomizer = randomizerList.find((o) => o.name === selected_randomizer);
 
 
 	function selectCategory(){
@@ -117,15 +123,15 @@
         else{
         glitchlessID = "00";
         }
-        score = score + category?.score+startingClass?.score+statRestriction?.score+challenge?.score+hardcoreChallenge?.score+randomizer?.score;
-        hardcoreChallengeText = hardcoreChallenge.name;
-        challengeText = challenge.name;
-        statRestrictionText = statRestriction.name;
-        weaponText = startingWeapon.name;
-        classText = startingClass.name;
-        categoryText = category.name;
-        randomizerTest = randomizer.name;
-        categoryID = gameID + category?.id + glitchlessID + startingWeapon?.id + startingClass.id + statRestriction.id + challenge.id + hardcoreChallenge.id + randomizer.id;
+        score = score + selectedCategory.score+selectedStartingClass.score+selectedStatRestriction.score+selectedChallenge.score+selectedHCChallenge.score +selectedRandomizer.score;
+        challengeText = selectedChallenge.name;
+        statRestrictionText = selectedStatRestriction.name;
+        weaponText = selectedWeapon.name;
+        classText = selectedStartingClass.name;
+        categoryText = selectedCategory.name;
+        hardcoreChallengeText = selectedHCChallenge.name;
+        randomizerTest = selectedRandomizer.name;
+        categoryID = gameID + selectedCategory.id + glitchlessID + selectedWeapon.id + selectedStartingClass.id + selectedStatRestriction.id + selectedChallenge.id+ selectedHCChallenge.id + selectedRandomizer.id;
         console.log(categoryID);
     }
 
@@ -140,7 +146,6 @@
 
 	function setSubmissionData(submissionArrayData) {
         submissionArrayData.forEach(element => {
-            console.log(element);
             if(element.categoryName == "Category"){
                 selected_category = element.randomOption;
             }
@@ -152,6 +157,15 @@
             }
             if(element.categoryName == "Stat Restrictions Full" || element.categoryName == "Stat Restrictions"){
                 selected_statRestriction = element.randomOption;
+            }
+            if(element.categoryName == "Challenge"){
+                selected_challenge = element.randomOption;
+            }
+            if(element.categoryName == "Hardcore Restrictions"){
+                selected_hc_challenge = element.randomOption;
+            }
+            if(element.categoryName == 'Modded Runs'){
+                selected_randomizer = element.randomOption;
             }
         });
 
@@ -215,24 +229,24 @@
         </select>
         <div class="mb-6 lg:w-[25vw]">
             <label for="Challenge" class="block mb-2 text-sm font-medium text-gray-900 flex-initial dark:text-[#F7EBE8]">Challenge *</label>
-            <select id="ChallengeInput" bind:value={challenge} on:change={()=>calculateScore()} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%" required>
+            <select id="ChallengeInput" bind:value={selected_challenge} on:change={()=>calculateScore()} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%" required>
                 {#each challengeList as challenge}
-                <option value={challenge}>{challenge.name}</option>
+                <option value={challenge.name}>{challenge.name}</option>
                 {/each}
             </select>
         </div>
         <div class="mb-6 lg:w-[25vw]">
             <label for="Challenge" class="block mb-2 text-sm font-medium text-gray-900 dflex-initial dark:text-[#F7EBE8]">Hardcore Challenge</label>
-            <select id="hardcoreChallengeInput" bind:value={hardcoreChallenge} on:change={()=>calculateScore()} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%">
+            <select id="hardcoreChallengeInput" bind:value={selected_hc_challenge} on:change={()=>calculateScore()} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="any%">
             {#each hcChallengeList as hardcoreChallenge}
-            <option value={hardcoreChallenge}>{hardcoreChallenge.name}</option>
+            <option value={hardcoreChallenge.name}>{hardcoreChallenge.name}</option>
             {/each}
             </select>
         </div>
         <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-[#F7EBE8]">Randomizer Type</label>
-        <select id="countriesInput" bind:value={randomizer} on:change={()=>calculateScore()} class="mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
+        <select id="countriesInput" bind:value={selected_randomizer} on:change={()=>calculateScore()} class="mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
             {#each randomizerList as randomizer}
-            <option value={randomizer}>{randomizer.name}</option>
+            <option value={randomizer.name}>{randomizer.name}</option>
             {/each}
         </select>
         <hr class="h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-[#F7EBE8]"/>
@@ -268,5 +282,5 @@
 </div>
 
 
-<div class="text-xl font-bold text-white">{JSON.stringify(selectedCategory)} <br/> {JSON.stringify(selectedWeapon)} <br/> {JSON.stringify(selectedStartingClass)}<br/> {JSON.stringify(selectedStatRestriction)}</div>
+<div class="text-xl font-bold text-white">{JSON.stringify(selectedCategory)} <br/> {JSON.stringify(selectedWeapon)} <br/> {JSON.stringify(selectedStartingClass)}<br/> {JSON.stringify(selectedStatRestriction)}<br/> {JSON.stringify(selectedChallenge)}<br/> {JSON.stringify(selectedHCChallenge)}<br/> {JSON.stringify(selectedRandomizer)}</div>
 {/if}
